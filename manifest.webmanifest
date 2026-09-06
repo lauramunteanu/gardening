@@ -1,7 +1,7 @@
 {
-  "name": "Calendrier de culture · Saint-Genis-Pouilly",
-  "short_name": "Calendrier",
-  "description": "Calendrier de semis, plantation et récolte, consultable hors ligne.",
+  "name": "Le jardin · Saint-Jean-de-Gonville",
+  "short_name": "Le jardin",
+  "description": "Calendriers du potager et des fleurs, consultables hors ligne.",
   "lang": "fr",
   "start_url": "./",
   "scope": "./",
@@ -10,7 +10,17 @@
   "background_color": "#EDEFE6",
   "theme_color": "#EDEFE6",
   "icons": [
-    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
-    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
   ]
 }

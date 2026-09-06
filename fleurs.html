@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FAF6EE">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Fleurs">
+<title>Toujours en fleurs — Calendrier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papier:#FAF6EE; --encre:#33291F; --sourdine:#7A6E5D;
+  --abricot:#CE6A2B; --bronze:#96713B; --feuille:#77863F; --prune:#6F5B82;
+  --hiver:#97A2AC; --printemps:#8CA25B; --ete:#D9A13E; --automne:#A9673A;
+  --carte:#FFFDF8; --ligne:#E4DCCB;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--papier);color:var(--encre);font-family:'Karla',system-ui,sans-serif;font-size:15px;line-height:1.5;padding:20px 14px 60px;}
+.page{max-width:680px;margin:0 auto;}
+nav.retour{margin-bottom:14px;}
+nav.retour a{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--sourdine);text-decoration:none;border-bottom:1px solid var(--ligne);padding-bottom:2px;}
+nav.retour a:hover,nav.retour a:focus-visible{color:var(--encre);border-color:var(--encre);}
+header{text-align:center;margin-bottom:6px;}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:34px;line-height:1.1;letter-spacing:-.01em;}
+h1 em{font-style:italic;color:var(--abricot);}
+.sous{color:var(--sourdine);font-size:13px;margin-top:6px;}
+.roue-bloc{margin:18px auto 4px;max-width:400px;}
+svg{display:block;width:100%;height:auto;}
+.seg{cursor:pointer;transition:opacity .15s;}
+.seg:hover{opacity:.82;}
+.seg.actif{stroke:var(--encre);stroke-width:2.5;}
+.mois-label{font-family:'Karla';font-size:10.5px;font-weight:700;fill:#fff;pointer-events:none;text-transform:uppercase;letter-spacing:.04em;}
+.legende{display:flex;flex-wrap:wrap;gap:10px 16px;justify-content:center;font-size:12px;color:var(--sourdine);margin:10px 0 22px;}
+.legende span{display:inline-flex;align-items:center;gap:5px;}
+.pastille{width:10px;height:10px;border-radius:50%;display:inline-block;}
+.anneau-note{text-align:center;font-size:12.5px;color:var(--sourdine);font-style:italic;font-family:'Fraunces',Georgia,serif;margin-top:2px;}
+#panneau{background:var(--carte);border:1px solid var(--ligne);border-radius:14px;padding:18px;margin-bottom:26px;}
+.p-titre{font-family:'Fraunces',Georgia,serif;font-size:24px;font-weight:600;margin-bottom:2px;}
+.p-fleurs{font-size:13px;color:var(--sourdine);margin-bottom:14px;font-style:italic;}
+.p-fleurs b{color:var(--abricot);font-style:normal;}
+.groupe{margin-bottom:12px;}
+.groupe:last-child{margin-bottom:0;}
+.g-tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:2px 9px;border-radius:20px;color:#fff;margin-bottom:6px;}
+.g-a{background:var(--prune);} .g-s{background:var(--feuille);} .g-p{background:var(--bronze);} .g-c{background:var(--abricot);} .g-x{background:var(--sourdine);}
+.groupe ul{list-style:none;}
+.groupe li{padding:4px 0 4px 14px;position:relative;font-size:14px;}
+.groupe li::before{content:"";position:absolute;left:0;top:12px;width:5px;height:5px;border-radius:50%;background:var(--ligne);}
+.calme{font-style:italic;color:var(--sourdine);font-family:'Fraunces',Georgia,serif;font-size:15px;}
+h2.sect{font-family:'Fraunces',Georgia,serif;font-size:19px;font-weight:600;margin:24px 0 10px;}
+details{background:var(--carte);border:1px solid var(--ligne);border-radius:14px;margin-bottom:10px;overflow:hidden;}
+summary{padding:14px 16px;cursor:pointer;font-family:'Fraunces',Georgia,serif;font-size:17px;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+summary::-webkit-details-marker{display:none;}
+summary .n{font-family:'Karla';font-size:12px;font-weight:500;color:var(--sourdine);}
+.d-inner{padding:0 16px 14px;}
+.s-note{font-size:13px;color:var(--sourdine);margin-bottom:12px;font-style:italic;}
+.carte-p{border-top:1px solid var(--ligne);padding:12px 0;}
+.carte-p:first-of-type{border-top:none;}
+.p-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;}
+.p-nom{font-weight:700;font-size:15px;}
+.p-tag{font-size:11px;font-weight:700;color:#fff;background:var(--bronze);padding:1px 8px;border-radius:20px;white-space:nowrap;}
+.p-tag.chaud{background:var(--abricot);}
+.p-meta{font-size:12.5px;color:var(--sourdine);margin:2px 0 8px;}
+.strip{display:grid;grid-template-columns:repeat(12,1fr);gap:2px;}
+.strip .m{font-size:9px;text-align:center;color:var(--sourdine);}
+.strip .c{height:12px;border-radius:3px;background:#EFE9DB;}
+.c.sem{background:var(--feuille);} .c.pla{background:var(--bronze);} .c.flo{background:var(--abricot);}
+.p-note{font-size:13px;color:var(--sourdine);margin-top:8px;}
+.strip-leg{display:flex;gap:14px;font-size:11.5px;color:var(--sourdine);margin:6px 0 18px;justify-content:center;}
+.strip-leg i{width:14px;height:9px;border-radius:3px;display:inline-block;margin-right:4px;vertical-align:middle;font-style:normal;}
+footer{margin-top:30px;font-size:12.5px;color:var(--sourdine);border-top:1px solid var(--ligne);padding-top:14px;}
+footer b{color:var(--encre);}
+</style>
+</head>
+<body>
+<div class="page">
+<nav class="retour"><a href="./">← Les deux calendriers</a></nav>
+<header>
+  <h1>Toujours <em>en fleurs</em></h1>
+  <div class="sous">Terrasse, balcon &amp; jardin · Saint-Jean-de-Gonville, 500 m · Saints de Glace mi-mai</div>
+</header>
+
+<div class="roue-bloc"><svg id="roue" viewBox="0 0 220 220"></svg></div>
+<div class="anneau-note">L'anneau abricot au centre : la continuité de floraison, mois par mois. S'il ne se rompt pas, le pari est tenu.</div>
+<div class="legende">
+  <span><i class="pastille" style="background:var(--hiver)"></i>Hiver</span>
+  <span><i class="pastille" style="background:var(--printemps)"></i>Printemps</span>
+  <span><i class="pastille" style="background:var(--ete)"></i>Été</span>
+  <span><i class="pastille" style="background:var(--automne)"></i>Automne</span>
+  <span><i class="pastille" style="background:var(--encre)"></i>Aujourd'hui</span>
+</div>
+
+<div id="panneau"></div>
+
+<h2 class="sect">Les plantes, par lieu</h2>
+<div class="strip-leg">
+  <span><i style="background:var(--feuille)"></i>Semis</span>
+  <span><i style="background:var(--bronze)"></i>Plantation / achat</span>
+  <span><i style="background:var(--abricot)"></i>Floraison &amp; coupe</span>
+</div>
+<div id="fiches"></div>
+
+<footer>
+<b>Règles du jeu.</b> Rien de frileux dehors avant les Saints de Glace (mi-mai). Aucune méditerranéenne sur le goutte-à-goutte partagé — le portulaca et les sauges s'arrosent à la main. Les tulipes en pot sont des annuelles ; les narcisses vivent en manchons plastiques qu'on escamote derrière le jasmin en mai. Deux jours de permutation au balcon par an : début mai et octobre. Semis d'avril au chaud seulement si la barre LED est libérée du programme thrips — sinon, semis direct mi-mai et floraison fin juillet. Graines, bulbes et rosier : Promesse de Fleurs (Baumaux n'avait aucune des variétés voulues). Plants d'été : Botanic. Commande n°1 passée le 6 septembre, livrée le 17 ; bon d'achat de 20 € à dépenser avant mi-décembre, en une seule fois.
+</footer>
+</div>
+
+<script>
+const MOIS=["Jan","Fév","Mar","Avr","Mai","Juin","Juil","Août","Sep","Oct","Nov","Déc"];
+const SAISON=[0,0,1,1,1,2,2,2,3,3,3,0]; // index par mois (0=jan)
+const COUL=["#97A2AC","#8CA25B","#D9A13E","#A9673A"];
+const moisCourant=()=>new Date().getMonth()+1;
+/* La saison bascule en septembre : les mufliers de l'an prochain se sèment
+   dès la fin août. Sept. 2026 → « 2026–27 ». */
+const libelleSaison=()=>{
+  const d=new Date(),y=d.getFullYear(),a=d.getMonth()+1>=9?y:y-1;
+  return a+'–'+String(a+1).slice(2);
+};
+let AUJ=moisCourant();
+
+/* Les données du jardin vivent dans data-fleurs.json et sont chargées par init(). */
+let SECTIONS=[],TACHES={};
+
+const G_LABEL={a:["Acheter & commander","g-a"],s:["Semer","g-s"],p:["Planter","g-p"],c:["Floraison & coupe","g-c"],x:["Soins & permutations","g-x"]};
+
+// floraisons par mois
+const FLO=Array.from({length:13},()=>[]);
+let maxFlo=1;
+function construireFloraisons(){
+  FLO.forEach(a=>a.length=0);
+  SECTIONS.forEach(s=>s.plantes.forEach(p=>(p.flo||[]).forEach(m=>FLO[m].push(p.nom))));
+  maxFlo=Math.max(1,...FLO.slice(1).map(a=>a.length));
+}
+
+// ---- roue ----
+function arc(cx,cy,r1,r2,a0,a1){
+  const p=(r,a)=>[cx+r*Math.cos(a),cy+r*Math.sin(a)];
+  const [x0,y0]=p(r2,a0),[x1,y1]=p(r2,a1),[x2,y2]=p(r1,a1),[x3,y3]=p(r1,a0);
+  const big=(a1-a0)>Math.PI?1:0;
+  return `M${x0},${y0}A${r2},${r2} 0 ${big} 1 ${x1},${y1}L${x2},${y2}A${r1},${r1} 0 ${big} 0 ${x3},${y3}Z`;
+}
+let actif=AUJ;
+function drawRoue(){
+  const svg=document.getElementById('roue');
+  const cx=110,cy=110;let h='';
+  for(let m=1;m<=12;m++){
+    const a0=-Math.PI/2+(m-1)*Math.PI/6, a1=a0+Math.PI/6;
+    const c=COUL[SAISON[m-1]];
+    h+=`<path class="seg${m===actif?' actif':''}" data-m="${m}" d="${arc(cx,cy,66,100,a0+0.012,a1-0.012)}" fill="${c}"/>`;
+    const am=(a0+a1)/2, lx=cx+84*Math.cos(am), ly=cy+84*Math.sin(am)+3.5;
+    h+=`<text class="mois-label" x="${lx}" y="${ly}" text-anchor="middle">${MOIS[m-1]}</text>`;
+    // anneau de floraison
+    const n=FLO[m].length;
+    if(n>0){
+      const op=0.25+0.75*(n/maxFlo);
+      h+=`<path d="${arc(cx,cy,52,62,a0+0.02,a1-0.02)}" fill="#CE6A2B" opacity="${op.toFixed(2)}" pointer-events="none"/>`;
+    }
+    if(m===AUJ){
+      const dx=cx+44*Math.cos(am), dy=cy+44*Math.sin(am);
+      h+=`<circle cx="${dx}" cy="${dy}" r="4" fill="#33291F"/>`;
+    }
+  }
+  h+=`<text x="${cx}" y="${cy+1}" text-anchor="middle" style="font-family:'Fraunces',Georgia,serif;font-size:13px;font-style:italic;fill:#7A6E5D">${libelleSaison()}</text>`;
+  svg.innerHTML=h;
+  svg.querySelectorAll('.seg').forEach(s=>s.addEventListener('click',()=>{actif=+s.dataset.m;drawRoue();drawPanneau();}));
+}
+
+// ---- panneau ----
+const NOMS_LONGS=["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+function drawPanneau(){
+  const t=TACHES[actif]||[];
+  const fl=FLO[actif];
+  let h=`<div class="p-titre">${NOMS_LONGS[actif-1]}</div>`;
+  h+=`<div class="p-fleurs">${fl.length?`En fleurs — <b>${fl.length}</b> : ${fl.join(', ')}`:`Rien en fleurs — le seul mois où l'anneau a le droit de pâlir.`}</div>`;
+  if(!t.length){h+=`<div class="calme">Rien à faire — le jardin travaille tout seul.</div>`;}
+  else{
+    const par={};t.forEach(([k,txt])=>{(par[k]=par[k]||[]).push(txt);});
+    ['a','s','p','c','x'].forEach(k=>{
+      if(!par[k])return;
+      h+=`<div class="groupe"><span class="g-tag ${G_LABEL[k][1]}">${G_LABEL[k][0]}</span><ul>${par[k].map(x=>`<li>${x}</li>`).join('')}</ul></div>`;
+    });
+  }
+  document.getElementById('panneau').innerHTML=h;
+}
+
+// ---- fiches ----
+function stripHTML(p){
+  let cells='',labels='';
+  for(let m=1;m<=12;m++){
+    labels+=`<div class="m">${MOIS[m-1][0]}</div>`;
+    let cl='';
+    if((p.flo||[]).includes(m))cl='flo';
+    else if((p.pla||[]).includes(m))cl='pla';
+    else if((p.sem||[]).includes(m))cl='sem';
+    cells+=`<div class="c ${cl}"></div>`;
+  }
+  return `<div class="strip">${labels}${cells}</div>`;
+}
+function drawFiches(){
+document.getElementById('fiches').innerHTML=SECTIONS.map(sec=>`
+<details${sec.titre==="Balcon"?" open":""}>
+ <summary>${sec.titre}<span class="n">${sec.plantes.length} plantes</span></summary>
+ <div class="d-inner">
+  ${sec.note?`<p class="s-note">${sec.note}</p>`:''}
+  ${sec.plantes.map(p=>`
+  <div class="carte-p">
+   <div class="p-head"><span class="p-nom">${p.nom}</span>${p.tag?`<span class="p-tag${p.chaud?' chaud':''}">${p.tag}</span>`:''}</div>
+   <div class="p-meta">${p.meta}</div>
+   ${stripHTML(p)}
+   ${p.note?`<div class="p-note">${p.note}</div>`:''}
+  </div>`).join('')}
+ </div>
+</details>`).join('');
+}
+
+/* ---- mois courant ----
+   AUJ est lu sur l'horloge de l'appareil, puis revérifié : le calendrier
+   bascule tout seul au changement de mois, même hors ligne. */
+function majMoisCourant(){
+  const m=moisCourant();
+  if(m===AUJ)return;
+  const suivaitLeMois=(actif===AUJ);   // ne pas voler la sélection faite à la main
+  AUJ=m;
+  if(suivaitLeMois)actif=m;
+  drawRoue();
+  drawPanneau();
+}
+/* Replanifié au plus tard toutes les 6 h : setTimeout déborde au-delà de ~24 jours,
+   or un mois peut durer 31 jours. */
+function planifierProchainMois(){
+  const d=new Date(),prochain=new Date(d.getFullYear(),d.getMonth()+1,1,0,0,5);
+  setTimeout(()=>{majMoisCourant();planifierProchainMois();},
+             Math.min(prochain-d,6*3600*1000));
+}
+
+// ---- chargement des données puis rendu ----
+async function init(){
+  try{
+    const r=await fetch('data-fleurs.json',{cache:'no-store'});
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    const data=await r.json();
+    SECTIONS=data.sections;
+    TACHES=data.taches;
+  }catch(err){
+    console.error('Chargement de data-fleurs.json impossible :',err);
+    document.getElementById('panneau').innerHTML=
+      '<div class="p-titre">Données indisponibles</div>'+
+      '<div class="calme">Impossible de charger <code>data-fleurs.json</code>. '+
+      'Vérifiez la connexion, puis rechargez la page.</div>';
+    return;
+  }
+  construireFloraisons();
+  drawRoue();
+  drawPanneau();
+  drawFiches();
+  planifierProchainMois();
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)majMoisCourant();});
+  window.addEventListener('focus',majMoisCourant);
+}
+init();
+</script>
+<script>
+/* Hors ligne : on enregistre le service worker une fois la page chargée. */
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('./sw.js').catch(err=>{
+      console.warn('Service worker non enregistré :',err);
+    });
+  });
+}
+</script>
+</body>
+</html>

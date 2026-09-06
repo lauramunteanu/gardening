@@ -1,0 +1,786 @@
+{
+  "sections": [
+    {
+      "titre": "Balcon",
+      "note": "Quatre bacs de 60 cm en rotation deux fois l'an, plus le grand bac blanc permanent.",
+      "plantes": [
+        {
+          "nom": "Pensées & violas",
+          "meta": "Tapis sur les bulbes · 4 bacs 60 cm",
+          "pla": [
+            10
+          ],
+          "flo": [
+            10,
+            11,
+            12,
+            1,
+            2,
+            3,
+            4
+          ],
+          "note": "Floraison discrète en plein hiver, explosion en mars–avril juste quand les bulbes percent."
+        },
+        {
+          "nom": "Narcisses (manchons)",
+          "meta": "Pots plastiques glissés dans les bacs",
+          "pla": [
+            10,
+            11
+          ],
+          "flo": [
+            3,
+            4
+          ],
+          "note": "En mai, on retire le manchon et le feuillage jaunit derrière le jasmin, pas sur le balcon."
+        },
+        {
+          "nom": "Tulipes (quelques-unes)",
+          "meta": "Dans les bacs, sous les pensées",
+          "pla": [
+            10,
+            11
+          ],
+          "flo": [
+            4
+          ],
+          "note": "Traitées en annuelles : arrachées et jetées après floraison, bulbes neufs chaque automne."
+        },
+        {
+          "nom": "Lantana",
+          "meta": "Ancre d'été · 1 par bac",
+          "tag": "décision oct.",
+          "chaud": 1,
+          "pla": [
+            5
+          ],
+          "flo": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "Rabattre léger si les boutons sèchent encore. En octobre : reconduire si la reprise a convaincu, sinon remplacer."
+        },
+        {
+          "nom": "Gomphrena",
+          "meta": "Le plus résistant à la chaleur de tous",
+          "sem": [
+            4
+          ],
+          "pla": [
+            5
+          ],
+          "flo": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "Semis d'avril possible, sinon plants en mai. Sèche magnifiquement pour bouquets d'hiver."
+        },
+        {
+          "nom": "Scaevola",
+          "meta": "Retombant · reconduit",
+          "pla": [
+            5
+          ],
+          "flo": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "A fait ses preuves cette année, on garde le rôle."
+        },
+        {
+          "nom": "Grand bac blanc — gauras + sauges",
+          "meta": "'Amethyst Lips' & 'Suncrest Lemon Light'",
+          "tag": "permanent",
+          "flo": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "Taille légère en avril, c'est tout. La colonne vertébrale du balcon."
+        }
+      ]
+    },
+    {
+      "titre": "Terrasse — pots",
+      "note": "Bacs rectangulaires de 20 cm pour les bulbes nains, pots moyens pour l'été, un seul grand achat : le pot du rosier.",
+      "plantes": [
+        {
+          "nom": "Tulipe clusiana 'Cynthia' ×10",
+          "meta": "Bacs rect. 20 cm · crème et rouge · 25 cm",
+          "tag": "commandée",
+          "pla": [
+            10,
+            11
+          ],
+          "flo": [
+            3,
+            4
+          ],
+          "note": "Fine et effilée, la silhouette clusiana. Basse, précoce, indifférente à la bise — et vivace, contrairement aux grandes."
+        },
+        {
+          "nom": "Tulipe kaufmanniana 'Heart's Delight' ×10",
+          "meta": "Bacs rect. 20 cm · rose carminé / crème · 20 cm",
+          "tag": "commandée",
+          "pla": [
+            10,
+            11
+          ],
+          "flo": [
+            3
+          ],
+          "note": "Tulipe nénuphar : s'ouvre presque à plat au soleil, cœur jaune. La plus spectaculaire des trois."
+        },
+        {
+          "nom": "Tulipe greigii 'Quebec' ×10",
+          "meta": "Bacs rect. 20 cm · feuillage marbré · 20 cm",
+          "tag": "commande d'octobre",
+          "pla": [
+            10,
+            11
+          ],
+          "flo": [
+            3
+          ],
+          "note": "Reportée à la commande d'octobre (bon d'achat). Feuillage strié de pourpre, décoratif avant même la fleur."
+        },
+        {
+          "nom": "Rosier 'Lady of Shalott'",
+          "meta": "Grand pot 50 cm · orange-abricot · 1,2–1,4 m",
+          "tag": "grand pot à acheter",
+          "chaud": 1,
+          "pla": [
+            11
+          ],
+          "flo": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "Commande en octobre, plantation racines nues en novembre. Taille d'un tiers + engrais rosier en mars, engrais après chaque vague. Arrosage profond et espacé, goutteur généreux pendant les absences."
+        },
+        {
+          "nom": "Sauges arbustives (2–3 nouvelles)",
+          "meta": "Pots moyens individuels · hors goutte-à-goutte",
+          "pla": [
+            4,
+            5
+          ],
+          "flo": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "note": "Le succès incontesté de l'année, multiplié. Une des nouvelles peut reprendre la place des gauras moribonds du bac gaura/sauge."
+        },
+        {
+          "nom": "Angelonia",
+          "meta": "Pots moyens 25 cm",
+          "pla": [
+            5
+          ],
+          "flo": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "note": "Des épis de muflier qui ne boudent pas en août. Le relais fiable du cœur de l'été."
+        },
+        {
+          "nom": "Pélargoniums zonale + lierre",
+          "meta": "Pots moyens sur l'AquaBloom · l'opulence classique",
+          "pla": [
+            5
+          ],
+          "flo": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "Le seul vrai bonheur de l'étagère cette année, multiplié : zonale pour les boules dressées, lierre pour le rideau retombant façon balcon genevois."
+        },
+        {
+          "nom": "Dahlias nains",
+          "meta": "Pots moyens sur l'AquaBloom",
+          "pla": [
+            4,
+            5
+          ],
+          "flo": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "Tubercules en mars (moins cher), démarrés en pot à l'abri en avril, ou plants tout faits en mai. Grosses fleurs sans interruption jusqu'au gel ; tubercules arrachés en octobre."
+        },
+        {
+          "nom": "Pervenche de Madagascar",
+          "meta": "Pots moyens sur l'AquaBloom",
+          "pla": [
+            5
+          ],
+          "flo": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "note": "Coussin vernissé couvert de fleurs au pire de l'août. Aime exactement ce que donne le goutte-à-goutte : humidité régulière, jamais détrempée."
+        },
+        {
+          "nom": "Mufliers nains 'Frosted Flames'",
+          "meta": "Pots près du lagerstroemia",
+          "sem": [
+            2
+          ],
+          "pla": [
+            5
+          ],
+          "flo": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "La part terrasse du semis de février — bronze et abricot contre le feuillage du lagerstroemia."
+        },
+        {
+          "nom": "Jacinthe 'Gipsy Queen' ×5",
+          "meta": "Pots près du coin assis · abricot-saumon",
+          "tag": "commandée",
+          "pla": [
+            10,
+            11
+          ],
+          "flo": [
+            3,
+            4
+          ],
+          "note": "La vraie pêche parmi les jacinthes. Planter à 8–10 cm. Dès la 2e année les épis se relâchent, plus naturels — le parfum reste."
+        },
+        {
+          "nom": "Jacinthe 'China Pink' ×5",
+          "meta": "Pots près du coin assis · rose pâle à rose chair",
+          "tag": "commandée",
+          "pla": [
+            10,
+            11
+          ],
+          "flo": [
+            3,
+            4
+          ],
+          "note": "Parfumée, tendre, elle adoucit l'abricot de 'Gipsy Queen'. Un blanc ('Carnegie') viendra compléter le trio une autre année."
+        },
+        {
+          "nom": "Narcisses (manchons en cache-pots)",
+          "meta": "Petits pots plastiques du stock",
+          "pla": [
+            10,
+            11
+          ],
+          "flo": [
+            3,
+            4
+          ],
+          "note": "Même manège qu'au balcon : floraison en scène, dépérissement en coulisses."
+        }
+      ]
+    },
+    {
+      "titre": "Étagère de la terrasse",
+      "note": "Les correctifs de l'été : on remplace ce qui a grillé par ce qui aime griller.",
+      "plantes": [
+        {
+          "nom": "Scaevola (pot rouge suspendu)",
+          "meta": "Remplace verveine + calibrachoa",
+          "pla": [
+            5
+          ],
+          "flo": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "Un seul plant suffit à remplir le pot."
+        },
+        {
+          "nom": "Euphorbia 'Diamond Frost'",
+          "meta": "Prend la place du bacopa, à côté du pélargonium",
+          "pla": [
+            5
+          ],
+          "flo": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "Brume blanche jusqu'aux gelées, zéro entretien."
+        },
+        {
+          "nom": "Portulaca",
+          "meta": "Étage du bas, à la place du sedum",
+          "tag": "hors goutte-à-goutte",
+          "chaud": 1,
+          "pla": [
+            5
+          ],
+          "flo": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "note": "Arrosage à la main, rare. Le sedum mort sur la ligne d'arrosage sentait l'excès d'eau, pas la chaleur."
+        },
+        {
+          "nom": "Œillets (dianthus)",
+          "meta": "En place",
+          "flo": [
+            5,
+            6,
+            7
+          ],
+          "note": "Tailler les brûlures au vert, pailler léger loin des couronnes."
+        },
+        {
+          "nom": "Pélargonium",
+          "meta": "En place",
+          "flo": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "Rien à changer."
+        },
+        {
+          "nom": "Gaura 'Blush' + romarin",
+          "meta": "Haut de l'étagère · en place",
+          "flo": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "Le duo qui marche, on n'y touche pas."
+        }
+      ]
+    },
+    {
+      "titre": "Potager — rangs de coupe",
+      "note": "La fabrique à bouquets. Le droit d'avoir l'air d'une ligne de production.",
+      "plantes": [
+        {
+          "nom": "Mufliers — vague 1 (Lemon Sherbet, Black Prince, Maximum varié)",
+          "meta": "À semer dès réception · caisse ajourée",
+          "tag": "semis 17 sept.",
+          "chaud": 1,
+          "sem": [
+            9
+          ],
+          "pla": [
+            3,
+            4
+          ],
+          "flo": [
+            5,
+            6,
+            7
+          ],
+          "note": "Colis livré le 17 septembre : semer dans la semaine, pas la suivante. C'est eux qui comblent le creux entre tulipes et été. Lemon Sherbet est une vraie vivace ; Maximum varié (6400 graines, 2,50 €) sert d'assurance en nombre."
+        },
+        {
+          "nom": "Mufliers Avignon (Deep Orange II, Cherry Rose II)",
+          "meta": "80–100 cm · filet corset obligatoire",
+          "tag": "moitié / moitié",
+          "chaud": 1,
+          "sem": [
+            9,
+            2
+          ],
+          "pla": [
+            5
+          ],
+          "flo": [
+            5,
+            6,
+            9,
+            10
+          ],
+          "note": "Double floraison : mai–juin puis septembre–octobre. Série peu rustique à 500 m — semer 10 graines sous caisse maintenant, garder 10 pour février. Chaque sachet ne contient que 20 graines."
+        },
+        {
+          "nom": "Mufliers — vague 2 (Potomac Orange, Mme Butterfly Bronze)",
+          "meta": "Hauts · filet corset · 15 cm d'espacement",
+          "sem": [
+            2
+          ],
+          "pla": [
+            5
+          ],
+          "flo": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "Semis de février au chaud, plantation mi-mai. Potomac ne se pince pas."
+        },
+        {
+          "nom": "Zinnias (Benary's Giant, Oklahoma)",
+          "meta": "Le meilleur rapport fleur/euro du vase",
+          "sem": [
+            4
+          ],
+          "pla": [
+            5
+          ],
+          "flo": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "Semis au chaud mi-avril si la barre LED est libre ; sinon semis direct mi-mai, floraison fin juillet. Plus on coupe, plus ça fleurit."
+        },
+        {
+          "nom": "Cosmos",
+          "meta": "Même calendrier que les zinnias",
+          "sem": [
+            4
+          ],
+          "pla": [
+            5
+          ],
+          "flo": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "Prospère dans l'indifférence. Coupe hebdomadaire avec le reste."
+        }
+      ]
+    },
+    {
+      "titre": "Massif & murs",
+      "note": "Ce qui s'installe et revient tout seul — planté une fois, fleurit des années.",
+      "plantes": [
+        {
+          "nom": "Allium 'Silver Spring' ×3",
+          "meta": "Massif · boules blanches à œil pourpre · 70 cm",
+          "tag": "commandé",
+          "pla": [
+            10,
+            11
+          ],
+          "flo": [
+            5,
+            6
+          ],
+          "note": "Le seul blanc du lot, et c'est lui qui fait chanter le pourpre de 'Purple Sensation'. L'œil sombre au cœur de chaque fleuron lui donne son reflet argenté."
+        },
+        {
+          "nom": "Allium 'Purple Sensation' ×15",
+          "meta": "Massif, entre hortensias et lilas",
+          "tag": "commande d'octobre",
+          "pla": [
+            11
+          ],
+          "flo": [
+            5,
+            6
+          ],
+          "note": "Reportée à octobre (bon d'achat) — 175 en stock, aucun risque de rupture. À planter dans la même séance de bêchage que la commande Naudet. Le pont mai–juin entre tulipes et mufliers."
+        },
+        {
+          "nom": "Tulipes hautes",
+          "meta": "Pleine terre, à l'abri de la bise",
+          "pla": [
+            10,
+            11
+          ],
+          "flo": [
+            4,
+            5
+          ],
+          "note": "Si l'envie de grandes persiste : au sol, pas en pot — la profondeur y est gratuite."
+        },
+        {
+          "nom": "Narcisse 'British Gamble'",
+          "meta": "Devant le massif · blanc à trompette pêche · 45 cm",
+          "pla": [
+            10,
+            11
+          ],
+          "flo": [
+            3,
+            4
+          ],
+          "note": "Énorme trompette froufroutante, citron pâle puis rose abricot — au frais du 500 m, elle tirera sur le pêche. Se naturalise en touffes. Quelques bulbes en manchons contre le mur de la terrasse si envie."
+        },
+        {
+          "nom": "Narcisses (pleine terre)",
+          "meta": "Devant le massif",
+          "pla": [
+            10,
+            11
+          ],
+          "flo": [
+            3,
+            4
+          ],
+          "note": "Le feuillage jaunissant disparaît derrière la pousse des arbustes."
+        },
+        {
+          "nom": "Verbena bonariensis",
+          "meta": "Fond de massif ou près du cotinus",
+          "pla": [
+            4,
+            5
+          ],
+          "flo": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "Se ressème seule ensuite. Haute, aérienne, insensible à la canicule."
+        },
+        {
+          "nom": "Erigeron karvinskianus",
+          "meta": "Poches dans les deux murs à lavande",
+          "pla": [
+            4,
+            5
+          ],
+          "flo": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "note": "S'installe dans les fissures et fleurit sept mois. Le plus long feu d'artifice du jardin."
+        },
+        {
+          "nom": "Asters",
+          "meta": "Devant de massif, ou un pot moyen",
+          "pla": [
+            4,
+            5
+          ],
+          "flo": [
+            9,
+            10
+          ],
+          "note": "Le final d'octobre, quand les zinnias fatiguent."
+        }
+      ]
+    }
+  ],
+  "taches": {
+    "1": [
+      [
+        "x",
+        "Surveiller les pensées, ôter les fleurs fanées par temps doux."
+      ],
+      [
+        "x",
+        "Vérifier la caisse d'hivernage des mufliers : aération, pas de condensation."
+      ]
+    ],
+    "2": [
+      [
+        "s",
+        "Semis au chaud — mufliers vague 2 : Potomac Orange, Appleblossom, Mme Butterfly Bronze, Frosted Flames."
+      ]
+    ],
+    "3": [
+      [
+        "x",
+        "Rosier : taille d'un tiers + engrais rosier."
+      ],
+      [
+        "p",
+        "Planter les mufliers vague 1 (mars–avril) au potager et devant le massif."
+      ],
+      [
+        "x",
+        "Repiquer les semis de mufliers en godets aux premières vraies feuilles."
+      ],
+      [
+        "a",
+        "Acheter les tubercules de dahlias nains (moins cher que les plants de mai)."
+      ]
+    ],
+    "4": [
+      [
+        "s",
+        "Semis au chaud : zinnias + cosmos — si la barre LED est libre, sinon semis direct mi-mai."
+      ],
+      [
+        "p",
+        "Planter érigeron (murs), verbena bonariensis, asters et les nouvelles sauges."
+      ],
+      [
+        "c",
+        "Floraison : tulipes botaniques, narcisses, pensées à leur apogée."
+      ]
+    ],
+    "5": [
+      [
+        "x",
+        "Début mai — permutation balcon n°2 : bulbes retirés, tulipes jetées, manchons de narcisses derrière le jasmin."
+      ],
+      [
+        "a",
+        "Acheter les plants d'été à Botanic : gomphrena, scaevola ×2, angelonia, Diamond Frost, portulaca, pélargoniums (zonale + lierre), pervenche de Madagascar — et lantana si remplacement, dahlias nains si pas de tubercules."
+      ],
+      [
+        "p",
+        "Mi-mai, après les Saints de Glace : planter mufliers vague 2 (filet corset), zinnias, cosmos, angelonia, garnir balcon et étagère."
+      ]
+    ],
+    "6": [
+      [
+        "c",
+        "Première floraison du rosier 'Lady of Shalott'."
+      ],
+      [
+        "c",
+        "Couper les alliums pour le vase."
+      ],
+      [
+        "x",
+        "Engrais rosier après la première vague."
+      ]
+    ],
+    "7": [
+      [
+        "c",
+        "Coupe hebdomadaire : zinnias, cosmos, mufliers — la fabrique tourne."
+      ],
+      [
+        "x",
+        "Rabattre légèrement les lantanas si les boutons sèchent."
+      ]
+    ],
+    "8": [
+      [
+        "c",
+        "Coupe continue au potager."
+      ],
+      [
+        "s",
+        "Semer les mufliers vague 1 pour l'an prochain (fin août → mi-septembre, sous la caisse)."
+      ]
+    ],
+    "9": [
+      [
+        "x",
+        "Commande Promesse de Fleurs passée (105,50 €) — livraison le 17 septembre. Bon d'achat de 20 €, valable 90 jours."
+      ],
+      [
+        "s",
+        "À réception, dans la semaine : semer Lemon Sherbet, Black Prince et Maximum varié sous la caisse. Semis tardif, donc ne pas traîner."
+      ],
+      [
+        "s",
+        "Avignon Deep Orange + Cherry Rose : 10 graines maintenant, 10 gardées pour février."
+      ],
+      [
+        "x",
+        "Ranger les bulbes au sec et à l'obscurité jusqu'à la plantation d'octobre–novembre."
+      ]
+    ],
+    "10": [
+      [
+        "a",
+        "Commande n°2 avec le bon de 20 € (utilisable en une fois, minimum 20 € d'achat) : allium 'Purple Sensation' ×15, tulipe greigii 'Quebec' ×10, graines de zinnias ('Queeny Lemon Peach', 'Géant de Californie'), cosmos, gomphrena."
+      ],
+      [
+        "x",
+        "Permutation balcon n°1 : l'été arraché, bulbes + tapis de pensées installés."
+      ],
+      [
+        "a",
+        "Acheter les pensées en godets."
+      ],
+      [
+        "a",
+        "Commander le rosier 'Lady of Shalott' et le grand pot de 50 cm."
+      ],
+      [
+        "x",
+        "Décision lantana : reconduire ou remplacer au printemps."
+      ],
+      [
+        "p",
+        "Planter les bulbes en pots et bacs."
+      ],
+      [
+        "x",
+        "Arracher zinnias et cosmos au premier gel."
+      ]
+    ],
+    "11": [
+      [
+        "p",
+        "Planter le rosier racines nues dans le grand pot, par temps doux."
+      ],
+      [
+        "p",
+        "Alliums 'Purple Sensation' au massif, dans la même séance que les arbustes Naudet."
+      ],
+      [
+        "p",
+        "Derniers bulbes en pleine terre."
+      ]
+    ],
+    "12": [
+      [
+        "x",
+        "Repos. Un œil sur la caisse des mufliers après grosse bise ou neige."
+      ]
+    ]
+  }
+}
