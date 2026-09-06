@@ -2,7 +2,7 @@
    App shell is precached, Google Fonts are cached on first use.
    Bump CACHE when index.html changes so clients pick up the new version. */
 
-const CACHE = 'calendrier-v2';
+const CACHE = 'calendrier-v3';
 
 const SHELL = [
   './',
@@ -52,9 +52,11 @@ self.addEventListener('fetch', event => {
   if (url.origin !== self.location.origin) return;
 
   // Navigations: network first so a fresh deploy shows up, cache as fallback.
+  // GitHub Pages serves HTML with max-age=600, so a plain fetch() can be answered
+  // from the HTTP cache with a copy up to ten minutes old — no-store skips that.
   if (req.mode === 'navigate') {
     event.respondWith(
-      fetch(req)
+      fetch(req.url, { cache: 'no-store', credentials: 'same-origin' })
         .then(res => {
           const copy = res.clone();
           caches.open(CACHE).then(cache => cache.put('./index.html', copy));

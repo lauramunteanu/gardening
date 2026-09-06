@@ -10,5 +10,8 @@ Publié via GitHub Pages depuis la branche `main`.
 
 ## Mettre à jour
 
-Modifier `index.html`, incrémenter `CACHE` dans `sw.js` (`calendrier-v1` → `calendrier-v2`, …)
+Modifier `index.html`, incrémenter `CACHE` dans `sw.js` (`calendrier-v3` → `calendrier-v4`, …)
 pour que les appareils déjà visités récupèrent la nouvelle version, puis pousser sur `main`.
+
+Le mois affiché est déduit de l'horloge de l'appareil : rien à modifier au fil des mois.
+Seul le millésime du titre (« 2026–27 ») est écrit à la main, comme le contenu du calendrier.
