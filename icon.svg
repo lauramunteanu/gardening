@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Calendrier de culture">
+  <rect width="512" height="512" rx="96" fill="#EDEFE6"/>
+  <path d="M256 400V236" stroke="#4E7A45" stroke-width="26" stroke-linecap="round"/>
+  <path d="M256 250c0-62-44-108-104-116-6 62 34 112 104 116z" fill="#6FA05C"/>
+  <path d="M256 288c0-52 38-92 90-98 6 52-30 94-90 98z" fill="#4E7A45"/>
+  <circle cx="256" cy="188" r="22" fill="#C79A2B"/>
+  <path d="M170 412h172" stroke="#A63D57" stroke-width="26" stroke-linecap="round"/>
+</svg>

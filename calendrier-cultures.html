@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendrier de culture · Saint-Genis-Pouilly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Karla:wght@400;500;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papier:#EDEFE6;
+  --carte:#F8F9F3;
+  --encre:#243120;
+  --sourdine:#5C6553;
+  --ligne:#C9CEBD;
+  --semis:#C79A2B;
+  --plant:#4E7A45;
+  --recolte:#A63D57;
+  --achat:#5C6E7E;
+  --soin:#7E6A9E;
+  --hiver:#7D93A6;
+  --printemps:#6FA05C;
+  --ete:#D8A93C;
+  --automne:#B0563F;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+body{
+  background:var(--papier);
+  color:var(--encre);
+  font-family:'Karla',sans-serif;
+  font-size:15px;line-height:1.5;
+  padding:0 14px 60px;max-width:760px;margin:0 auto;
+}
+header{padding:30px 0 6px;text-align:center}
+.eyebrow{
+  font-family:'Spline Sans Mono',monospace;font-size:10.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--sourdine);
+  margin-bottom:8px;
+}
+h1{
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
+  font-size:clamp(28px,7vw,40px);line-height:1.02;letter-spacing:-.01em;
+}
+h1 .an{color:var(--recolte)}
+
+/* ---- roue ---- */
+.roue-wrap{display:flex;justify-content:center;padding:10px 0 0}
+svg.roue{width:min(92vw,360px);height:auto;display:block}
+.wedge{cursor:pointer;transition:opacity .15s;opacity:.5}
+.wedge:hover{opacity:.8}
+.wedge.sel{opacity:1;stroke:var(--encre);stroke-width:2.5}
+.wedge:focus-visible{outline:none;opacity:1;stroke:var(--recolte);stroke-width:3}
+.mlabel{
+  font-family:'Spline Sans Mono',monospace;font-size:13px;font-weight:500;
+  fill:var(--encre);pointer-events:none;text-anchor:middle;dominant-baseline:central;
+}
+.centre-mois{
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px;
+  fill:var(--encre);text-anchor:middle;
+}
+.centre-n{
+  font-family:'Spline Sans Mono',monospace;font-size:10px;
+  fill:var(--sourdine);text-anchor:middle;
+}
+.now-dot{fill:var(--encre)}
+
+/* ---- panneau du mois ---- */
+.panneau{
+  background:var(--carte);border:1px solid var(--ligne);border-radius:8px;
+  padding:16px;margin-top:14px;min-height:120px;
+}
+.panneau h2{
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;
+  display:flex;align-items:baseline;gap:10px;
+}
+.panneau h2 .saison{
+  font-family:'Spline Sans Mono',monospace;font-weight:400;font-size:10.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--sourdine);
+}
+.groupe{margin-top:14px}
+.groupe-titre{
+  font-family:'Spline Sans Mono',monospace;font-size:11px;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;
+  display:flex;align-items:center;gap:7px;margin-bottom:7px;
+}
+.groupe-titre i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.tache{
+  display:flex;justify-content:space-between;gap:10px;align-items:baseline;
+  padding:6px 0;border-top:1px dashed var(--ligne);font-size:14px;
+}
+.tache .lieu{
+  font-family:'Spline Sans Mono',monospace;font-size:10px;color:var(--sourdine);
+  white-space:nowrap;
+}
+.tache .extra{color:var(--sourdine);font-size:12.5px}
+.rien{color:var(--sourdine);font-size:14px;margin-top:12px;font-style:italic}
+
+/* ---- légende ---- */
+.legende{
+  display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;
+  padding:14px 0 4px;font-family:'Spline Sans Mono',monospace;font-size:10.5px;
+}
+.legende span{display:inline-flex;align-items:center;gap:5px}
+.pastille{width:10px;height:10px;border-radius:2px;display:inline-block}
+
+/* ---- fiches cultures ---- */
+.fiches-titre{
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;
+  margin-top:40px;padding-top:18px;border-top:3px solid var(--encre);
+}
+details{margin-top:12px;border:1px solid var(--ligne);border-radius:8px;background:var(--carte)}
+details summary{
+  cursor:pointer;list-style:none;padding:13px 14px;
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;
+  display:flex;justify-content:space-between;align-items:center;gap:8px;
+}
+details summary::-webkit-details-marker{display:none}
+details summary .n{
+  font-family:'Spline Sans Mono',monospace;font-weight:400;font-size:10.5px;
+  color:var(--sourdine);
+}
+details summary::after{content:"+";font-weight:400;font-size:20px;color:var(--sourdine)}
+details[open] summary::after{content:"–"}
+details summary:focus-visible{outline:2px solid var(--recolte);outline-offset:-2px;border-radius:8px}
+.details-inner{padding:0 14px 14px}
+.section-note{color:var(--sourdine);font-size:13px;margin-bottom:4px;max-width:60ch}
+
+.carte-crop{
+  background:var(--papier);border:1px solid var(--ligne);
+  border-radius:6px;padding:12px 12px 14px;margin-top:10px;
+}
+.crop-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.crop-nom{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px}
+.crop-tag{
+  font-family:'Spline Sans Mono',monospace;font-size:9.5px;
+  color:var(--carte);background:var(--encre);border-radius:3px;padding:2px 6px;white-space:nowrap;
+}
+.crop-tag.warn{background:var(--recolte)}
+.crop-meta{
+  font-family:'Spline Sans Mono',monospace;font-size:11px;color:var(--sourdine);
+  margin-top:4px;line-height:1.7;
+}
+.crop-meta b{color:var(--encre);font-weight:500}
+.strip{margin-top:11px}
+.mois-row,.act-row{display:grid;grid-template-columns:repeat(12,1fr);gap:2px}
+.mois-row div{
+  font-family:'Spline Sans Mono',monospace;font-size:9px;text-align:center;
+  color:var(--sourdine);padding-bottom:2px;
+}
+.mois-row div.now{color:var(--recolte);font-weight:700}
+.act-row div{height:10px;background:#E2E5D8;border-radius:2px;position:relative}
+.act-row{margin-bottom:2px}
+.act-row div.s{background:var(--semis)}
+.act-row div.sc{background:repeating-linear-gradient(45deg,var(--semis) 0 3px,#EFE4C4 3px 6px)}
+.act-row div.p{background:var(--plant)}
+.act-row div.sp{background:linear-gradient(90deg,var(--semis) 50%,var(--plant) 50%)}
+.act-row div.r{background:var(--recolte)}
+.act-row div.c{background:var(--soin)}
+.act-row div.a::after{
+  content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:6px;height:6px;border-radius:50%;background:var(--achat);
+  border:1.5px solid var(--carte);
+}
+.crop-note{font-size:13px;margin-top:9px}
+
+footer{
+  margin-top:40px;padding-top:14px;border-top:3px solid var(--encre);
+  font-family:'Spline Sans Mono',monospace;font-size:10.5px;color:var(--sourdine);line-height:1.8;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Saint-Jean-de-Gonville · ~500 m · argilo-calcaire · bise</div>
+  <h1>L'année au jardin <span class="an">2026–27</span></h1>
+</header>
+
+<div class="roue-wrap">
+  <svg class="roue" viewBox="0 0 340 340" role="group" aria-label="Roue des mois — choisir un mois pour voir ses tâches" id="roue"></svg>
+</div>
+
+<div class="legende">
+  <span><i class="pastille" style="background:var(--achat);border-radius:50%"></i> acheter</span>
+  <span><i class="pastille" style="background:var(--semis)"></i> semer dehors</span>
+  <span><i class="pastille" style="background:repeating-linear-gradient(45deg,var(--semis) 0 3px,#EFE4C4 3px 6px)"></i> semer au chaud</span>
+  <span><i class="pastille" style="background:var(--plant)"></i> planter</span>
+  <span><i class="pastille" style="background:var(--recolte)"></i> récolter</span>
+  <span><i class="pastille" style="background:var(--soin)"></i> soins</span>
+</div>
+
+<div class="panneau" id="panneau" aria-live="polite"></div>
+
+<h2 class="fiches-titre">Fiches de culture</h2>
+<div id="fiches"></div>
+
+<footer>
+  Repères : dernières gelées jusqu'en avril-mai → rien de frileux dehors avant la mi-mai · premières gelées mi-octobre.<br>
+  <b>Graines en stock depuis le 14 sept. 2026</b> (commande Ste Marthe du 6 sept., 28 sachets) — conserver en boîte hermétique + sachet de silice, au frais et à l'obscurité. Noter l'année sur chaque sachet.<br>
+  Pots de légumes-racines et patate douce sur la ligne « humide » de l'AquaBloom, jamais avec lavande/romarin.<br>
+  Voile anti-insectes systématique : radis, navets, cima di rapa, jeunes choux. Granulés de phosphate ferrique (type Ferramol) autour des jeunes plants only.<br>
+  Fournisseurs : Ferme de Sainte Marthe · Pépinières Naudet · Botanic · Graines Baumaux.
+</footer>
+
+<script>
+const MOIS_L=["J","F","M","A","M","J","J","A","S","O","N","D"];
+const MOIS_N=["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+const SAISON=m=>[12,1,2].includes(m)?["hiver","var(--hiver)"]:[3,4,5].includes(m)?["printemps","var(--printemps)"]:[6,7,8].includes(m)?["été","var(--ete)"]:["automne","var(--automne)"];
+const NOW=8;
+
+const sections=[
+{id:"interieur",titre:"Intérieur & fenêtres",lieu:"intérieur",note:"À l'écart des plantes d'intérieur tant que le programme thrips n'est pas terminé.",crops:[
+ {nom:"Basilic 'Grand Vert'",tag:"semis au chaud",ach:"✔ en stock",stype:"chaud",meta:"semis au chaud en godets 10–12 cm · pot final 30 cm sur la terrasse",s:[4],p:[5],r:[6,7,8,9,10],note:"Sortie sur la terrasse à la mi-mai. Pincer sans arrêt pour retarder la floraison."},
+ {nom:"Coriandre",tag:"semis direct",ach:"✔ en stock",meta:"<b>Baumaux / Ste Marthe</b> · pot 25–30 cm sur la terrasse",s:[3,4,8],r:[5,6,9,10],note:"Monte en graine dès les chaleurs : deux vraies saisons, printemps et fin d'été."},
+ {nom:"Menthe",tag:"plant",ach:"plant (Botanic)",meta:"<b>Plant Botanic</b> · pot ≥ 30 cm — jamais en pleine terre",a:[4],p:[4],r:[5,6,7,8,9,10],note:"Envahissante par ses rhizomes : le pot est une prison, pas une option. Diviser chaque printemps."}
+]},
+{id:"terrasse",titre:"Terrasse — pots",lieu:"terrasse",note:"Tous sur la ligne « humide » de l'AquaBloom. Les racines en pot esquivent la mouche de la carotte (vol bas) et les altises.",crops:[
+ {nom:"Radis 'de 18 jours'",tag:"successif",ach:"✔ en stock",meta:"pot prof. 15–20 cm · <b>voile anti-insectes</b>",s:[3,4,5,6,7,8,9],r:[4,5,6,7,8,9,10],note:"Un semis toutes les 3 semaines de mars à septembre. Le voile règle le problème d'altises."},
+ {nom:"Carotte 'Marché de Paris' / 'Nantaise demi-longue'",tag:"pot profond",ach:"✔ en stock",meta:"pot prof. ≥ 30 cm · terreau + sable, jamais la terre du jardin",s:[3,6],r:[6,7,9,10],note:"À 50–60 cm de hauteur, hors du vol de la mouche de la carotte. Éclaircir à 3–4 cm."},
+ {nom:"Navet 'de Milan rouge à forcer'",tag:"pot + voile",ach:"✔ en stock",meta:"Pot 25–30 cm · <b>voile anti-insectes</b> dès le semis",s:[3,8],r:[5,6,10],note:"C'est l'altise qui a mangé le semis du potager : sous voile en pot, le problème disparaît."},
+ {nom:"Patate douce 'Beauregard'",tag:"marginal",warn:true,ach:"plants (slips)",meta:"Slips commandés au printemps · pot 40 L <b>noir</b>, angle le plus chaud",a:[4],p:[5],r:[9,10],note:"Limite à 500 m : la chaleur du pot noir rend la culture possible. Récolte modeste, arrachage avant gelée."},
+ {nom:"Figuier 'Ronde de Bordeaux'",tag:"pérenne",ach:"arbre (commande Naudet)",meta:"Commande nov. · bac 50–60 L contre le mur sud · hivernage avec le laurier-rose",a:[11],p:[11],r:[8,9],note:"La seule figue assez précoce pour cette altitude. Vraies récoltes dès la 2e–3e année."},
+ {nom:"Tomate naine 'Maskotka'",tag:"pot, sans tuteur",ach:"✔ en stock",stype:"chaud",meta:"Semis <b>au chaud</b> en mars · pot 30 L sur la ligne humide · <b>ni tuteur ni ébourgeonnage</b>",s:[3],p:[5],r:[7,8,9],note:"Naine et retombante, 40 g, précoce. La seule tomate à mettre en pot ici : les indéterminées demandent 2–4 L d'eau par jour en juillet, ce que l'AquaBloom ne fournit pas sans déséquilibrer le reste de la ligne."},
+ {nom:"Piments 'Jalapeño Rouge' + 'Gorria' (Espelette)",tag:"vivaces !",ach:"✔ en stock",stype:"chaud",meta:"Semis <b>au chaud</b> fin janvier–février · pot 25–30 L chacun · la chaleur du pot compense la saison courte",s:[1,2],p:[5],r:[8,9,10],note:"Les piments sont vivaces : rentrer le pot avant les gelées, rabattre de moitié, garder à peine humide dans une pièce fraîche et lumineuse — il repart en mars avec un mois d'avance sur tout semis. <b>Quarantaine obligatoire de 3 semaines à l'écart des plantes d'intérieur</b> (thrips, aleurodes, araignées rouges), avec un piège jaune par pot."},
+ {nom:"Fraisier des bois 'Reine des Vallées'",tag:"alpin, vivace",ach:"✔ en stock",stype:"chaud",meta:"Semis <b>en surface, sans recouvrir</b> (besoin de lumière) fév.–mars · 2 semaines au frigo avant semis améliore la levée · lève en 2–4 semaines",s:[2,3],p:[5],r:[6,7,8,9],note:"Le seul fraisier qui se ressème fidèlement. Pas de stolons, donc il reste en place : idéal en pot ou en bordure des coins mi-ombragés que l'arrosage atteint. Fructifie dès le premier été."},
+ {nom:"Poivron 'Corno di Toro Rosso'",tag:"pot ou potager",ach:"✔ en stock",stype:"chaud",meta:"Semis <b>au chaud</b> (18–20 °C) en godets 7 cm en mars · pot 40 cm ou potager",s:[3],p:[5],r:[8,9],note:"Type pointu doux, bien plus précoce que les poivrons carrés qui ne mûrissent pas ici."}
+]},
+{id:"bac",titre:"Bac surélevé (1 m × 40 cm)",lieu:"bac",note:"Rotation continue : salades au printemps, fraisiers renouvelés l'été, épinard tout l'hiver.",crops:[
+ {nom:"Batavia 'Blonde de Paris' + roquette",tag:"bordures",ach:"✔ en stock",meta:"Semis en bordure du bac · roquette resemée en septembre",s:[3,9],r:[4,5,6,10,11],note:"En bac, hors de portée de la plupart des limaces qui ont eu les laitues."},
+ {nom:"Mâche 'Verte de Cambrai'",tag:"hiver",ach:"✔ en stock",meta:"Semis <b>direct</b> mi-septembre, avec l'épinard · plombler le sol après semis (la mâche aime la terre tassée)",s:[9],r:[11,12,1,2,3],note:"Apprécie justement les sols calcaires. Récolte en rosettes entières de novembre à mars — la salade d'hiver la plus fiable ici, et zéro entretien."},
+ {nom:"Fraisier Mara des bois — renouvellement",tag:"an 3",ach:"",meta:"Stolons maison · empotés en sept.-oct., replantés en terre <b>neuve</b> au printemps",c:[9,10],p:[3],r:[6,7,8,9,10],note:"<b>Ordre des opérations le 15 sept. :</b> tester le stolon marcotté (traction douce), le sevrer et l'empoter s'il résiste — avant d'arracher les pieds mères pour semer. Sinon on soulève une mère qui nourrit encore un stolon."},
+ {nom:"Épinard 'Géant d'hiver'",tag:"hiver",ach:"✔ en stock",meta:"Pleine largeur du bac après l'arrachage des fraisiers",s:[9],r:[10,11,12,1,2,3],note:"Le cœur de la production d'hiver. Récolte feuille à feuille d'octobre à mars."}
+]},
+{id:"potager",titre:"Potager",lieu:"potager",note:"L'ail succède aux tomates en octobre (rotation alliums → solanacées). Un seul plant de courgette, avec de l'espace.",crops:[
+ {nom:"Tomates cerises 'Black Cherry' + 'Orange Berry'",tag:"semis au chaud",ach:"✔ en stock",stype:"chaud",meta:"Semis <b>au chaud</b> (18–20 °C) en terrine ou godets 7 cm en mars · repiquage en pots 10–12 cm aux premières vraies feuilles · endurcissement début mai · dehors mi-mai, tuteurs, 60 cm entre plants",s:[3],p:[5],r:[7,8,9,10],note:"Jamais de semis direct dehors ici. 'Orange Berry' est précoce (essentiel à 500 m) et fait 15–30 g, légèrement acidulée ; Ste Marthe recommande justement de l'associer à 'Black Cherry'. La rampe LED évite les plants filés de fenêtre."},
+ {nom:"Aubergine 'de Barbentane' greffée",tag:"plant greffé",ach:"plant greffé (Botanic)",meta:"<b>Plant greffé uniquement</b> · emplacement le plus chaud du potager",a:[5],p:[5],r:[8,9],note:"Le greffage apporte la vigueur que la saison courte refuse aux plants francs."},
+ {nom:"Concombre 'Tanja'",tag:"treillis",ach:"✔ en stock",stype:"chaud",meta:"semis <b>au chaud</b> en godets 8 cm fin avril (2 graines/godet, garder la plus belle) · dehors mi-mai sur treillis vertical",s:[4],p:[5],r:[7,8,9],note:"À la verticale pour ne pas répéter l'encombrement de cette année."},
+ {nom:"Courgette",tag:"1 plant",ach:"✔ en stock",stype:"chaud",meta:"Semis <b>au chaud</b> en godets 8 cm fin avril · dehors mi-mai · <b>1 m² pour lui seul</b>",s:[4],p:[5],r:[7,8,9,10]},
+ {nom:"Piment de Cayenne",tag:"existant",ach:"",meta:"Reconduit chaque année · plant en mai",p:[5],r:[8,9,10]},
+ {nom:"Ail 'Germidour'",tag:"sur butte",ach:"bulbes (Botanic mi-oct.)",meta:"Caïeux à 3–4 cm, <b>sur butte</b> (l'argile hivernale fait pourrir l'ail à plat)",p:[10],r:[6,7],note:"Rien à faire entre plantation et récolte : la culture la plus compatible avec les absences."},
+ {nom:"Oignon rouge 'Red Baron'",tag:"bulbilles",ach:"bulbilles",meta:"Bulbilles de <b>printemps</b> (les rouges d'automne montent trop) · 10 cm entre bulbilles",a:[3],p:[3],r:[7,8]}
+]},
+{id:"pleine-terre",titre:"Pleine terre",lieu:"pleine terre",note:"Le gros du calendrier d'hiver, et tout ce qui supporte les absences sans arrosage.",crops:[
+ {nom:"Framboisier remontant 'Heritage'",tag:"Naudet nov.",ach:"racines nues (Naudet)",meta:"Rang, 40 cm entre plants · <b>rabattre au ras du sol chaque hiver</b>",a:[11],p:[11],r:[8,9,10],note:"Prolonge la saison des framboises jusqu'aux gelées. Récolte dès l'an prochain."},
+ {nom:"Mûre 'Loch Ness' (sans épines)",tag:"Naudet nov.",ach:"racines nues (Naudet)",meta:"Palissée sur 2 fils le long d'une clôture",a:[11],p:[11],r:[8,9]},
+ {nom:"Courges 'Nutterbutter' + 'Potimarron'",tag:"conservation",ach:"✔ en stock",stype:"chaud",meta:"Semis <b>au chaud</b> en godets 8 cm <b>fin avril</b> · dehors mi-mai en bordure du terrain, laisser courir",s:[4],p:[5],r:[9,10],note:"'Nutterbutter' remplace la butternut classique : 90 jours au lieu de 100–110, adaptée aux climats rudes et peu sensible à l'oïdium — fruits d'environ 1 kg, plus petits mais qui mûrissent vraiment ici. Récolte avant les gelées, conservation au sec dans la maison jusqu'en février."},
+ {nom:"Poireau 'Bleu de Solaise'",tag:"nº1 hiver",ach:"plants (juillet)",meta:"<b>Plants</b> achetés en juillet · habillage racines + feuilles à la plantation",a:[7],p:[7],r:[11,12,1,2,3],note:"Le plus rustique des poireaux. Reste en terre tout l'hiver — le gel l'améliore."},
+ {nom:"Kale 'Cavolo Nero'",tag:"voile",ach:"✔ en stock",stype:"godet",meta:"Semis en godets <b>dehors à l'abri</b> en mai (rustique, pas besoin de chaleur) · 3 plants, sous voile jusqu'à l'installation",s:[5],p:[6],r:[12,1,2,3],note:"Planté déjà costaud pour passer le cap des limaces. S'adoucit après les gelées."},
+ {nom:"Chou rouge 'Tête Noire 3'",tag:"voile",ach:"✔ en stock",stype:"godet",meta:"Semis en godets <b>dehors à l'abri</b> en avril · 2–3 plants en juin · voile contre piéride et puceron cendré",s:[4],p:[6],r:[9,10,11],note:"Variété de conservation, remplace 'Rodynda' (introuvable). Se garde plusieurs mois en cave après récolte."},
+ {nom:"Chou de Bruxelles 'Groninger'",tag:"exigeant",warn:true,ach:"✔ en stock",stype:"godet",meta:"Semis en godets <b>dehors à l'abri</b> en avril · plantation juin · tuteurer (bise) · voile tout l'été",s:[4],p:[6],r:[11,12,1,2],note:"La culture la plus exigeante de la liste : 8 mois d'occupation du sol. Premier candidat au sacrifice si la place manque."},
+ {nom:"Brocoli à jets pourpres (Early Purple Sprouting)",tag:"trou de mars",ach:"✔ en stock",stype:"godet",meta:"Semis en godets <b>dehors à l'abri</b> mai–juin · plantation juillet, 50 cm entre plants · tuteurer (bise) · voile tout l'été",s:[5,6],p:[7],r:[3,4],note:"La seule production de mars-avril, quand le reste du jardin ne donne rien. Occupe le sol 10 mois : à choisir avant les choux de Bruxelles si la place manque. Le gel améliore les jets. Récolter les pousses au fur et à mesure pour relancer la production."},
+ {nom:"Brocoli calabrais (Calabrese)",tag:"après l'ail",ach:"✔ en stock",stype:"godet",meta:"Semis en godets mars–avril <b>ou</b> juin · plantation dans le potager en juillet, <b>après l'arrachage de l'ail</b> · voile",s:[3,4,6],p:[7],r:[9,10],note:"Occupe la case laissée vide par l'ail de juin-juillet : la rotation se boucle toute seule. Après la coupe de la tête centrale, les rejets latéraux donnent encore plusieurs semaines."},
+ {nom:"Cima di rapa (brocoli-rave)",tag:"rapide",ach:"✔ en stock",meta:"Semis <b>direct</b> en août–septembre, en ligne · éclaircir à 15 cm · voile contre les altises (crucifère)",s:[8,9],r:[10,11],note:"60 jours du semis à la récolte, pas d'hivernage : le brocoli sans les dix mois d'occupation. Ce sont les jets et jeunes feuilles qui se mangent, avant l'ouverture des fleurs. Peut se resemer début printemps."},
+ {nom:"Panais 'de Guernesey'",tag:"graines fraîches",ach:"à racheter chaque année",meta:"Graines <b>fraîches chaque année</b> · semis direct épais fév.–mars",a:[1],s:[2,3],r:[10,11,12,1,2],note:"Se conserve en terre comme le poireau : se récolte tout l'hiver."},
+ {nom:"Topinambour",tag:"à confiner",ach:"tubercules",meta:"Tubercules plantés fév.–mars · coin dont on ne veut plus, ou très grand pot",a:[2],p:[2,3],r:[11,12,1,2,3],note:"Décision d'emplacement irréversible : là où il est planté, il reste."},
+ {nom:"Céleri-rave 'Monarch'",tag:"conditionnel",warn:true,ach:"plants",meta:"Plants en mai · <b>uniquement</b> sur zone irriguée au goutte-à-goutte",a:[5],p:[5],r:[10,11],note:"Exige une humidité constante tout l'été. Deuxième candidat au sacrifice."}
+]},
+{id:"existant",titre:"Existant — entretien",lieu:"verger",note:"",crops:[
+ {nom:"Pommiers",tag:"tavelure + carpocapse",ach:"",meta:"Bouillie bordelaise à la <b>chute des feuilles</b> (nov.) et au <b>débourrement</b> (mars–avril) · pièges à phéromones carpocapse mai → août",c:[3,4,5,6,7,8,11],r:[9,10]},
+ {nom:"Romarin",tag:"existant",ach:"",wheel:false,meta:"Ligne « sèche » de l'arrosage, avec la lavande · taille légère après floraison · <b>récolte toute l'année</b>",r:[1,2,3,4,5,6,7,8,9,10,11,12]}
+]}
+];
+
+// tâches ponctuelles hors fiches
+const speciales=[
+ {m:9,g:"a",nom:"📦 Livraison Sainte Marthe (14 sept.)",extra:"28 sachets — étiqueter l'année, ranger en boîte hermétique + silice"},
+ {m:9,g:"s",nom:"Cima di rapa 'Sessantina'",extra:"semis direct, dès réception — 60 jours, ne pas attendre"},
+ {m:10,g:"a",nom:"Ail 'Germidour' (bulbes)",extra:"Botanic mi-oct., ou Ste Marthe 7,90 € — seul achat d'automne restant"},
+ {m:3,g:"a",nom:"Bulbilles d'oignon rouge 'Red Baron'",extra:"était en rupture chez Ste Marthe — à racheter au printemps"},
+ {m:4,g:"a",nom:"Plants (slips) de patate douce 'Beauregard'",extra:"commande de printemps, plants vivants"},
+ {m:1,g:"a",nom:"Racheter les graines de panais",extra:"seule graine qui ne se garde pas plus d'un an"},
+ {m:9,g:"a",nom:"Pots & voile anti-insectes",extra:"2–3 pots prof. 30 cm, 1 × 25–30 cm, 1 × 15–20 cm, 1 × 40 L noir"},
+ {m:11,g:"a",nom:"Commande Naudet racines nues",extra:"framboisier 'Heritage', mûre 'Loch Ness', figuier — à grouper avec les lilas et hortensias"},
+ {m:10,g:"c",nom:"Rentrer les piments — QUARANTAINE",extra:"3 semaines à l'écart des plantes d'intérieur + piège jaune par pot (risque thrips)"},
+ {m:5,g:"c",nom:"Pièges à phéromones carpocapse",extra:"pommiers, de mai à août"},
+ {m:6,g:"c",nom:"Granulés anti-limaces autour des jeunes plants",extra:"phosphate ferrique, à la plantation des choux et brocolis uniquement"},
+ {m:12,g:"c",nom:"Rabattre les framboisiers 'Heritage'",extra:"au ras du sol, chaque hiver"},
+ {m:10,g:"c",nom:"Rentrer laurier-rose & figuier",extra:"hivernage hors gel avant les premières gelées (figuier : dès l'automne 2027)"},
+ {m:3,g:"c",nom:"Rampe LED sur les semis au chaud",extra:"tomates & poivrons — sous réserve de la fin du programme thrips"},
+ {m:5,g:"c",nom:"Endurcir les plants frileux",extra:"sorties de jour dès début mai, plantation mi-mai après les saints de glace"},
+ {m:2,g:"a",nom:"Terreau de semis, terrines & godets 7–8 cm",extra:"pour les semis au chaud de mars-avril + terre neuve du bac à fraisiers"},
+ {m:10,g:"c",nom:"Purger et rentrer l'AquaBloom",extra:"vidanger tuyaux et pompe avant le gel · le Blumat intérieur reste en service"},
+ {m:4,g:"c",nom:"Remise en route de l'AquaBloom",extra:"contrôle des goutteurs ligne par ligne avant les plantations de mai"},
+ {m:6,g:"c",nom:"Tomates : ébourgeonnage & attaches",extra:"chaque semaine jusqu'en septembre"}
+];
+const STYPE_LBL={chaud:"au chaud (18–20 °C)",godet:"en godets, dehors à l'abri",direct:"semis direct"};
+
+// ---- construire l'index mensuel ----
+const GROUPES=[["a","Acheter","var(--achat)"],["s","Semer","var(--semis)"],["p","Planter","var(--plant)"],["r","Récolter","var(--recolte)"],["c","Soins","var(--soin)"]];
+const parMois={};
+for(let m=1;m<=12;m++)parMois[m]={a:[],s:[],p:[],r:[],c:[]};
+sections.forEach(sec=>sec.crops.forEach(c=>{
+  if(c.wheel===false)return;
+  ["a","s","p","r","c"].forEach(g=>{
+    (c[g]||[]).forEach(m=>{
+      parMois[m][g].push({nom:c.nom,lieu:sec.lieu,extra:g==="a"&&c.ach?c.ach:g==="s"?STYPE_LBL[c.stype||"direct"]:""});
+    });
+  });
+}));
+speciales.forEach(t=>parMois[t.m][t.g].push({nom:t.nom,lieu:"",extra:t.extra||""}));
+
+// ---- roue SVG ----
+const CX=170,CY=170,RO=150,RI=72;
+const rad=a=>a*Math.PI/180;
+const pt=(r,a)=>[CX+r*Math.cos(rad(a)),CY+r*Math.sin(rad(a))];
+function wedgePath(i){
+  const a0=-90+i*30, a1=a0+30;
+  const [x0o,y0o]=pt(RO,a0),[x1o,y1o]=pt(RO,a1);
+  const [x0i,y0i]=pt(RI,a0),[x1i,y1i]=pt(RI,a1);
+  return `M ${x0o} ${y0o} A ${RO} ${RO} 0 0 1 ${x1o} ${y1o} L ${x1i} ${y1i} A ${RI} ${RI} 0 0 0 ${x0i} ${y0i} Z`;
+}
+let sel=NOW;
+const svg=document.getElementById('roue');
+function drawRoue(){
+  let s="";
+  for(let i=0;i<12;i++){
+    const m=i+1,[,col]=SAISON(m);
+    s+=`<path class="wedge${m===sel?' sel':''}" d="${wedgePath(i)}" fill="${col}" tabindex="0" role="button" aria-label="${MOIS_N[i]}" data-m="${m}"></path>`;
+  }
+  for(let i=0;i<12;i++){
+    const [lx,ly]=pt((RO+RI)/2,-75+i*30);
+    s+=`<text class="mlabel" x="${lx}" y="${ly}">${MOIS_L[i]}</text>`;
+  }
+  const [nx,ny]=pt(RO-8,-75+(NOW-1)*30);
+  s+=`<circle class="now-dot" cx="${nx}" cy="${ny}" r="3.5"></circle>`;
+  const nT=GROUPES.reduce((n,[g])=>n+parMois[sel][g].length,0);
+  s+=`<text class="centre-mois" x="${CX}" y="${CY-2}">${MOIS_N[sel-1]}</text>`;
+  s+=`<text class="centre-n" x="${CX}" y="${CY+18}">${nT} tâche${nT>1?"s":""}</text>`;
+  svg.innerHTML=s;
+}
+svg.addEventListener('click',e=>{const w=e.target.closest('.wedge');if(w){sel=+w.dataset.m;drawRoue();drawPanneau();}});
+svg.addEventListener('keydown',e=>{
+  const w=e.target.closest('.wedge');
+  if(w&&(e.key==='Enter'||e.key===' ')){e.preventDefault();sel=+w.dataset.m;drawRoue();drawPanneau();}
+});
+
+// ---- panneau ----
+function drawPanneau(){
+  const [saison]=SAISON(sel);
+  let html=`<h2>${MOIS_N[sel-1]} <span class="saison">${saison}</span></h2>`;
+  let vide=true;
+  GROUPES.forEach(([g,label,col])=>{
+    const items=parMois[sel][g];
+    if(!items.length)return;
+    vide=false;
+    html+=`<div class="groupe"><div class="groupe-titre" style="color:${col}"><i style="background:${col}"></i>${label}</div>`;
+    items.forEach(t=>{
+      html+=`<div class="tache"><div>${t.nom}${t.extra?`<div class="extra">${t.extra}</div>`:""}</div><div class="lieu">${t.lieu}</div></div>`;
+    });
+    html+=`</div>`;
+  });
+  if(vide)html+=`<p class="rien">Rien à faire — le jardin travaille tout seul.</p>`;
+  document.getElementById('panneau').innerHTML=html;
+}
+
+// ---- fiches ----
+function stripHTML(c){
+  let mois='<div class="mois-row">'+MOIS_L.map((m,i)=>`<div class="${i+1===NOW?'now':''}">${m}</div>`).join('')+'</div>';
+  let r1='<div class="act-row">';
+  for(let m=1;m<=12;m++){
+    const s=(c.s||[]).includes(m),p=(c.p||[]).includes(m),so=(c.c||[]).includes(m),a=(c.a||[]).includes(m);
+    const sCls=c.stype==='chaud'?'sc':'s';
+    let cls=s&&p?'sp':s?sCls:p?'p':so?'c':'';
+    if(a)cls+=' a';
+    r1+=`<div class="${cls.trim()}"></div>`;
+  }
+  r1+='</div><div class="act-row">';
+  for(let m=1;m<=12;m++)r1+=`<div class="${(c.r||[]).includes(m)?'r':''}"></div>`;
+  return `<div class="strip">${mois}${r1}</div></div>`;
+}
+document.getElementById('fiches').innerHTML=sections.map(sec=>`
+<details${sec.id==='bac'?'':''}>
+  <summary>${sec.titre}<span class="n">${sec.crops.length} culture${sec.crops.length>1?'s':''}</span></summary>
+  <div class="details-inner">
+    ${sec.note?`<p class="section-note">${sec.note}</p>`:''}
+    ${sec.crops.map(c=>`
+    <div class="carte-crop">
+      <div class="crop-head">
+        <div class="crop-nom">${c.nom}</div>
+        ${c.tag?`<div class="crop-tag${c.warn?' warn':''}">${c.tag}</div>`:''}
+      </div>
+      <div class="crop-meta">${c.meta}</div>
+      ${stripHTML(c)}
+      ${c.note?`<div class="crop-note">${c.note}</div>`:''}
+    </div>`).join('')}
+  </div>
+</details>`).join('');
+
+drawRoue();
+drawPanneau();
+</script>
+</body>
+</html>
