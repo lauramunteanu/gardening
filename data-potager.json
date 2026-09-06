@@ -78,7 +78,7 @@
           "nom": "Radis 'de 18 jours'",
           "tag": "successif",
           "ach": "✔ en stock",
-          "meta": "pot prof. 15–20 cm · <b>voile anti-insectes</b>",
+          "meta": "Pots ronds 20 × 15 cm (10 en stock) · <b>voile sur arceaux</b> · un pot par semis successif",
           "s": [
             3,
             4,
@@ -244,6 +244,38 @@
             9
           ],
           "note": "Type pointu doux, bien plus précoce que les poivrons carrés qui ne mûrissent pas ici."
+        },
+        {
+          "nom": "Cima di rapa 'Sessantina' (brocoli-rave)",
+          "tag": "rapide",
+          "ach": "✔ en stock",
+          "meta": "Semis <b>direct</b> dès réception (14 sept.) · jardinière 50 × 17 cm, 3 plants à 15 cm · <b>voile sur arceaux</b>, cordon élastique au bord du pot",
+          "s": [
+            8,
+            9
+          ],
+          "r": [
+            10,
+            11
+          ],
+          "note": "60 jours du semis à la récolte : le brocoli sans les dix mois d'occupation. Ce sont les jets et jeunes feuilles qui se mangent, avant l'ouverture des fleurs. En pot sur la ligne humide — il monte à graine au moindre stress hydrique. Deux jardinières de 50 cm disponibles, soit 6 plants. Peut se resemer début printemps."
+        },
+        {
+          "nom": "Batavia 'Blonde de Paris'",
+          "tag": "pot déplaçable",
+          "ach": "✔ en stock",
+          "meta": "Pots ronds 20–23 cm, 1 pied par pot · ligne humide · 4 pots disponibles",
+          "s": [
+            3,
+            9
+          ],
+          "r": [
+            5,
+            6,
+            10,
+            11
+          ],
+          "note": "En pot plutôt qu'en bac : un semis de mi-septembre à 500 m est encore petit aux gelées de mi-octobre, et le pot se déplace contre le mur sud ou sous voile d'hivernage. Amère dès qu'elle sèche — jamais hors de la ligne humide."
         }
       ]
     },
@@ -254,28 +286,10 @@
       "note": "Rotation continue : salades au printemps, fraisiers renouvelés l'été, épinard tout l'hiver.",
       "crops": [
         {
-          "nom": "Batavia 'Blonde de Paris' + roquette",
-          "tag": "bordures",
-          "ach": "✔ en stock",
-          "meta": "Semis en bordure du bac · roquette resemée en septembre",
-          "s": [
-            3,
-            9
-          ],
-          "r": [
-            4,
-            5,
-            6,
-            10,
-            11
-          ],
-          "note": "En bac, hors de portée de la plupart des limaces qui ont eu les laitues."
-        },
-        {
           "nom": "Mâche 'Verte de Cambrai'",
           "tag": "hiver",
           "ach": "✔ en stock",
-          "meta": "Semis <b>direct</b> mi-septembre, avec l'épinard · plombler le sol après semis (la mâche aime la terre tassée)",
+          "meta": "Semis <b>direct</b> mi-septembre, avec l'épinard · plomber le sol après semis (la mâche aime la terre tassée) · ≈ 25 cm de la longueur du bac, une vingtaine de rosettes à 10 cm",
           "s": [
             9
           ],
@@ -289,31 +303,27 @@
           "note": "Apprécie justement les sols calcaires. Récolte en rosettes entières de novembre à mars — la salade d'hiver la plus fiable ici, et zéro entretien."
         },
         {
-          "nom": "Fraisier Mara des bois — renouvellement",
-          "tag": "an 3",
-          "ach": "",
-          "meta": "Stolons maison · empotés en sept.-oct., replantés en terre <b>neuve</b> au printemps",
-          "c": [
-            9,
-            10
-          ],
-          "p": [
-            3
+          "nom": "Roquette cultivée",
+          "tag": "bordure + voile",
+          "ach": "✔ en stock",
+          "meta": "Bande de 10–15 cm en bordure du bac · <b>voile anti-insectes</b> dès le semis (crucifère)",
+          "s": [
+            3,
+            9
           ],
           "r": [
-            6,
-            7,
-            8,
-            9,
-            10
+            10,
+            11,
+            3,
+            4
           ],
-          "note": "<b>Ordre des opérations le 15 sept. :</b> tester le stolon marcotté (traction douce), le sevrer et l'empoter s'il résiste — avant d'arracher les pieds mères pour semer. Sinon on soulève une mère qui nourrit encore un stolon."
+          "note": "Se récolte feuille à feuille jusqu'aux froids, repart au printemps. Le voile règle les altises, même si la pression d'automne est plus faible qu'au printemps."
         },
         {
           "nom": "Épinard 'Géant d'hiver'",
           "tag": "hiver",
           "ach": "✔ en stock",
-          "meta": "Pleine largeur du bac après l'arrachage des fraisiers",
+          "meta": "≈ 60 cm de la longueur du bac, pleine largeur, après l'arrachage des fraisiers",
           "s": [
             9
           ],
@@ -325,7 +335,23 @@
             2,
             3
           ],
-          "note": "Le cœur de la production d'hiver. Récolte feuille à feuille d'octobre à mars."
+          "note": "Le cœur de la production d'hiver. Récolte feuille à feuille d'octobre à mars. Le bac fait 1 m × 40 cm : 60 cm pour l'épinard, 25 cm pour la mâche, une bande en bordure pour la roquette."
+        },
+        {
+          "nom": "Fraisier Mara des bois — fin de cycle",
+          "tag": "arrachage",
+          "ach": "",
+          "meta": "5 pieds mères en an 3 · <b>un seul</b> stolon raciné cette année · arrachage mi-septembre",
+          "c": [
+            9
+          ],
+          "r": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "note": "<b>Ordre des opérations le 15 sept. :</b> tester le stolon raciné (traction douce), le sevrer et l'empoter en godet 9 cm s'il résiste — avant d'arracher les pieds mères. Le stolon sert de secours, pas de renouvellement : les pieds mères partent au compost et le bac passe aux légumes d'hiver. Renouvellement par achat de racines nues en novembre (voir massif potager)."
         }
       ]
     },
@@ -458,9 +484,9 @@
     },
     {
       "id": "pleine-terre",
-      "titre": "Pleine terre",
-      "lieu": "pleine terre",
-      "note": "Le gros du calendrier d'hiver, et tout ce qui supporte les absences sans arrosage.",
+      "titre": "Massif potager (en terre)",
+      "lieu": "massif potager",
+      "note": "Le massif en terre, non surélevé. Pression d'altises élevée : voile obligatoire sur toute crucifère, scellé dès le semis.",
       "crops": [
         {
           "nom": "Framboisier remontant 'Heritage'",
@@ -634,21 +660,6 @@
           "note": "Occupe la case laissée vide par l'ail de juin-juillet : la rotation se boucle toute seule. Après la coupe de la tête centrale, les rejets latéraux donnent encore plusieurs semaines."
         },
         {
-          "nom": "Cima di rapa (brocoli-rave)",
-          "tag": "rapide",
-          "ach": "✔ en stock",
-          "meta": "Semis <b>direct</b> en août–septembre, en ligne · éclaircir à 15 cm · voile contre les altises (crucifère)",
-          "s": [
-            8,
-            9
-          ],
-          "r": [
-            10,
-            11
-          ],
-          "note": "60 jours du semis à la récolte, pas d'hivernage : le brocoli sans les dix mois d'occupation. Ce sont les jets et jeunes feuilles qui se mangent, avant l'ouverture des fleurs. Peut se resemer début printemps."
-        },
-        {
           "nom": "Panais 'de Guernesey'",
           "tag": "graines fraîches",
           "ach": "à racheter chaque année",
@@ -707,6 +718,26 @@
             11
           ],
           "note": "Exige une humidité constante tout l'été. Deuxième candidat au sacrifice."
+        },
+        {
+          "nom": "Fraisier 'Charlotte' ×10",
+          "tag": "Naudet nov.",
+          "ach": "racines nues (Naudet)",
+          "meta": "Plantation <b>novembre</b>, à réception · 5 pieds à 30 cm dans le carré libéré par la courgette · terreau + compost incorporés · 5 en réserve",
+          "a": [
+            11
+          ],
+          "p": [
+            11
+          ],
+          "r": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "Remontante : fruits deux fois plus gros que Mara des bois, récolte de juin aux gelées plutôt qu'une seule vague de trois semaines — le seul rythme compatible avec les absences. Plantation d'automne pour un enracinement avant l'hiver et une vraie récolte dès l'été 2027. <b>Ne pas planter là où étaient les tomates</b> (verticilliose commune aux deux). Durée de vie utile : 3 ans."
         }
       ]
     },
@@ -767,12 +798,6 @@
       "extra": "28 sachets — étiqueter l'année, ranger en boîte hermétique + silice"
     },
     {
-      "m": 9,
-      "g": "s",
-      "nom": "Cima di rapa 'Sessantina'",
-      "extra": "semis direct, dès réception — 60 jours, ne pas attendre"
-    },
-    {
       "m": 10,
       "g": "a",
       "nom": "Ail 'Germidour' (bulbes)",
@@ -799,14 +824,14 @@
     {
       "m": 9,
       "g": "a",
-      "nom": "Pots & voile anti-insectes",
-      "extra": "2–3 pots prof. 30 cm, 1 × 25–30 cm, 1 × 15–20 cm, 1 × 40 L noir"
+      "nom": "📦 Achats de septembre",
+      "extra": "Pots déjà en stock — reste à acheter : voile anti-insectes, arceaux, cordon élastique, terreau universel + terreau de semis, caisse ajourée, boîte hermétique + silice"
     },
     {
       "m": 11,
       "g": "a",
       "nom": "Commande Naudet racines nues",
-      "extra": "framboisier 'Heritage', mûre 'Loch Ness', figuier — à grouper avec les lilas et hortensias"
+      "extra": "framboisier 'Heritage', mûre 'Loch Ness', figuier 'Ronde de Bordeaux', fraisiers 'Charlotte' ×10 — à grouper avec les lilas et hortensias"
     },
     {
       "m": 10,
@@ -873,6 +898,54 @@
       "g": "c",
       "nom": "Tomates : ébourgeonnage & attaches",
       "extra": "chaque semaine jusqu'en septembre"
+    },
+    {
+      "m": 3,
+      "g": "a",
+      "nom": "Gros contenants de printemps",
+      "extra": "Pot 40 L NOIR (patate douce), 30 L (Maskotka), 2 × 25–30 L (piments), 40 cm (poivron), pot prof. ≥ 30 cm (carotte 'Nantaise') — le plus gros pot en stock ne fait que 26 × 25 cm"
+    },
+    {
+      "m": 9,
+      "g": "c",
+      "nom": "Vider le bac : laitues montées + fraisiers",
+      "extra": "Arracher les laitues montées cette semaine · les 5 pieds mères de Mara des bois (an 3) partent au compost après prélèvement des stolons"
+    },
+    {
+      "m": 9,
+      "g": "c",
+      "nom": "Stolons de fraisiers en godets 9 cm",
+      "extra": "6–7 stolons racinés, godets 9 × 9 en stock, terreau universel · mur nord sous l'avancée de toit avec les boutures de lavande · hivernage frais et lumineux, jamais détrempé"
+    },
+    {
+      "m": 2,
+      "g": "c",
+      "nom": "Organisation de la boîte à graines",
+      "extra": "Classement par mois de semis, pas par famille · silice à contrôler à chaque ouverture · panais en tête de janvier (à racheter, ne pas semer les vieilles)"
+    },
+    {
+      "m": 9,
+      "g": "c",
+      "nom": "Empoter l'unique stolon de Mara des bois",
+      "extra": "Godet 9 cm, terreau universel, mur nord sous l'avancée de toit avec les boutures de lavande — plant de secours uniquement"
+    },
+    {
+      "m": 11,
+      "g": "c",
+      "nom": "Vérifier que Naudet vend des fraisiers",
+      "extra": "Naudet est un pépiniériste d'arbres et d'arbustes : confirmer qu'il liste les fraisiers avant de compter dessus. Sinon commander les 'Charlotte' ailleurs, en automne et en racines nues — jamais au printemps ni en godets"
+    },
+    {
+      "m": 11,
+      "g": "p",
+      "nom": "Planter les fraisiers 'Charlotte'",
+      "extra": "Même séance que framboisier, mûre et alliums · carré de la courgette, compost incorporé · pas sur l'emplacement des tomates"
+    },
+    {
+      "m": 5,
+      "g": "c",
+      "nom": "⚠ Déplacer la courgette",
+      "extra": "Les fraisiers occupent désormais le mètre carré de la courgette, et pour 3 ans. Prévoir un autre emplacement dès 2027 — la courgette demande 1 m² à elle seule"
     }
   ]
 }

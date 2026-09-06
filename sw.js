@@ -2,7 +2,7 @@
    App shell is precached, Google Fonts are cached on first use.
    Bump CACHE when index.html changes so clients pick up the new version. */
 
-const CACHE = 'calendrier-v6';
+const CACHE = 'calendrier-v7';
 
 const SHELL = [
   './',
