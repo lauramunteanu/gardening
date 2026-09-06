@@ -217,7 +217,8 @@ footer{
 const MOIS_L=["J","F","M","A","M","J","J","A","S","O","N","D"];
 const MOIS_N=["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
 const SAISON=m=>[12,1,2].includes(m)?["hiver","var(--hiver)"]:[3,4,5].includes(m)?["printemps","var(--printemps)"]:[6,7,8].includes(m)?["été","var(--ete)"]:["automne","var(--automne)"];
-const NOW=8;
+const moisCourant=()=>new Date().getMonth()+1;
+let NOW=moisCourant();
 
 const sections=[
 {id:"interieur",titre:"Intérieur & fenêtres",lieu:"intérieur",note:"À l'écart des plantes d'intérieur tant que le programme thrips n'est pas terminé.",crops:[
@@ -399,6 +400,36 @@ document.getElementById('fiches').innerHTML=sections.map(sec=>`
 
 drawRoue();
 drawPanneau();
+
+/* ---- mois courant ----
+   NOW est lu sur l'horloge de l'appareil au chargement, puis reverifie :
+   le calendrier bascule tout seul au changement de mois, meme hors ligne
+   et meme si la page reste ouverte plusieurs jours. */
+function majMarqueursFiches(){
+  document.querySelectorAll('#fiches .mois-row').forEach(row=>{
+    [...row.children].forEach((cell,i)=>cell.classList.toggle('now',i+1===NOW));
+  });
+}
+function majMoisCourant(){
+  const m=moisCourant();
+  if(m===NOW)return;
+  const suivaitLeMois=(sel===NOW);   // ne pas voler la selection faite a la main
+  NOW=m;
+  if(suivaitLeMois)sel=m;
+  drawRoue();
+  drawPanneau();
+  majMarqueursFiches();
+}
+/* Replanifie au plus tard toutes les 6 h : setTimeout deborde au-dela de ~24 jours,
+   or un mois peut durer 31 jours. */
+function planifierProchainMois(){
+  const d=new Date(),prochain=new Date(d.getFullYear(),d.getMonth()+1,1,0,0,5);
+  setTimeout(()=>{majMoisCourant();planifierProchainMois();},
+             Math.min(prochain-d,6*3600*1000));
+}
+planifierProchainMois();
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)majMoisCourant();});
+window.addEventListener('focus',majMoisCourant);
 </script>
 <script>
 /* Hors ligne : on enregistre le service worker une fois la page chargée. */
