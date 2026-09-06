@@ -220,86 +220,14 @@ const SAISON=m=>[12,1,2].includes(m)?["hiver","var(--hiver)"]:[3,4,5].includes(m
 const moisCourant=()=>new Date().getMonth()+1;
 let NOW=moisCourant();
 
-const sections=[
-{id:"interieur",titre:"Intérieur & fenêtres",lieu:"intérieur",note:"À l'écart des plantes d'intérieur tant que le programme thrips n'est pas terminé.",crops:[
- {nom:"Basilic 'Grand Vert'",tag:"semis au chaud",ach:"✔ en stock",stype:"chaud",meta:"semis au chaud en godets 10–12 cm · pot final 30 cm sur la terrasse",s:[4],p:[5],r:[6,7,8,9,10],note:"Sortie sur la terrasse à la mi-mai. Pincer sans arrêt pour retarder la floraison."},
- {nom:"Coriandre",tag:"semis direct",ach:"✔ en stock",meta:"<b>Baumaux / Ste Marthe</b> · pot 25–30 cm sur la terrasse",s:[3,4,8],r:[5,6,9,10],note:"Monte en graine dès les chaleurs : deux vraies saisons, printemps et fin d'été."},
- {nom:"Menthe",tag:"plant",ach:"plant (Botanic)",meta:"<b>Plant Botanic</b> · pot ≥ 30 cm — jamais en pleine terre",a:[4],p:[4],r:[5,6,7,8,9,10],note:"Envahissante par ses rhizomes : le pot est une prison, pas une option. Diviser chaque printemps."}
-]},
-{id:"terrasse",titre:"Terrasse — pots",lieu:"terrasse",note:"Tous sur la ligne « humide » de l'AquaBloom. Les racines en pot esquivent la mouche de la carotte (vol bas) et les altises.",crops:[
- {nom:"Radis 'de 18 jours'",tag:"successif",ach:"✔ en stock",meta:"pot prof. 15–20 cm · <b>voile anti-insectes</b>",s:[3,4,5,6,7,8,9],r:[4,5,6,7,8,9,10],note:"Un semis toutes les 3 semaines de mars à septembre. Le voile règle le problème d'altises."},
- {nom:"Carotte 'Marché de Paris' / 'Nantaise demi-longue'",tag:"pot profond",ach:"✔ en stock",meta:"pot prof. ≥ 30 cm · terreau + sable, jamais la terre du jardin",s:[3,6],r:[6,7,9,10],note:"À 50–60 cm de hauteur, hors du vol de la mouche de la carotte. Éclaircir à 3–4 cm."},
- {nom:"Navet 'de Milan rouge à forcer'",tag:"pot + voile",ach:"✔ en stock",meta:"Pot 25–30 cm · <b>voile anti-insectes</b> dès le semis",s:[3,8],r:[5,6,10],note:"C'est l'altise qui a mangé le semis du potager : sous voile en pot, le problème disparaît."},
- {nom:"Patate douce 'Beauregard'",tag:"marginal",warn:true,ach:"plants (slips)",meta:"Slips commandés au printemps · pot 40 L <b>noir</b>, angle le plus chaud",a:[4],p:[5],r:[9,10],note:"Limite à 500 m : la chaleur du pot noir rend la culture possible. Récolte modeste, arrachage avant gelée."},
- {nom:"Figuier 'Ronde de Bordeaux'",tag:"pérenne",ach:"arbre (commande Naudet)",meta:"Commande nov. · bac 50–60 L contre le mur sud · hivernage avec le laurier-rose",a:[11],p:[11],r:[8,9],note:"La seule figue assez précoce pour cette altitude. Vraies récoltes dès la 2e–3e année."},
- {nom:"Tomate naine 'Maskotka'",tag:"pot, sans tuteur",ach:"✔ en stock",stype:"chaud",meta:"Semis <b>au chaud</b> en mars · pot 30 L sur la ligne humide · <b>ni tuteur ni ébourgeonnage</b>",s:[3],p:[5],r:[7,8,9],note:"Naine et retombante, 40 g, précoce. La seule tomate à mettre en pot ici : les indéterminées demandent 2–4 L d'eau par jour en juillet, ce que l'AquaBloom ne fournit pas sans déséquilibrer le reste de la ligne."},
- {nom:"Piments 'Jalapeño Rouge' + 'Gorria' (Espelette)",tag:"vivaces !",ach:"✔ en stock",stype:"chaud",meta:"Semis <b>au chaud</b> fin janvier–février · pot 25–30 L chacun · la chaleur du pot compense la saison courte",s:[1,2],p:[5],r:[8,9,10],note:"Les piments sont vivaces : rentrer le pot avant les gelées, rabattre de moitié, garder à peine humide dans une pièce fraîche et lumineuse — il repart en mars avec un mois d'avance sur tout semis. <b>Quarantaine obligatoire de 3 semaines à l'écart des plantes d'intérieur</b> (thrips, aleurodes, araignées rouges), avec un piège jaune par pot."},
- {nom:"Fraisier des bois 'Reine des Vallées'",tag:"alpin, vivace",ach:"✔ en stock",stype:"chaud",meta:"Semis <b>en surface, sans recouvrir</b> (besoin de lumière) fév.–mars · 2 semaines au frigo avant semis améliore la levée · lève en 2–4 semaines",s:[2,3],p:[5],r:[6,7,8,9],note:"Le seul fraisier qui se ressème fidèlement. Pas de stolons, donc il reste en place : idéal en pot ou en bordure des coins mi-ombragés que l'arrosage atteint. Fructifie dès le premier été."},
- {nom:"Poivron 'Corno di Toro Rosso'",tag:"pot ou potager",ach:"✔ en stock",stype:"chaud",meta:"Semis <b>au chaud</b> (18–20 °C) en godets 7 cm en mars · pot 40 cm ou potager",s:[3],p:[5],r:[8,9],note:"Type pointu doux, bien plus précoce que les poivrons carrés qui ne mûrissent pas ici."}
-]},
-{id:"bac",titre:"Bac surélevé (1 m × 40 cm)",lieu:"bac",note:"Rotation continue : salades au printemps, fraisiers renouvelés l'été, épinard tout l'hiver.",crops:[
- {nom:"Batavia 'Blonde de Paris' + roquette",tag:"bordures",ach:"✔ en stock",meta:"Semis en bordure du bac · roquette resemée en septembre",s:[3,9],r:[4,5,6,10,11],note:"En bac, hors de portée de la plupart des limaces qui ont eu les laitues."},
- {nom:"Mâche 'Verte de Cambrai'",tag:"hiver",ach:"✔ en stock",meta:"Semis <b>direct</b> mi-septembre, avec l'épinard · plombler le sol après semis (la mâche aime la terre tassée)",s:[9],r:[11,12,1,2,3],note:"Apprécie justement les sols calcaires. Récolte en rosettes entières de novembre à mars — la salade d'hiver la plus fiable ici, et zéro entretien."},
- {nom:"Fraisier Mara des bois — renouvellement",tag:"an 3",ach:"",meta:"Stolons maison · empotés en sept.-oct., replantés en terre <b>neuve</b> au printemps",c:[9,10],p:[3],r:[6,7,8,9,10],note:"<b>Ordre des opérations le 15 sept. :</b> tester le stolon marcotté (traction douce), le sevrer et l'empoter s'il résiste — avant d'arracher les pieds mères pour semer. Sinon on soulève une mère qui nourrit encore un stolon."},
- {nom:"Épinard 'Géant d'hiver'",tag:"hiver",ach:"✔ en stock",meta:"Pleine largeur du bac après l'arrachage des fraisiers",s:[9],r:[10,11,12,1,2,3],note:"Le cœur de la production d'hiver. Récolte feuille à feuille d'octobre à mars."}
-]},
-{id:"potager",titre:"Potager",lieu:"potager",note:"L'ail succède aux tomates en octobre (rotation alliums → solanacées). Un seul plant de courgette, avec de l'espace.",crops:[
- {nom:"Tomates cerises 'Black Cherry' + 'Orange Berry'",tag:"semis au chaud",ach:"✔ en stock",stype:"chaud",meta:"Semis <b>au chaud</b> (18–20 °C) en terrine ou godets 7 cm en mars · repiquage en pots 10–12 cm aux premières vraies feuilles · endurcissement début mai · dehors mi-mai, tuteurs, 60 cm entre plants",s:[3],p:[5],r:[7,8,9,10],note:"Jamais de semis direct dehors ici. 'Orange Berry' est précoce (essentiel à 500 m) et fait 15–30 g, légèrement acidulée ; Ste Marthe recommande justement de l'associer à 'Black Cherry'. La rampe LED évite les plants filés de fenêtre."},
- {nom:"Aubergine 'de Barbentane' greffée",tag:"plant greffé",ach:"plant greffé (Botanic)",meta:"<b>Plant greffé uniquement</b> · emplacement le plus chaud du potager",a:[5],p:[5],r:[8,9],note:"Le greffage apporte la vigueur que la saison courte refuse aux plants francs."},
- {nom:"Concombre 'Tanja'",tag:"treillis",ach:"✔ en stock",stype:"chaud",meta:"semis <b>au chaud</b> en godets 8 cm fin avril (2 graines/godet, garder la plus belle) · dehors mi-mai sur treillis vertical",s:[4],p:[5],r:[7,8,9],note:"À la verticale pour ne pas répéter l'encombrement de cette année."},
- {nom:"Courgette",tag:"1 plant",ach:"✔ en stock",stype:"chaud",meta:"Semis <b>au chaud</b> en godets 8 cm fin avril · dehors mi-mai · <b>1 m² pour lui seul</b>",s:[4],p:[5],r:[7,8,9,10]},
- {nom:"Piment de Cayenne",tag:"existant",ach:"",meta:"Reconduit chaque année · plant en mai",p:[5],r:[8,9,10]},
- {nom:"Ail 'Germidour'",tag:"sur butte",ach:"bulbes (Botanic mi-oct.)",meta:"Caïeux à 3–4 cm, <b>sur butte</b> (l'argile hivernale fait pourrir l'ail à plat)",p:[10],r:[6,7],note:"Rien à faire entre plantation et récolte : la culture la plus compatible avec les absences."},
- {nom:"Oignon rouge 'Red Baron'",tag:"bulbilles",ach:"bulbilles",meta:"Bulbilles de <b>printemps</b> (les rouges d'automne montent trop) · 10 cm entre bulbilles",a:[3],p:[3],r:[7,8]}
-]},
-{id:"pleine-terre",titre:"Pleine terre",lieu:"pleine terre",note:"Le gros du calendrier d'hiver, et tout ce qui supporte les absences sans arrosage.",crops:[
- {nom:"Framboisier remontant 'Heritage'",tag:"Naudet nov.",ach:"racines nues (Naudet)",meta:"Rang, 40 cm entre plants · <b>rabattre au ras du sol chaque hiver</b>",a:[11],p:[11],r:[8,9,10],note:"Prolonge la saison des framboises jusqu'aux gelées. Récolte dès l'an prochain."},
- {nom:"Mûre 'Loch Ness' (sans épines)",tag:"Naudet nov.",ach:"racines nues (Naudet)",meta:"Palissée sur 2 fils le long d'une clôture",a:[11],p:[11],r:[8,9]},
- {nom:"Courges 'Nutterbutter' + 'Potimarron'",tag:"conservation",ach:"✔ en stock",stype:"chaud",meta:"Semis <b>au chaud</b> en godets 8 cm <b>fin avril</b> · dehors mi-mai en bordure du terrain, laisser courir",s:[4],p:[5],r:[9,10],note:"'Nutterbutter' remplace la butternut classique : 90 jours au lieu de 100–110, adaptée aux climats rudes et peu sensible à l'oïdium — fruits d'environ 1 kg, plus petits mais qui mûrissent vraiment ici. Récolte avant les gelées, conservation au sec dans la maison jusqu'en février."},
- {nom:"Poireau 'Bleu de Solaise'",tag:"nº1 hiver",ach:"plants (juillet)",meta:"<b>Plants</b> achetés en juillet · habillage racines + feuilles à la plantation",a:[7],p:[7],r:[11,12,1,2,3],note:"Le plus rustique des poireaux. Reste en terre tout l'hiver — le gel l'améliore."},
- {nom:"Kale 'Cavolo Nero'",tag:"voile",ach:"✔ en stock",stype:"godet",meta:"Semis en godets <b>dehors à l'abri</b> en mai (rustique, pas besoin de chaleur) · 3 plants, sous voile jusqu'à l'installation",s:[5],p:[6],r:[12,1,2,3],note:"Planté déjà costaud pour passer le cap des limaces. S'adoucit après les gelées."},
- {nom:"Chou rouge 'Tête Noire 3'",tag:"voile",ach:"✔ en stock",stype:"godet",meta:"Semis en godets <b>dehors à l'abri</b> en avril · 2–3 plants en juin · voile contre piéride et puceron cendré",s:[4],p:[6],r:[9,10,11],note:"Variété de conservation, remplace 'Rodynda' (introuvable). Se garde plusieurs mois en cave après récolte."},
- {nom:"Chou de Bruxelles 'Groninger'",tag:"exigeant",warn:true,ach:"✔ en stock",stype:"godet",meta:"Semis en godets <b>dehors à l'abri</b> en avril · plantation juin · tuteurer (bise) · voile tout l'été",s:[4],p:[6],r:[11,12,1,2],note:"La culture la plus exigeante de la liste : 8 mois d'occupation du sol. Premier candidat au sacrifice si la place manque."},
- {nom:"Brocoli à jets pourpres (Early Purple Sprouting)",tag:"trou de mars",ach:"✔ en stock",stype:"godet",meta:"Semis en godets <b>dehors à l'abri</b> mai–juin · plantation juillet, 50 cm entre plants · tuteurer (bise) · voile tout l'été",s:[5,6],p:[7],r:[3,4],note:"La seule production de mars-avril, quand le reste du jardin ne donne rien. Occupe le sol 10 mois : à choisir avant les choux de Bruxelles si la place manque. Le gel améliore les jets. Récolter les pousses au fur et à mesure pour relancer la production."},
- {nom:"Brocoli calabrais (Calabrese)",tag:"après l'ail",ach:"✔ en stock",stype:"godet",meta:"Semis en godets mars–avril <b>ou</b> juin · plantation dans le potager en juillet, <b>après l'arrachage de l'ail</b> · voile",s:[3,4,6],p:[7],r:[9,10],note:"Occupe la case laissée vide par l'ail de juin-juillet : la rotation se boucle toute seule. Après la coupe de la tête centrale, les rejets latéraux donnent encore plusieurs semaines."},
- {nom:"Cima di rapa (brocoli-rave)",tag:"rapide",ach:"✔ en stock",meta:"Semis <b>direct</b> en août–septembre, en ligne · éclaircir à 15 cm · voile contre les altises (crucifère)",s:[8,9],r:[10,11],note:"60 jours du semis à la récolte, pas d'hivernage : le brocoli sans les dix mois d'occupation. Ce sont les jets et jeunes feuilles qui se mangent, avant l'ouverture des fleurs. Peut se resemer début printemps."},
- {nom:"Panais 'de Guernesey'",tag:"graines fraîches",ach:"à racheter chaque année",meta:"Graines <b>fraîches chaque année</b> · semis direct épais fév.–mars",a:[1],s:[2,3],r:[10,11,12,1,2],note:"Se conserve en terre comme le poireau : se récolte tout l'hiver."},
- {nom:"Topinambour",tag:"à confiner",ach:"tubercules",meta:"Tubercules plantés fév.–mars · coin dont on ne veut plus, ou très grand pot",a:[2],p:[2,3],r:[11,12,1,2,3],note:"Décision d'emplacement irréversible : là où il est planté, il reste."},
- {nom:"Céleri-rave 'Monarch'",tag:"conditionnel",warn:true,ach:"plants",meta:"Plants en mai · <b>uniquement</b> sur zone irriguée au goutte-à-goutte",a:[5],p:[5],r:[10,11],note:"Exige une humidité constante tout l'été. Deuxième candidat au sacrifice."}
-]},
-{id:"existant",titre:"Existant — entretien",lieu:"verger",note:"",crops:[
- {nom:"Pommiers",tag:"tavelure + carpocapse",ach:"",meta:"Bouillie bordelaise à la <b>chute des feuilles</b> (nov.) et au <b>débourrement</b> (mars–avril) · pièges à phéromones carpocapse mai → août",c:[3,4,5,6,7,8,11],r:[9,10]},
- {nom:"Romarin",tag:"existant",ach:"",wheel:false,meta:"Ligne « sèche » de l'arrosage, avec la lavande · taille légère après floraison · <b>récolte toute l'année</b>",r:[1,2,3,4,5,6,7,8,9,10,11,12]}
-]}
-];
-
-// tâches ponctuelles hors fiches
-const speciales=[
- {m:9,g:"a",nom:"📦 Livraison Sainte Marthe (14 sept.)",extra:"28 sachets — étiqueter l'année, ranger en boîte hermétique + silice"},
- {m:9,g:"s",nom:"Cima di rapa 'Sessantina'",extra:"semis direct, dès réception — 60 jours, ne pas attendre"},
- {m:10,g:"a",nom:"Ail 'Germidour' (bulbes)",extra:"Botanic mi-oct., ou Ste Marthe 7,90 € — seul achat d'automne restant"},
- {m:3,g:"a",nom:"Bulbilles d'oignon rouge 'Red Baron'",extra:"était en rupture chez Ste Marthe — à racheter au printemps"},
- {m:4,g:"a",nom:"Plants (slips) de patate douce 'Beauregard'",extra:"commande de printemps, plants vivants"},
- {m:1,g:"a",nom:"Racheter les graines de panais",extra:"seule graine qui ne se garde pas plus d'un an"},
- {m:9,g:"a",nom:"Pots & voile anti-insectes",extra:"2–3 pots prof. 30 cm, 1 × 25–30 cm, 1 × 15–20 cm, 1 × 40 L noir"},
- {m:11,g:"a",nom:"Commande Naudet racines nues",extra:"framboisier 'Heritage', mûre 'Loch Ness', figuier — à grouper avec les lilas et hortensias"},
- {m:10,g:"c",nom:"Rentrer les piments — QUARANTAINE",extra:"3 semaines à l'écart des plantes d'intérieur + piège jaune par pot (risque thrips)"},
- {m:5,g:"c",nom:"Pièges à phéromones carpocapse",extra:"pommiers, de mai à août"},
- {m:6,g:"c",nom:"Granulés anti-limaces autour des jeunes plants",extra:"phosphate ferrique, à la plantation des choux et brocolis uniquement"},
- {m:12,g:"c",nom:"Rabattre les framboisiers 'Heritage'",extra:"au ras du sol, chaque hiver"},
- {m:10,g:"c",nom:"Rentrer laurier-rose & figuier",extra:"hivernage hors gel avant les premières gelées (figuier : dès l'automne 2027)"},
- {m:3,g:"c",nom:"Rampe LED sur les semis au chaud",extra:"tomates & poivrons — sous réserve de la fin du programme thrips"},
- {m:5,g:"c",nom:"Endurcir les plants frileux",extra:"sorties de jour dès début mai, plantation mi-mai après les saints de glace"},
- {m:2,g:"a",nom:"Terreau de semis, terrines & godets 7–8 cm",extra:"pour les semis au chaud de mars-avril + terre neuve du bac à fraisiers"},
- {m:10,g:"c",nom:"Purger et rentrer l'AquaBloom",extra:"vidanger tuyaux et pompe avant le gel · le Blumat intérieur reste en service"},
- {m:4,g:"c",nom:"Remise en route de l'AquaBloom",extra:"contrôle des goutteurs ligne par ligne avant les plantations de mai"},
- {m:6,g:"c",nom:"Tomates : ébourgeonnage & attaches",extra:"chaque semaine jusqu'en septembre"}
-];
+/* Les données du jardin vivent dans data.json et sont chargées par init(). */
+let sections=[],speciales=[];
 const STYPE_LBL={chaud:"au chaud (18–20 °C)",godet:"en godets, dehors à l'abri",direct:"semis direct"};
 
 // ---- construire l'index mensuel ----
 const GROUPES=[["a","Acheter","var(--achat)"],["s","Semer","var(--semis)"],["p","Planter","var(--plant)"],["r","Récolter","var(--recolte)"],["c","Soins","var(--soin)"]];
 const parMois={};
+function construireIndexMensuel(){
 for(let m=1;m<=12;m++)parMois[m]={a:[],s:[],p:[],r:[],c:[]};
 sections.forEach(sec=>sec.crops.forEach(c=>{
   if(c.wheel===false)return;
@@ -310,6 +238,7 @@ sections.forEach(sec=>sec.crops.forEach(c=>{
   });
 }));
 speciales.forEach(t=>parMois[t.m][t.g].push({nom:t.nom,lieu:"",extra:t.extra||""}));
+}
 
 // ---- roue SVG ----
 const CX=170,CY=170,RO=150,RI=72;
@@ -380,6 +309,7 @@ function stripHTML(c){
   for(let m=1;m<=12;m++)r1+=`<div class="${(c.r||[]).includes(m)?'r':''}"></div>`;
   return `<div class="strip">${mois}${r1}</div></div>`;
 }
+function drawFiches(){
 document.getElementById('fiches').innerHTML=sections.map(sec=>`
 <details${sec.id==='bac'?'':''}>
   <summary>${sec.titre}<span class="n">${sec.crops.length} culture${sec.crops.length>1?'s':''}</span></summary>
@@ -397,14 +327,12 @@ document.getElementById('fiches').innerHTML=sections.map(sec=>`
     </div>`).join('')}
   </div>
 </details>`).join('');
-
-drawRoue();
-drawPanneau();
+}
 
 /* ---- mois courant ----
-   NOW est lu sur l'horloge de l'appareil au chargement, puis reverifie :
-   le calendrier bascule tout seul au changement de mois, meme hors ligne
-   et meme si la page reste ouverte plusieurs jours. */
+   NOW est lu sur l'horloge de l'appareil au chargement, puis revérifié :
+   le calendrier bascule tout seul au changement de mois, même hors ligne
+   et même si la page reste ouverte plusieurs jours. */
 function majMarqueursFiches(){
   document.querySelectorAll('#fiches .mois-row').forEach(row=>{
     [...row.children].forEach((cell,i)=>cell.classList.toggle('now',i+1===NOW));
@@ -413,23 +341,46 @@ function majMarqueursFiches(){
 function majMoisCourant(){
   const m=moisCourant();
   if(m===NOW)return;
-  const suivaitLeMois=(sel===NOW);   // ne pas voler la selection faite a la main
+  const suivaitLeMois=(sel===NOW);   // ne pas voler la sélection faite à la main
   NOW=m;
   if(suivaitLeMois)sel=m;
   drawRoue();
   drawPanneau();
   majMarqueursFiches();
 }
-/* Replanifie au plus tard toutes les 6 h : setTimeout deborde au-dela de ~24 jours,
+/* Replanifié au plus tard toutes les 6 h : setTimeout déborde au-delà de ~24 jours,
    or un mois peut durer 31 jours. */
 function planifierProchainMois(){
   const d=new Date(),prochain=new Date(d.getFullYear(),d.getMonth()+1,1,0,0,5);
   setTimeout(()=>{majMoisCourant();planifierProchainMois();},
              Math.min(prochain-d,6*3600*1000));
 }
-planifierProchainMois();
-document.addEventListener('visibilitychange',()=>{if(!document.hidden)majMoisCourant();});
-window.addEventListener('focus',majMoisCourant);
+
+// ---- chargement des données puis rendu ----
+async function init(){
+  try{
+    const r=await fetch('data.json',{cache:'no-store'});
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    const data=await r.json();
+    sections=data.sections;
+    speciales=data.speciales;
+  }catch(err){
+    console.error('Chargement de data.json impossible :',err);
+    document.getElementById('panneau').innerHTML=
+      '<h2>Données indisponibles</h2>'+
+      '<p class="rien">Impossible de charger <code>data.json</code>. '+
+      'Vérifiez la connexion, puis rechargez la page.</p>';
+    return;
+  }
+  construireIndexMensuel();
+  drawRoue();
+  drawPanneau();
+  drawFiches();
+  planifierProchainMois();
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)majMoisCourant();});
+  window.addEventListener('focus',majMoisCourant);
+}
+init();
 </script>
 <script>
 /* Hors ligne : on enregistre le service worker une fois la page chargée. */

@@ -2,11 +2,12 @@
    App shell is precached, Google Fonts are cached on first use.
    Bump CACHE when index.html changes so clients pick up the new version. */
 
-const CACHE = 'calendrier-v3';
+const CACHE = 'calendrier-v4';
 
 const SHELL = [
   './',
   './index.html',
+  './data.json',
   './manifest.webmanifest',
   './icon.svg'
 ];
@@ -50,6 +51,23 @@ self.addEventListener('fetch', event => {
   }
 
   if (url.origin !== self.location.origin) return;
+
+  // Garden data: network first, so an edit to data.json shows up on the next
+  // load without a hard refresh. The cached copy is the offline fallback.
+  if (url.pathname.endsWith('/data.json')) {
+    event.respondWith(
+      fetch(req.url, { cache: 'no-store', credentials: 'same-origin' })
+        .then(res => {
+          if (res.ok) {
+            const copy = res.clone();
+            caches.open(CACHE).then(cache => cache.put('./data.json', copy));
+          }
+          return res;
+        })
+        .catch(() => caches.match('./data.json'))
+    );
+    return;
+  }
 
   // Navigations: network first so a fresh deploy shows up, cache as fallback.
   // GitHub Pages serves HTML with max-age=600, so a plain fetch() can be answered
