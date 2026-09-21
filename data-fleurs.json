@@ -109,7 +109,7 @@
             9,
             10
           ],
-          "note": "Taille légère en avril, c'est tout. La colonne vertébrale du balcon."
+          "note": "La colonne vertébrale du balcon. Taille d'avril uniquement, d'un tiers, dans du bois portant des yeux verts — la sauge ne repart pas du bois nu. Renouveler les 5 premiers centimètres de terreau au passage. Les gauras y échouent : la jardinière est trop basse pour leur pivot — ne pas réessayer, remplacer par thym/origan, stachys ou santoline, népéta 'Walker's Low', sedum 'Herbstfreude', ou une seconde sauge."
         }
       ]
     },
@@ -158,7 +158,7 @@
           "note": "Reportée à la commande d'octobre (bon d'achat). Feuillage strié de pourpre, décoratif avant même la fleur."
         },
         {
-          "nom": "Rosier 'Lady of Shalott'",
+          "nom": "Rosier 'Lady of Shalott' (nouveau)",
           "meta": "Grand pot 50 cm · orange-abricot · 1,2–1,4 m",
           "tag": "grand pot à acheter",
           "chaud": 1,
@@ -190,7 +190,7 @@
             10,
             11
           ],
-          "note": "Le succès incontesté de l'année, multiplié. Une des nouvelles peut reprendre la place des gauras moribonds du bac gaura/sauge."
+          "note": "Le succès incontesté de l'année, multiplié. Terre pauvre et sèche : l'engrais les fait s'affaler. Taille d'avril uniquement, d'un tiers, jamais dans le bois nu."
         },
         {
           "nom": "Angelonia",
@@ -208,7 +208,7 @@
         },
         {
           "nom": "Pélargoniums zonale + lierre",
-          "meta": "Pots moyens sur l'AquaBloom · l'opulence classique",
+          "meta": "Pots moyens · l'opulence classique",
           "pla": [
             5
           ],
@@ -224,7 +224,7 @@
         },
         {
           "nom": "Dahlias nains",
-          "meta": "Pots moyens sur l'AquaBloom",
+          "meta": "Pots moyens",
           "pla": [
             4,
             5
@@ -240,7 +240,7 @@
         },
         {
           "nom": "Pervenche de Madagascar",
-          "meta": "Pots moyens sur l'AquaBloom",
+          "meta": "Pots moyens",
           "pla": [
             5
           ],
@@ -397,7 +397,7 @@
             9,
             10
           ],
-          "note": "Le duo qui marche, on n'y touche pas."
+          "note": "Le duo qui marche, on n'y touche pas. C'est la profondeur et le drainage du pot qui font la différence — le gaura a un pivot. Romarin : pas de soucoupe l'hiver, et ne jamais couper au-delà des feuilles vertes."
         }
       ]
     },
@@ -615,6 +615,129 @@
           "note": "Le final d'octobre, quand les zinnias fatiguent."
         }
       ]
+    },
+    {
+      "titre": "Le fond permanent — arbustes et vivaces déjà en place",
+      "note": "Le gros de la couverture florale de l'année vient d'ici, pas des semis. Les fenêtres de taille et l'hivernage de ces plantes sont suivis en détail dans le calendrier des arbustes.",
+      "plantes": [
+        {
+          "nom": "Rosier grimpant rouge",
+          "tag": "en place",
+          "meta": "Mur ouest de la maison",
+          "flo": [
+            6,
+            8
+          ],
+          "note": "Taille structurelle fin février. La remontée d'août dépend entièrement du nettoyage fait après la première floraison — c'est elle qui la déclenche."
+        },
+        {
+          "nom": "Laurier-rose",
+          "tag": "toxique",
+          "meta": "Pot terracotta, terrasse",
+          "flo": [
+            7,
+            8,
+            9
+          ],
+          "note": "Fleurit sur le bois de l'année : taille au printemps, jamais à l'automne. Hivernage hors gel. <b>Toxique dans toutes ses parties, tailles fanées comprises</b> — gants, et ramasser chaque chute (Taiko)."
+        },
+        {
+          "nom": "Lilas des Indes",
+          "tag": "en place",
+          "meta": "Pot, terrasse",
+          "flo": [
+            8,
+            9
+          ],
+          "note": "Fleurit sur les pousses de l'année : taille sévère en mars. Lui donner la position la plus chaude et la plus réverbérante — une floraison pauvre vient du manque de chaleur autant que du pot trop petit."
+        },
+        {
+          "nom": "Gattilier",
+          "tag": "en place",
+          "meta": "Pot, terrasse",
+          "flo": [
+            7,
+            8
+          ],
+          "note": "Fleurit sur le bois de l'année. Feuillaison très tardive : ne pas le croire mort en avril."
+        },
+        {
+          "nom": "Hortensia macrophylla",
+          "tag": "bois an passé",
+          "meta": "Jardinière, terrasse",
+          "flo": [
+            6,
+            7,
+            8
+          ],
+          "note": "Fleurit sur le bois de l'an passé : ne jamais tailler à l'automne, et protéger les tiges en hiver — ce sont les boutons de l'année suivante. Les belles feuilles sans fleurs viennent de là."
+        },
+        {
+          "nom": "Hortensia paniculata",
+          "tag": "bois année",
+          "meta": "Pot, près de la porte",
+          "flo": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "Fleurit sur le bois de l'année : rabattre toutes les tiges fin février. La couleur qui vire vient de l'âge des fleurs, pas du pH."
+        },
+        {
+          "nom": "Agapanthe",
+          "tag": "en place",
+          "meta": "Pot, terrasse",
+          "flo": [
+            7,
+            8
+          ],
+          "note": "Variété persistante, donc groupe gélif. La garder à l'étroit dans son pot et ne jamais couper les feuilles. Engrais tomate d'avril à juillet : l'azote donne des feuilles et pas de fleurs. La perte de l'an dernier venait de l'humidité hivernale, pas du froid."
+        },
+        {
+          "nom": "Dahlia pêche",
+          "tag": "en place",
+          "meta": "Pot d'origine, terrasse",
+          "flo": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "note": "Celui déjà en place, en cours d'installation. Hivernage du pot entier au hors-gel après la première gelée, sans arracher les tubercules — et rempotage plus grand au printemps, le pot actuel sèche trop vite."
+        },
+        {
+          "nom": "Jasmin officinal",
+          "tag": "bois an passé",
+          "meta": "Jardinière à treillis, mur",
+          "flo": [
+            6,
+            7,
+            8
+          ],
+          "note": "Fleurit sur le bois de l'an passé : taille juste après la floraison, en fin d'été. Jamais au printemps."
+        },
+        {
+          "nom": "Jasmin étoilé",
+          "tag": "bois an passé",
+          "meta": "Pot à treillis, mur",
+          "flo": [
+            6,
+            7
+          ],
+          "note": "Persistant et le plus gélif des grimpants ici. Taille en juillet seulement, et uniquement pour contenir l'encombrement."
+        },
+        {
+          "nom": "Cotinus",
+          "tag": "jeune plant",
+          "meta": "Bordure, clôture verte",
+          "flo": [
+            6,
+            7
+          ],
+          "note": "Inflorescences en fumée. Jeune plant : cercle désherbé, paillage et arrosage profond les deux premiers étés — c'est ce qui le fait démarrer, pas la taille."
+        }
+      ]
     }
   ],
   "taches": {
@@ -632,12 +755,20 @@
       [
         "s",
         "Semis au chaud — mufliers vague 2 : Potomac Orange, Appleblossom, Mme Butterfly Bronze, Frosted Flames."
+      ],
+      [
+        "x",
+        "Rosier grimpant rouge : taille structurelle. Supprimer un tiers des plus vieilles branches au ras, palisser les jeunes à l'horizontale, rabattre les latérales à 2–3 yeux. Rénovation étalée sur deux à trois hivers."
+      ],
+      [
+        "x",
+        "Hortensia paniculata : rabattre toutes les tiges à 2–3 yeux au-dessus d'une charpente de 30–40 cm, et retirer les vieilles inflorescences à ce moment-là."
       ]
     ],
     "3": [
       [
         "x",
-        "Rosier : taille d'un tiers + engrais rosier."
+        "Rosier 'Lady of Shalott' : taille d'un tiers + engrais rosier. (Le grimpant rouge, lui, se taille en février.)"
       ],
       [
         "p",
@@ -650,6 +781,14 @@
       [
         "a",
         "Acheter les tubercules de dahlias nains (moins cher que les plants de mai)."
+      ],
+      [
+        "x",
+        "Lilas des Indes : rempoter d'un tiers plus grand, puis rabattre les pousses de l'an passé à 2–3 yeux."
+      ],
+      [
+        "x",
+        "Cotinus : raccourcir d'un tiers les tiges nues, au-dessus d'un œil tourné vers l'extérieur."
       ]
     ],
     "4": [
@@ -664,6 +803,38 @@
       [
         "c",
         "Floraison : tulipes botaniques, narcisses, pensées à leur apogée."
+      ],
+      [
+        "x",
+        "Gattilier : taille sévère sur charpente basse."
+      ],
+      [
+        "x",
+        "Sauge arbustive : rabattre d'un tiers dans du bois portant des yeux verts visibles, jamais dans le bois nu. Renouveler les 5 premiers centimètres de terreau de la jardinière."
+      ],
+      [
+        "x",
+        "Verveine citronnelle : rabattre à 20 cm une fois les pousses vertes visibles à la base."
+      ],
+      [
+        "x",
+        "Hortensia macrophylla : attendre de voir les yeux vivants, puis couper le bois mort jusqu'au premier gros bouton vert. Pas avant."
+      ],
+      [
+        "x",
+        "Laurier-rose : rabattre d'un tiers les rameaux défleuris, éclaircir le centre."
+      ],
+      [
+        "x",
+        "Reprise des engrais. Plantes fleuries : lilas des Indes, laurier-rose, dahlia, agapanthe (engrais tomate). Universel : hortensias, jasmins, heuchère. Rien pour sauge, gaura, romarin, gattilier."
+      ],
+      [
+        "p",
+        "Remplacer la gaura ratée de la jardinière longue : thym/origan, stachys ou santoline, népéta 'Walker's Low', sedum 'Herbstfreude', ou une seconde sauge."
+      ],
+      [
+        "x",
+        "Heuchère : sortir de la jardinière gaura/carex, pot individuel à mi-ombre, replanter plus profond ou diviser."
       ]
     ],
     "5": [
@@ -691,7 +862,11 @@
       ],
       [
         "x",
-        "Engrais rosier après la première vague."
+        "Engrais rosier après la première vague — 'Lady of Shalott'."
+      ],
+      [
+        "c",
+        "Rosier grimpant rouge : nettoyer après la première floraison et raccourcir les rameaux défleuris de quelques yeux — c'est ce qui déclenche la remontée d'août."
       ]
     ],
     "7": [
@@ -702,6 +877,14 @@
       [
         "x",
         "Rabattre légèrement les lantanas si les boutons sèchent."
+      ],
+      [
+        "x",
+        "Jasmin étoilé : taille éventuelle, uniquement pour contenir l'encombrement."
+      ],
+      [
+        "c",
+        "Lilas des Indes : supprimer les panicules fanées au fur et à mesure pour une seconde vague."
       ]
     ],
     "8": [
@@ -712,6 +895,10 @@
       [
         "s",
         "Semer les mufliers vague 1 pour l'an prochain (fin août → mi-septembre, sous la caisse)."
+      ],
+      [
+        "x",
+        "Jasmin officinal : taille juste après la fin de floraison. Supprimer le vieux bois enchevêtré, raccourcir les rameaux défleuris."
       ]
     ],
     "9": [
@@ -730,6 +917,18 @@
       [
         "x",
         "Ranger les bulbes au sec et à l'obscurité jusqu'à la plantation d'octobre–novembre."
+      ],
+      [
+        "x",
+        "Couper les hampes florales fanées de l'agapanthe au ras."
+      ],
+      [
+        "x",
+        "Retirer les follicules (gousses) du laurier-rose et supprimer les fleurs fanées — les « chenilles duveteuses » sont des graines."
+      ],
+      [
+        "x",
+        "Aucun engrais à partir de maintenant : tout reprend en avril. Nourrir à l'automne pousse une croissance tendre qui gèle."
       ]
     ],
     "10": [
@@ -760,6 +959,26 @@
       [
         "x",
         "Arracher zinnias et cosmos au premier gel."
+      ],
+      [
+        "x",
+        "Rentrer au hors-gel (0–8 °C, un peu de lumière) : olivier, laurier-rose, agapanthe. Arrosage quasi nul."
+      ],
+      [
+        "x",
+        "Dahlia : rabattre à 10–15 cm après la première gelée, rentrer le pot entier, substrat presque sec, un filet d'eau par mois."
+      ],
+      [
+        "x",
+        "Emmailloter les pots (le contenant, pas le feuillage) : gattilier, lilas des Indes, jasmin étoilé, jasmin officinal, romarin, les deux hortensias, érable negundo."
+      ],
+      [
+        "x",
+        "Hortensia macrophylla : seule exception, voile d'hivernage aussi sur les tiges, à ouvrir par temps doux. Ce sont les boutons de l'an prochain."
+      ],
+      [
+        "x",
+        "Butter la verveine citronnelle : 20 cm de feuilles sèches ou de paillis sur la souche, jusqu'en avril."
       ]
     ],
     "11": [

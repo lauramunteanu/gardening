@@ -72,13 +72,13 @@
       "id": "terrasse",
       "titre": "Terrasse — pots",
       "lieu": "terrasse",
-      "note": "Tous sur la ligne « humide » de l'AquaBloom. Les racines en pot esquivent la mouche de la carotte (vol bas) et les altises.",
+      "note": "Tous à l'arrosoir, humidité régulière. Les racines en pot esquivent la mouche de la carotte (vol bas) et les altises.",
       "crops": [
         {
           "nom": "Radis 'de 18 jours'",
           "tag": "successif",
           "ach": "✔ en stock",
-          "meta": "1 pot rond 20 × 15 cm, semis à la volée · voile sur arceaux · semé le 13/09/2026",
+          "meta": "1 pot rond 20 × 15 cm, semis à la volée · voile sur arceaux, cordon scellé au bord · semé le 13/09/2026",
           "s": [
             3,
             4,
@@ -97,7 +97,7 @@
             9,
             10
           ],
-          "note": "Un semis toutes les 3 semaines de mars à septembre. Le voile règle le problème d'altises."
+          "note": "Un semis toutes les 3 semaines de mars à septembre. Le voile règle le problème d'altises. Éclairci à 8–9 plants à 3–4 cm le 20/09 : garder une humidité régulière, récolte vers la mi-octobre."
         },
         {
           "nom": "Carotte 'Marché de Paris' / 'Nantaise demi-longue'",
@@ -172,7 +172,7 @@
           "tag": "pot, sans tuteur",
           "ach": "✔ en stock",
           "stype": "chaud",
-          "meta": "Semis <b>au chaud</b> en mars · pot 30 L sur la ligne humide · <b>ni tuteur ni ébourgeonnage</b>",
+          "meta": "Semis <b>au chaud</b> en mars · pot 30 L · <b>ni tuteur ni ébourgeonnage</b>",
           "s": [
             3
           ],
@@ -184,7 +184,7 @@
             8,
             9
           ],
-          "note": "Naine et retombante, 40 g, précoce. La seule tomate à mettre en pot ici : les indéterminées demandent 2–4 L d'eau par jour en juillet, ce que l'AquaBloom ne fournit pas sans déséquilibrer le reste de la ligne."
+          "note": "Naine et retombante, 40 g, précoce. La seule tomate à mettre en pot ici : les indéterminées demandent 2–4 L d'eau par jour en juillet, intenable à l'arrosoir."
         },
         {
           "nom": "Piments 'Jalapeño Rouge' + 'Gorria' (Espelette)",
@@ -255,10 +255,9 @@
             9
           ],
           "r": [
-            10,
             11
           ],
-          "note": "60 jours du semis à la récolte : le brocoli sans les dix mois d'occupation. Ce sont les jets et jeunes feuilles qui se mangent, avant l'ouverture des fleurs. En pot sur la ligne humide — il monte à graine au moindre stress hydrique. Peut se resemer début printemps. Récolte attendue deuxième quinzaine de novembre."
+          "note": "60 jours du semis à la récolte : le brocoli sans les dix mois d'occupation. Ce sont les jets et jeunes feuilles qui se mangent, avant l'ouverture des fleurs. En pot — il monte à graine au moindre stress hydrique. Peut se resemer début printemps. En touffes non éclaircies au 20/09 : éclaircir à 15 cm, soit environ 4 plants par jardinière de 60 cm. Récolte attendue à la mi-novembre ; voile sur les arceaux existants si le gel vient avant les boutons."
         },
         {
           "nom": "Batavia 'Blonde de Paris'",
@@ -275,7 +274,7 @@
             10,
             11
           ],
-          "note": "En pot plutôt qu'en bac : un semis de mi-septembre à 500 m est encore petit aux gelées de mi-octobre, et le pot se déplace contre le mur sud ou sous voile d'hivernage. Amère dès qu'elle sèche — jamais hors de la ligne humide."
+          "note": "En pot plutôt qu'en bac : un semis de mi-septembre à 500 m est encore petit aux gelées de mi-octobre, et le pot se déplace contre le mur sud ou sous voile d'hivernage. Amère dès qu'elle sèche : ne jamais la laisser manquer d'eau. Une huitaine de plants par pot au 20/09 : repiquer, garder le plus fort au centre, arroser au pied et jamais sur le cœur."
         }
       ]
     },
@@ -314,10 +313,11 @@
           "r": [
             10,
             11,
+            12,
             3,
             4
           ],
-          "note": "Se récolte feuille à feuille jusqu'aux froids, repart au printemps. Le voile règle les altises, même si la pression d'automne est plus faible qu'au printemps."
+          "note": "Éclaircie à 5 cm le 20/09. Se récolte feuille à feuille de la mi-octobre jusqu'en décembre, puis repart au printemps — le goût s'affine avec le froid. Le voile règle les altises, même si la pression d'automne est plus faible qu'au printemps."
         },
         {
           "nom": "Épinard 'Géant d'hiver'",
@@ -335,7 +335,7 @@
             2,
             3
           ],
-          "note": "Le cœur de la production d'hiver. Récolte feuille à feuille d'octobre à mars. Le bac fait 1 m × 40 cm, en trois blocs du fond vers l'avant : 60 cm d'épinard, 25 cm de mâche, 15 cm de roquette."
+          "note": "Le cœur de la production d'hiver. Récolte feuille à feuille d'octobre à mars. Aux cotylédons et clairsemé au 20/09 : ressemer les trous, puis éclaircir à 10–15 cm aux 1–2 vraies feuilles. Le voile est facultatif ici — l'épinard n'est pas une crucifère. Le bac fait 1 m × 40 cm, en trois blocs du fond vers l'avant : 60 cm d'épinard, 25 cm de mâche, 15 cm de roquette."
         },
         {
           "nom": "Fraisier Mara des bois — fin de cycle",
@@ -489,10 +489,10 @@
       "note": "Le massif en terre, non surélevé. Pression d'altises élevée : voile obligatoire sur toute crucifère, scellé dès le semis.",
       "crops": [
         {
-          "nom": "Framboisier remontant 'Heritage'",
+          "nom": "Framboisier 'Heritage' (commande nov.)",
           "tag": "Naudet nov.",
           "ach": "racines nues (Naudet)",
-          "meta": "Rang, 40 cm entre plants · <b>rabattre au ras du sol chaque hiver</b>",
+          "meta": "Rang, 40 cm entre plants · rabattre au ras chaque hiver <b>une fois planté</b> (le remontant fructifie sur les cannes de l'année)",
           "a": [
             11
           ],
@@ -504,7 +504,7 @@
             9,
             10
           ],
-          "note": "Prolonge la saison des framboises jusqu'aux gelées. Récolte dès l'an prochain."
+          "note": "Prolonge la saison des framboises jusqu'aux gelées. Récolte dès l'an prochain. <b>À ne pas confondre avec le framboisier déjà en place</b> (planté en octobre 2025, une seule canne survivante) : son type n'est pas identifié et il ne se taille pas — voir le calendrier des arbustes."
         },
         {
           "nom": "Mûre 'Loch Ness' (sans épines)",
@@ -771,7 +771,7 @@
           "tag": "existant",
           "ach": "",
           "wheel": false,
-          "meta": "Ligne « sèche » de l'arrosage, avec la lavande · taille légère après floraison · <b>récolte toute l'année</b>",
+          "meta": "Avec la lavande, au sec · <b>récolte toute l'année</b>",
           "r": [
             1,
             2,
@@ -842,8 +842,8 @@
     {
       "m": 12,
       "g": "c",
-      "nom": "Rabattre les framboisiers 'Heritage'",
-      "extra": "au ras du sol, chaque hiver"
+      "nom": "Rabattre les framboisiers 'Heritage' — eux seuls",
+      "extra": "Au ras du sol chaque hiver, et uniquement sur les 'Heritage' plantés en novembre. <b>Ne pas toucher à la canne déjà en place</b> : son type est inconnu, elle est sortie en 2026 sans fructifier, et une coupe au ras supprimerait la récolte de juin si elle n'est pas remontante. Il n'en reste qu'une."
     },
     {
       "m": 10,
@@ -868,12 +868,6 @@
       "g": "a",
       "nom": "Terreau de semis, terrines & godets 7–8 cm",
       "extra": "pour les semis au chaud de mars-avril + terre neuve du bac à fraisiers"
-    },
-    {
-      "m": 4,
-      "g": "c",
-      "nom": "Remise en route de l'AquaBloom",
-      "extra": "contrôle des goutteurs ligne par ligne avant les plantations de mai"
     },
     {
       "m": 6,
@@ -914,12 +908,6 @@
     {
       "m": 9,
       "g": "c",
-      "nom": "Poser les voiles sur arceaux (14/09/2026)",
-      "extra": "Pot de radis, les 2 jardinières de cima di rapa et le bloc de roquette · arceaux à 15 cm de hauteur pour les radis, 25–30 cm pour la cima di rapa · cordon serré sous le bord du pot · rouleau en stock, maille fine, suffisant contre les altises"
-    },
-    {
-      "m": 9,
-      "g": "c",
       "nom": "Phosphate ferrique à la levée",
       "extra": "Granulés dès que les semis du 13/09 sortent, sans attendre les premiers dégâts : épinard, mâche, roquette, batavia"
     },
@@ -933,13 +921,49 @@
       "m": 9,
       "g": "c",
       "nom": "Arrosage à la main des semis de septembre",
-      "extra": "Tous les semis du 13/09 arrosés à la main chaque jour jusqu'à la reprise · AquaBloom débranché tant que la levée n'est pas franche, rebranché quand les plantules sont sorties en nombre"
+      "extra": "Tous les semis du 13/09 arrosés à la main chaque jour jusqu'à la reprise — tout est arrosé à la main, il n'y a pas d'arrosage automatique au potager"
+    },
+    {
+      "m": 9,
+      "g": "c",
+      "nom": "Éclaircir la cima di rapa",
+      "extra": "À 15 cm, soit environ 4 plants par jardinière de 60 cm. Les éclaircissages se mangent."
+    },
+    {
+      "m": 9,
+      "g": "c",
+      "nom": "Repiquer la batavia en pots individuels",
+      "extra": "Une huitaine par pot : garder le plus fort au centre, répartir le reste, puis installer les pots à la position la plus ensoleillée."
+    },
+    {
+      "m": 9,
+      "g": "s",
+      "nom": "Ressemer l'épinard dans les trous",
+      "extra": "Le semis du 13/09 est clairsemé : compléter maintenant pour que tout lève ensemble."
+    },
+    {
+      "m": 9,
+      "g": "c",
+      "nom": "Voile scellé au bord sur les crucifères",
+      "extra": "Roquette, radis et cima di rapa, tant que le temps reste doux. Les éclaircissages des trois se mangent : arracher les isolés, couper les touffus, rincer et consommer le jour même."
+    },
+    {
+      "m": 10,
+      "g": "c",
+      "nom": "Éclaircir l'épinard à 10–15 cm",
+      "extra": "Aux 1–2 vraies feuilles, pas avant."
+    },
+    {
+      "m": 10,
+      "g": "r",
+      "nom": "Récolte des radis",
+      "extra": "Vers la mi-octobre, 18 à 25 jours après le semis du 13/09."
     },
     {
       "m": 11,
-      "g": "c",
-      "nom": "Purger et rentrer l'AquaBloom (vers le 20/11)",
-      "extra": "Revoir l'arrosage vers le 20 novembre, avant le départ du 27 · vidanger tuyaux et pompe · le Blumat intérieur reste en service · purger plus tôt si une gelée est annoncée"
+      "g": "r",
+      "nom": "Récolte de la cima di rapa",
+      "extra": "À la mi-novembre, sur les jets et les jeunes feuilles, avant l'ouverture des fleurs · voile sur les arceaux si le gel menace avant les boutons."
     }
   ]
 }
