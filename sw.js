@@ -2,22 +2,24 @@
    App shell is precached, Google Fonts are cached on first use.
    Bump CACHE when index.html changes so clients pick up the new version. */
 
-const CACHE = 'calendrier-v7';
+const CACHE = 'calendrier-v8';
 
 const SHELL = [
   './',
   './index.html',
   './potager.html',
   './fleurs.html',
+  './arbustes.html',
   './data-potager.json',
   './data-fleurs.json',
+  './data-arbustes.json',
   './manifest.webmanifest',
   './icon.svg'
 ];
 
 // Chaque page navigable a sa propre copie en cache : la page d'accueil ne peut
 // pas servir de repli pour le potager, elle n'en a pas le contenu.
-const PAGES = ['/index.html', '/potager.html', '/fleurs.html'];
+const PAGES = ['/index.html', '/potager.html', '/fleurs.html', '/arbustes.html'];
 
 const FONT_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com'];
 
@@ -61,7 +63,7 @@ self.addEventListener('fetch', event => {
 
   // Garden data: network first, so an edit to a data file shows up on the next
   // load without a hard refresh. The cached copy is the offline fallback.
-  if (/\/data-(potager|fleurs)\.json$/.test(url.pathname)) {
+  if (/\/data-(potager|fleurs|arbustes)\.json$/.test(url.pathname)) {
     event.respondWith(
       fetch(req.url, { cache: 'no-store', credentials: 'same-origin' })
         .then(res => {

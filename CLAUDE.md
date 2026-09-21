@@ -1,14 +1,15 @@
-# Le jardin — deux calendriers
+# Le jardin — trois calendriers
 
 Site publié sur GitHub Pages : https://lauramunteanu.github.io/gardening/
 
-`index.html` est une page d'accueil qui laisse choisir entre les deux calendriers :
+`index.html` est une page d'accueil qui laisse choisir entre les trois calendriers :
 
 | Page | Sujet | Contenu |
 |---|---|---|
 | `index.html` | accueil / choix | — |
 | `potager.html` | légumes & aromatiques | `data-potager.json` |
 | `fleurs.html` | fleurs & floraisons | `data-fleurs.json` |
+| `arbustes.html` | arbres, arbustes, grimpants | `data-arbustes.json` |
 
 ## Où modifier quoi
 
@@ -54,21 +55,50 @@ culture du décompte de la roue.
 Le fichier `data-fleurs.json` a été extrait de l'original, où certains mois s'écrivaient
 `r(6,10)` ; ces appels sont devenus des tableaux littéraux (`[6,7,8,9,10]`).
 
+`data-arbustes.json` :
+
+```
+{
+  "plantes":     [ { nom, nomLatin, emplacement, type, contenant, bois, taille,
+                     vieuxBois, saigne, hivernage, rusticite, plantation, etabli, taches } ],
+  "ponctuelles": [ { m, nom, extra } ]
+}
+```
+
+Les quatre vues dérivent toutes de `plantes` :
+
+- `taille` = `{ mois, legere, interdit, bloque, note }`. `bloque: true` grise les douze
+  mois et affiche « à déterminer » — c'est l'état du framboisier tant que son type
+  n'est pas identifié, et de la haie de Lonicera qui part à l'arrachage.
+- `vieuxBois: false` veut dire **ne repart pas du bois brun** (romarin, sauge,
+  conifères). C'est un drapeau permanent, pas un mois.
+- `saigne: true` déclenche l'alerte rouge de la vue « Le mois ».
+- `hivernage` : `hors-gel`, `pot emmailloté`, `feuillage protégé`, `souche buttée`
+  ou `aucun`. `feuillage protégé` implique aussi l'emmaillotage du pot.
+- `plantation` (`YYYY-MM`) + `etabli: false` alimentent « Jeunes plants » et
+  l'entrée disparaît d'elle-même au bout de trois ans.
+
+`ponctuelles` est une extension au modèle du spec : elle accueille ce qui n'est
+pas une plante suivie (datura à arracher, semis spontané dans le mur).
+
 ## Fichiers
 
-- `index.html` — page d'accueil, choix entre les deux calendriers
-- `potager.html`, `fleurs.html` — les calendriers : mise en page et logique
-- `data-potager.json`, `data-fleurs.json` — le contenu
+- `index.html` — page d'accueil, choix entre les trois calendriers
+- `potager.html`, `fleurs.html`, `arbustes.html` — les calendriers : mise en page et logique
+- `data-potager.json`, `data-fleurs.json`, `data-arbustes.json` — le contenu
 - `sw.js` — service worker (hors ligne)
 - `manifest.webmanifest`, `icon.svg` — ajout à l'écran d'accueil
-- `calendrier-cultures.html`, `calendrier-fleurs.html` — sources d'origine, figées, non servies
+- `calendrier-cultures.html`, `calendrier-fleurs.html` — sources d'origine, figées, non servies.
+  **Attention** : un spec qui vise `calendrier-fleurs.html` vise en réalité
+  `data-fleurs.json` (contenu) ou `fleurs.html` (mise en page). Éditer le fichier
+  d'origine ne change rien sur le site.
 
 ## Après modification
 
 - Un `data-*.json` seul : pousser sur `main`, rien d'autre. Le service worker les
   récupère en réseau d'abord, la nouvelle version apparaît au chargement suivant.
 - Un fichier HTML, `sw.js` ou un asset : incrémenter `CACHE` dans `sw.js`
-  (`calendrier-v5` → `calendrier-v6`, …) pour que les appareils déjà visités
+  (`calendrier-v8` → `calendrier-v9`, …) pour que les appareils déjà visités
   ne restent pas sur l'ancienne version.
 - Toute nouvelle page navigable doit être ajoutée à `SHELL` **et** à `PAGES`
   dans `sw.js` : chaque page a sa propre copie en cache, l'accueil ne peut pas
@@ -85,3 +115,18 @@ Le millésime (« 2026–27 ») est calculé par `libelleSaison()` et bascule le
 1er septembre, quand se commandent et se sèment les graines de l'année suivante.
 Il apparaît dans le titre de l'accueil, dans celui du potager et au centre de la
 roue des fleurs.
+
+## Ce qui est encore en suspens
+
+- **Framboisier** : type inconnu. La seule canne vivante est sortie en 2026 et n'a
+  pas fructifié, ce qui plaide contre un remontant — mais `data-potager.json`
+  l'appelle encore « Framboisier remontant 'Heritage' ». Tant que ce n'est pas
+  tranché, aucune taille : une coupe au ras sur un non-remontant supprimerait la
+  récolte de juin, et il ne reste qu'une canne. Verdict à la première fructification.
+- **Fraisiers 'Charlotte'** : emplacement non tranché (massif en novembre, ou bac
+  début mars). La carte, la tâche de plantation de novembre, l'alerte « déplacer la
+  courgette » et l'entrée de février sur la terre neuve du bac se décident ensemble.
+- **Appleblossom** : cité dans le semis de février de `data-fleurs.json` sans carte
+  correspondante. Soit la variété sort de la commande, soit il lui faut une carte.
+- **AquaBloom** : plus utilisé, toutes les références sont retirées des calendriers
+  jusqu'à nouvel ordre.

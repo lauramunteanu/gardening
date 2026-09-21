@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ce qui dure — Arbres &amp; arbustes</title>
+<meta name="theme-color" content="#FAF6EE">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Arbustes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papier:#FAF6EE; --encre:#33291F; --sourdine:#7A6E5D;
+  --abricot:#CE6A2B; --bronze:#96713B; --feuille:#77863F; --prune:#6F5B82;
+  --carte:#FFFDF8; --ligne:#E4DCCB;
+  --taille:#77863F; --legere:#C6D0A4; --interdit:#A8432F; --indetermine:#B9AE9B;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--papier);color:var(--encre);font-family:'Karla',system-ui,sans-serif;font-size:15px;line-height:1.5;padding:20px 14px 60px;}
+.page{max-width:760px;margin:0 auto;}
+nav.retour{margin-bottom:14px;}
+nav.retour a{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--sourdine);text-decoration:none;border-bottom:1px solid var(--ligne);padding-bottom:2px;}
+nav.retour a:hover,nav.retour a:focus-visible{color:var(--encre);border-color:var(--encre);}
+header{text-align:center;margin-bottom:6px;}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:34px;line-height:1.1;letter-spacing:-.01em;}
+h1 em{font-style:italic;color:var(--bronze);}
+.sous{color:var(--sourdine);font-size:13px;margin-top:6px;}
+
+/* ---- bandeau des 12 mois ---- */
+.bandeau{display:flex;gap:3px;margin:20px 0 6px;overflow-x:auto;padding-bottom:4px;}
+.bandeau button{
+  flex:1 1 0;min-width:44px;border:1px solid var(--ligne);background:var(--carte);
+  font-family:'Karla';font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--sourdine);padding:7px 2px;border-radius:7px;cursor:pointer;transition:.15s;
+}
+.bandeau button:hover{border-color:var(--bronze);color:var(--encre);}
+.bandeau button.actif{background:var(--bronze);border-color:var(--bronze);color:#fff;}
+.bandeau button.auj{box-shadow:inset 0 -3px 0 var(--abricot);}
+.bandeau-note{text-align:center;font-size:12px;color:var(--sourdine);font-style:italic;font-family:'Fraunces',Georgia,serif;margin-bottom:18px;}
+
+/* ---- onglets ---- */
+.onglets{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.onglets button{
+  border:1px solid var(--ligne);background:var(--carte);color:var(--sourdine);
+  font-family:'Karla';font-size:13px;font-weight:500;padding:8px 13px;border-radius:20px;cursor:pointer;transition:.15s;
+}
+.onglets button:hover{color:var(--encre);border-color:var(--bronze);}
+.onglets button[aria-selected="true"]{background:var(--encre);border-color:var(--encre);color:var(--papier);font-weight:700;}
+.panneau{background:var(--carte);border:1px solid var(--ligne);border-radius:14px;padding:18px;}
+h2.vue{font-family:'Fraunces',Georgia,serif;font-size:21px;font-weight:600;margin-bottom:4px;}
+.vue-note{font-size:12.5px;color:var(--sourdine);margin-bottom:14px;}
+
+/* ---- légende ---- */
+.legende{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:12px;color:var(--sourdine);margin-bottom:14px;}
+.legende span{display:inline-flex;align-items:center;gap:5px;}
+.sw{width:15px;height:15px;border-radius:4px;display:inline-block;border:1px solid rgba(0,0,0,.12);}
+
+/* ---- matrice ---- */
+.matrice-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+table.matrice{border-collapse:separate;border-spacing:0;font-size:12px;width:100%;}
+table.matrice th{font-weight:700;color:var(--sourdine);font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:0 0 6px;text-align:center;}
+table.matrice th.plante{text-align:left;padding-left:2px;}
+table.matrice td{padding:0;}
+td.nom{
+  position:sticky;left:0;background:var(--carte);z-index:2;
+  padding:3px 10px 3px 2px;white-space:nowrap;border-right:1px solid var(--ligne);
+}
+td.nom button{
+  background:none;border:none;padding:0;cursor:pointer;text-align:left;
+  font-family:'Karla';font-size:12.5px;color:var(--encre);display:flex;align-items:center;gap:6px;
+}
+td.nom button:hover .n{text-decoration:underline;}
+.badge{
+  font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;
+  padding:1px 5px;border-radius:4px;border:1px solid;white-space:nowrap;
+}
+.badge.annee{color:var(--feuille);border-color:var(--feuille);}
+.badge.passe{color:var(--abricot);border-color:var(--abricot);}
+.badge.inconnu{color:var(--indetermine);border-color:var(--indetermine);}
+.badge.saigne{color:var(--interdit);border-color:var(--interdit);}
+.cell{height:22px;border-radius:3px;margin:2px 1px;display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;}
+.cell.t{background:var(--taille);}
+.cell.l{background:var(--legere);color:var(--encre);}
+.cell.i{background:var(--interdit);}
+.cell.b{background:repeating-linear-gradient(45deg,var(--indetermine),var(--indetermine) 3px,#EDE6D9 3px,#EDE6D9 6px);color:var(--encre);}
+.cell.n{background:#F2EDE2;}
+tr.vieux td.nom button .n{text-decoration:underline wavy var(--interdit) 1px;text-underline-offset:3px;}
+tr.raison td{padding:2px 2px 10px;}
+.raison-txt{font-size:12.5px;color:var(--sourdine);background:#F4EFE4;border-left:3px solid var(--bronze);padding:8px 11px;border-radius:0 7px 7px 0;}
+.raison-txt b{color:var(--encre);}
+
+/* ---- listes ---- */
+.groupe{margin-bottom:16px;}
+.groupe:last-child{margin-bottom:0;}
+.g-tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:2px 9px;border-radius:20px;color:#fff;margin-bottom:7px;}
+.g-horsgel{background:var(--interdit);} .g-pot{background:var(--bronze);} .g-feuillage{background:var(--abricot);}
+.g-souche{background:var(--prune);} .g-rien{background:var(--sourdine);} .g-taille{background:var(--feuille);}
+ul.liste{list-style:none;}
+ul.liste li{padding:5px 0 5px 15px;position:relative;font-size:13.5px;border-bottom:1px solid var(--ligne);}
+ul.liste li:last-child{border-bottom:none;}
+ul.liste li::before{content:"";position:absolute;left:2px;top:12px;width:5px;height:5px;border-radius:50%;background:var(--ligne);}
+ul.liste li .ou{color:var(--sourdine);font-size:12.5px;}
+.rien{font-size:13px;color:var(--sourdine);font-style:italic;}
+
+/* ---- jeunes plants ---- */
+.jeune{border:1px solid var(--ligne);border-radius:11px;padding:13px 14px;margin-bottom:11px;}
+.jeune:last-child{margin-bottom:0;}
+.jeune-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;}
+.jeune-nom{font-family:'Fraunces',Georgia,serif;font-size:17px;font-weight:600;}
+.jeune-reste{font-size:11.5px;color:var(--bronze);font-weight:700;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;}
+.jauge{height:5px;background:#EDE6D9;border-radius:3px;margin:9px 0 10px;overflow:hidden;}
+.jauge i{display:block;height:100%;background:var(--bronze);border-radius:3px;}
+.jeune-meta{font-size:12px;color:var(--sourdine);margin-bottom:9px;}
+.cases{display:grid;gap:5px;}
+.cases label{display:flex;align-items:flex-start;gap:8px;font-size:13px;cursor:pointer;}
+.cases input{margin-top:3px;accent-color:var(--feuille);flex:none;}
+.cases input:checked + span{color:var(--sourdine);text-decoration:line-through;}
+
+/* ---- le mois ---- */
+.bloc-mois{margin-bottom:18px;}
+.bloc-mois:last-child{margin-bottom:0;}
+.alerte{
+  background:#F7E8E2;border:1px solid var(--interdit);border-radius:9px;
+  padding:10px 13px;font-size:13px;margin-bottom:14px;
+}
+.alerte b{color:var(--interdit);}
+footer{margin-top:26px;font-size:12.5px;color:var(--sourdine);line-height:1.6;border-top:1px solid var(--ligne);padding-top:16px;}
+footer b{color:var(--encre);}
+footer p{margin-bottom:9px;}
+footer p:last-child{margin-bottom:0;}
+</style>
+</head>
+<body>
+<div class="page">
+<nav class="retour"><a href="./">← Tous les calendriers</a></nav>
+<header>
+  <h1>Ce qui <em>dure</em></h1>
+  <div class="sous">Arbres, arbustes et grimpants · Saint-Jean-de-Gonville, 500 m · tailles, hivernage et reprise</div>
+</header>
+
+<div class="bandeau" id="bandeau" role="group" aria-label="Choisir un mois"></div>
+<div class="bandeau-note">Le bois ne pardonne pas les erreurs de saison : ici, la question n'est pas quand ça fleurit, mais quand on a le droit de couper.</div>
+
+<div class="onglets" role="tablist" id="onglets"></div>
+<div class="panneau" id="panneau" role="tabpanel"></div>
+
+<footer>
+<p><b>Sur quel bois ?</b> Bois de l'année (lilas des Indes, hortensia paniculata, laurier-rose, gattilier, sauge, érable negundo, cotinus) = taille de fin d'hiver ou de printemps. Bois de l'an passé (rosier grimpant, hortensia macrophylla, jasmin officinal, jasmin étoilé, olivier) = taille après la floraison, jamais au printemps.</p>
+<p><b>Jamais dans le vieux bois.</b> Romarin, sauge arbustive, genévriers et thuyas ne repartent pas du bois brun et nu : la coupe laisse un trou définitif. Ce n'est pas une question de mois, c'est une limite permanente.</p>
+<p><b>Ça saigne.</b> Le mûrier ne se taille qu'entre novembre et janvier. L'érable negundo ne se taille pas en sève. Une coupe hors dormance coûte à l'arbre, quelle que soit la raison.</p>
+<p><b>La reprise passe avant la taille.</b> Un jeune arbuste avec de l'herbe sur ses racines pousse moins qu'un arbuste négligé mais paillé. Trois ans de cercle désherbé, de paillage, d'arrosage profond et de contrôle des liens.</p>
+</footer>
+</div>
+
+<script>
+const MOIS=["Jan","Fév","Mar","Avr","Mai","Juin","Juil","Août","Sep","Oct","Nov","Déc"];
+const NOMS_LONGS=["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+const moisCourant=()=>new Date().getMonth()+1;
+
+let PLANTES=[],PONCTUELLES=[];
+let AUJ=moisCourant();
+let sel=AUJ;
+let ongletActif='mois';
+
+const VUES=[
+  {id:'taille',   libelle:'Fenêtres de taille'},
+  {id:'hivernage',libelle:'Hivernage'},
+  {id:'jeunes',   libelle:'Jeunes plants'},
+  {id:'mois',     libelle:'Le mois'}
+];
+
+/* ---------- bandeau ---------- */
+function drawBandeau(){
+  document.getElementById('bandeau').innerHTML=MOIS.map((m,i)=>{
+    const n=i+1,cls=[n===sel?'actif':'',n===AUJ?'auj':''].filter(Boolean).join(' ');
+    return `<button class="${cls}" data-m="${n}" aria-pressed="${n===sel}" title="${NOMS_LONGS[i]}">${m}</button>`;
+  }).join('');
+}
+
+/* ---------- onglets ---------- */
+function drawOnglets(){
+  document.getElementById('onglets').innerHTML=VUES.map(v=>
+    `<button role="tab" data-vue="${v.id}" aria-selected="${v.id===ongletActif}">${v.libelle}</button>`).join('');
+}
+
+/* ---------- utilitaires ---------- */
+const etat=(p,m)=>{
+  if(p.taille.bloque)return 'b';
+  if((p.taille.interdit||[]).includes(m))return 'i';
+  if((p.taille.mois||[]).includes(m))return 't';
+  if((p.taille.legere||[]).includes(m))return 'l';
+  return 'n';
+};
+const GLYPHE={t:'●',l:'○',i:'✕',b:'?',n:''};
+const MOT={t:'taille',l:'taille légère',i:'interdit',b:'à déterminer',n:'rien de prévu'};
+
+const badgeBois=p=>{
+  if(p.bois==='année')return '<span class="badge annee">bois année</span>';
+  if(p.bois==='an passé')return '<span class="badge passe">bois an passé</span>';
+  if(p.bois==='à déterminer')return '<span class="badge inconnu">type inconnu</span>';
+  return '';
+};
+
+/* mois écoulés depuis la plantation, et ce qu'il reste des trois ans */
+function reprise(p){
+  if(!p.plantation)return null;
+  const [y,m]=p.plantation.split('-').map(Number);
+  const d=new Date();
+  const ecoules=(d.getFullYear()-y)*12+(d.getMonth()+1-m);
+  const reste=36-ecoules;
+  return {ecoules,reste,annee:Math.min(3,Math.floor(ecoules/12)+1),fini:reste<=0};
+}
+const jeunesPlants=()=>PLANTES.filter(p=>!p.etabli&&p.plantation&&!reprise(p).fini);
+
+/* ---------- vue 1 : fenêtres de taille ---------- */
+function vueTaille(){
+  let h=`<h2 class="vue">Fenêtres de taille</h2>
+  <p class="vue-note">Une ligne par plante, un mois par colonne. Toucher un nom affiche la raison — c'est elle qui compte, pas la couleur.</p>
+  <div class="legende">
+    <span><i class="sw" style="background:var(--taille)"></i>Taille</span>
+    <span><i class="sw" style="background:var(--legere)"></i>Taille légère</span>
+    <span><i class="sw" style="background:var(--interdit)"></i>Interdit</span>
+    <span><i class="sw" style="background:repeating-linear-gradient(45deg,var(--indetermine),var(--indetermine) 3px,#EDE6D9 3px,#EDE6D9 6px)"></i>À déterminer</span>
+    <span><i class="n" style="text-decoration:underline wavy var(--interdit) 1px;text-underline-offset:3px">nom souligné</i> = jamais dans le vieux bois</span>
+  </div>
+  <div class="matrice-wrap"><table class="matrice">
+    <thead><tr><th class="plante">Plante</th>${MOIS.map(m=>`<th>${m[0]}</th>`).join('')}</tr></thead><tbody>`;
+  PLANTES.forEach((p,i)=>{
+    h+=`<tr class="${p.vieuxBois?'':'vieux'}">
+      <td class="nom"><button data-p="${i}" aria-expanded="false"><span class="n">${p.nom}</span>${badgeBois(p)}${p.saigne?'<span class="badge saigne">saigne</span>':''}</button></td>`;
+    for(let m=1;m<=12;m++){
+      const e=etat(p,m);
+      h+=`<td><div class="cell ${e}" title="${p.nom} — ${NOMS_LONGS[m-1]} : ${MOT[e]}" aria-label="${MOT[e]}">${GLYPHE[e]}</div></td>`;
+    }
+    h+=`</tr><tr class="raison" id="r${i}" hidden><td colspan="13"><div class="raison-txt">
+      <b>${p.nomLatin}</b> · ${p.emplacement} · ${p.rusticite}<br>${p.taille.note}</div></td></tr>`;
+  });
+  return h+'</tbody></table></div>';
+}
+
+/* ---------- vue 2 : hivernage ---------- */
+function vueHivernage(){
+  const G=[
+    ['hors-gel','Rentrer au hors-gel','g-horsgel','0–8 °C, un peu de lumière, arrosage quasi nul'],
+    ['pot emmailloté','Pot emmailloté sur place','g-pot','le contenant, pas le feuillage · sur cales, contre le mur sud'],
+    ['feuillage protégé','Feuillage protégé en plus','g-feuillage','pot emmailloté ET voile sur les tiges, à ouvrir par temps doux'],
+    ['souche buttée','Souche buttée','g-souche','20 cm de feuilles sèches ou de paillis, jusqu’en avril']
+  ];
+  let h=`<h2 class="vue">Hivernage</h2>
+  <p class="vue-note">Seulement les plantes qui demandent une action d'automne. La liste du bas compte autant : elle évite du travail inutile.</p>`;
+  G.forEach(([cle,titre,cls,detail])=>{
+    const l=PLANTES.filter(p=>p.hivernage===cle);
+    if(!l.length)return;
+    h+=`<div class="groupe"><span class="g-tag ${cls}">${titre}</span>
+      <p class="vue-note">${detail}</p>
+      <ul class="liste">${l.map(p=>`<li>${p.nom} <span class="ou">— ${p.emplacement} · ${p.rusticite}</span></li>`).join('')}</ul></div>`;
+  });
+  const rien=PLANTES.filter(p=>p.hivernage==='aucun');
+  h+=`<div class="groupe"><span class="g-tag g-rien">Rien à faire</span>
+    <p class="vue-note">Rustiques sur place. Les emmailloter serait du travail perdu.</p>
+    <ul class="liste">${rien.map(p=>`<li>${p.nom} <span class="ou">— ${p.rusticite}</span></li>`).join('')}</ul></div>`;
+  return h;
+}
+
+/* ---------- vue 3 : jeunes plants ---------- */
+const CASES=[
+  ['cercle','Cercle désherbé maintenu'],
+  ['paillage','Paillage en place, écarté du tronc'],
+  ['arrosage','Arrosage profond hebdomadaire en période sèche'],
+  ['liens','Liens et tuteurs contrôlés — un doigt doit passer']
+];
+const cleCase=(nom,c)=>'arbustes:'+nom+':'+c;
+function litCase(nom,c){ try{return localStorage.getItem(cleCase(nom,c))==='1';}catch(e){return false;} }
+function ecritCase(nom,c,v){ try{localStorage.setItem(cleCase(nom,c),v?'1':'0');}catch(e){} }
+
+function vueJeunes(){
+  const l=jeunesPlants();
+  let h=`<h2 class="vue">Jeunes plants</h2>
+  <p class="vue-note">Trois ans de reprise, puis l'entrée disparaît d'elle-même. C'est ici qu'on perd réellement des plants — pas sur la taille.</p>`;
+  if(!l.length)return h+'<p class="rien">Aucun plant en cours de reprise.</p>';
+  l.forEach(p=>{
+    const r=reprise(p);
+    const [y,m]=p.plantation.split('-').map(Number);
+    const ans=Math.floor(r.reste/12),mois=r.reste%12;
+    h+=`<div class="jeune">
+      <div class="jeune-head"><span class="jeune-nom">${p.nom}</span>
+        <span class="jeune-reste">Année ${r.annee} sur 3 · encore ${ans?ans+' an'+(ans>1?'s':''):''}${ans&&mois?' ':''}${mois?mois+' mois':''}</span></div>
+      <div class="jauge"><i style="width:${Math.max(2,Math.min(100,r.ecoules/36*100)).toFixed(0)}%"></i></div>
+      <div class="jeune-meta">Planté en ${NOMS_LONGS[m-1].toLowerCase()} ${y} · ${p.emplacement}</div>
+      <div class="cases">${CASES.map(([c,lib])=>
+        `<label><input type="checkbox" data-plante="${p.nom}" data-case="${c}"${litCase(p.nom,c)?' checked':''}><span>${lib}</span></label>`).join('')}</div>
+    </div>`;
+  });
+  return h;
+}
+
+/* ---------- vue 4 : le mois ---------- */
+function vueMois(){
+  const m=sel;
+  let h=`<h2 class="vue">${NOMS_LONGS[m-1]}${m===AUJ?'':' <span class="ou" style="font-size:13px;color:var(--sourdine)">— mois choisi</span>'}</h2>`;
+
+  const saignent=PLANTES.filter(p=>p.saigne&&(p.taille.interdit||[]).includes(m));
+  if(saignent.length)
+    h+=`<div class="alerte"><b>Ne pas tailler ce mois-ci :</b> ${saignent.map(p=>p.nom).join(', ')}. Une coupe hors dormance fait saigner l'arbre.</div>`;
+
+  // la reprise passe avant la taille
+  const jeunes=jeunesPlants().filter(p=>(p.taches&&p.taches[m]||[]).length);
+  if(jeunes.length){
+    h+=`<div class="bloc-mois"><span class="g-tag g-pot">Reprise — jeunes plants</span><ul class="liste">`;
+    jeunes.forEach(p=>(p.taches[m]||[]).forEach(t=>h+=`<li><b>${p.nom}</b> — ${t}</li>`));
+    h+='</ul></div>';
+  }
+
+  const fenetres=PLANTES.filter(p=>etat(p,m)==='t'||etat(p,m)==='l');
+  if(fenetres.length){
+    h+=`<div class="bloc-mois"><span class="g-tag g-taille">Fenêtres de taille ouvertes</span><ul class="liste">`;
+    fenetres.forEach(p=>h+=`<li>${p.nom} ${badgeBois(p)} <span class="ou">— ${etat(p,m)==='l'?'taille légère':'taille'}</span></li>`);
+    h+='</ul></div>';
+  }
+
+  const autres=PLANTES.filter(p=>!jeunes.includes(p)&&(p.taches&&p.taches[m]||[]).length);
+  if(autres.length){
+    h+=`<div class="bloc-mois"><span class="g-tag g-feuillage">À faire</span><ul class="liste">`;
+    autres.forEach(p=>(p.taches[m]||[]).forEach(t=>h+=`<li><b>${p.nom}</b> — ${t}</li>`));
+    h+='</ul></div>';
+  }
+
+  const pon=PONCTUELLES.filter(t=>t.m===m);
+  if(pon.length){
+    h+=`<div class="bloc-mois"><span class="g-tag g-souche">Ponctuel</span><ul class="liste">`;
+    pon.forEach(t=>h+=`<li><b>${t.nom}</b> <span class="ou">— ${t.extra}</span></li>`);
+    h+='</ul></div>';
+  }
+
+  if(!saignent.length&&!jeunes.length&&!fenetres.length&&!autres.length&&!pon.length)
+    h+='<p class="rien">Rien à faire — le bois travaille tout seul.</p>';
+  return h;
+}
+
+/* ---------- rendu ---------- */
+function draw(){
+  drawBandeau();
+  drawOnglets();
+  const v={taille:vueTaille,hivernage:vueHivernage,jeunes:vueJeunes,mois:vueMois}[ongletActif];
+  document.getElementById('panneau').innerHTML=v();
+}
+
+document.getElementById('bandeau').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-m]');
+  if(!b)return;
+  sel=+b.dataset.m;
+  if(ongletActif!=='mois')ongletActif='mois';
+  draw();
+});
+document.getElementById('onglets').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-vue]');
+  if(!b)return;
+  ongletActif=b.dataset.vue;
+  draw();
+});
+document.getElementById('panneau').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-p]');
+  if(!b)return;
+  const r=document.getElementById('r'+b.dataset.p);
+  const ouvert=!r.hidden;
+  r.hidden=ouvert;
+  b.setAttribute('aria-expanded',String(!ouvert));
+});
+document.getElementById('panneau').addEventListener('change',e=>{
+  const c=e.target.closest('input[data-plante]');
+  if(!c)return;
+  ecritCase(c.dataset.plante,c.dataset.case,c.checked);
+});
+
+/* ---- mois courant ----
+   AUJ est lu sur l'horloge de l'appareil, puis revérifié : le calendrier
+   bascule tout seul au changement de mois, même hors ligne. */
+function majMoisCourant(){
+  const m=moisCourant();
+  if(m===AUJ)return;
+  const suivaitLeMois=(sel===AUJ);
+  AUJ=m;
+  if(suivaitLeMois)sel=m;
+  draw();
+}
+/* Replanifié au plus tard toutes les 6 h : setTimeout déborde au-delà de ~24 jours,
+   or un mois peut durer 31 jours. */
+function planifierProchainMois(){
+  const d=new Date(),prochain=new Date(d.getFullYear(),d.getMonth()+1,1,0,0,5);
+  setTimeout(()=>{majMoisCourant();planifierProchainMois();},
+             Math.min(prochain-d,6*3600*1000));
+}
+
+async function init(){
+  try{
+    const r=await fetch('data-arbustes.json',{cache:'no-store'});
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    const data=await r.json();
+    PLANTES=data.plantes;
+    PONCTUELLES=data.ponctuelles||[];
+  }catch(err){
+    console.error('Chargement de data-arbustes.json impossible :',err);
+    document.getElementById('panneau').innerHTML=
+      '<h2 class="vue">Données indisponibles</h2>'+
+      '<p class="rien">Impossible de charger <code>data-arbustes.json</code>. '+
+      'Vérifiez la connexion, puis rechargez la page.</p>';
+    return;
+  }
+  draw();
+  planifierProchainMois();
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)majMoisCourant();});
+  window.addEventListener('focus',majMoisCourant);
+}
+init();
+</script>
+<script>
+/* Hors ligne : on enregistre le service worker une fois la page chargée. */
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('./sw.js').catch(err=>{
+      console.warn('Service worker non enregistré :',err);
+    });
+  });
+}
+</script>
+</body>
+</html>

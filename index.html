@@ -22,12 +22,14 @@
   --p-carte:#F8F9F3; --p-accent:#4E7A45; --p-ligne:#C9CEBD;
   /* fleurs */
   --f-carte:#FFFDF8; --f-accent:#CE6A2B; --f-ligne:#E4DCCB; --f-encre:#33291F; --f-sourdine:#7A6E5D;
+  /* arbustes — même papier que les fleurs, accent bronze */
+  --a-carte:#FFFDF8; --a-accent:#96713B; --a-ligne:#E4DCCB; --a-encre:#33291F; --a-sourdine:#7A6E5D;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{
   background:var(--papier);color:var(--encre);
   font-family:'Karla',system-ui,sans-serif;font-size:15px;line-height:1.5;
-  padding:0 14px 60px;max-width:760px;margin:0 auto;
+  padding:0 14px 60px;max-width:1060px;margin:0 auto;
   display:flex;flex-direction:column;min-height:100vh;
 }
 header{padding:46px 0 4px;text-align:center}
@@ -45,8 +47,7 @@ h1 .an{color:var(--p-accent)}
   color:var(--sourdine);font-size:14px;margin:12px auto 0;max-width:38ch;
 }
 
-.cartes{display:grid;gap:16px;margin:34px 0 0}
-@media (min-width:660px){.cartes{grid-template-columns:1fr 1fr}}
+.cartes{display:grid;gap:16px;margin:34px 0 0;grid-template-columns:repeat(auto-fit,minmax(265px,1fr))}
 
 a.carte{
   display:flex;flex-direction:column;
@@ -79,6 +80,15 @@ a.carte .fleche{
   letter-spacing:.1em;text-transform:uppercase;color:var(--p-accent);
 }
 
+/* la carte arbustes : même papier que les fleurs, accent bronze */
+a.carte.arbustes{background:var(--a-carte);border-color:var(--a-ligne);color:var(--a-encre)}
+a.carte.arbustes:hover,a.carte.arbustes:focus-visible{border-color:var(--a-accent);box-shadow:0 6px 18px rgba(51,41,31,.09)}
+a.carte.arbustes .kicker,a.carte.arbustes p,a.carte.arbustes .maintenant{color:var(--a-sourdine)}
+a.carte.arbustes h2{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:27px}
+a.carte.arbustes h2 em{font-style:italic;color:var(--a-accent)}
+a.carte.arbustes .maintenant{border-top-color:var(--a-ligne)}
+a.carte.arbustes .maintenant b,a.carte.arbustes .fleche{color:var(--a-accent)}
+
 /* la carte fleurs emprunte sa propre palette */
 a.carte.fleurs{background:var(--f-carte);border-color:var(--f-ligne);color:var(--f-encre)}
 a.carte.fleurs:hover,a.carte.fleurs:focus-visible{border-color:var(--f-accent);box-shadow:0 6px 18px rgba(51,41,31,.09)}
@@ -100,7 +110,7 @@ footer code{font-family:'Spline Sans Mono',monospace;font-size:11px}
 <header>
   <div class="eyebrow">Saint-Jean-de-Gonville · ~500 m · argilo-calcaire · bise</div>
   <h1>Le jardin <span class="an" id="millesime">2026–27</span></h1>
-  <p class="intro">Deux calendriers, une même année : ce qu'on mange et ce qui fleurit.</p>
+  <p class="intro">Trois calendriers, une même année : ce qu'on mange, ce qui fleurit, et ce qui dure.</p>
 </header>
 
 <div class="cartes">
@@ -121,11 +131,19 @@ footer code{font-family:'Spline Sans Mono',monospace;font-size:11px}
     <div class="fleche">Ouvrir →</div>
   </a>
 
+  <a class="carte arbustes" href="arbustes.html">
+    <span class="kicker">Arbres &amp; arbustes</span>
+    <h2>Ce qui <em>dure</em></h2>
+    <p>Fenêtres de taille, hivernage et reprise des jeunes plants — le bois ne pardonne pas les erreurs de saison.</p>
+    <div class="maintenant" id="m-arbustes">&nbsp;</div>
+    <div class="fleche">Ouvrir →</div>
+  </a>
+
 </div>
 
 <footer>
   Consultable hors ligne une fois les deux pages ouvertes.<br>
-  Contenu dans <code>data-potager.json</code> et <code>data-fleurs.json</code>.
+  Contenu dans <code>data-potager.json</code>, <code>data-fleurs.json</code> et <code>data-arbustes.json</code>.
 </footer>
 
 <script>
@@ -174,10 +192,27 @@ function compteFleurs(data,m){
   return `${MOIS_N[m-1]} · <b>${pluriel(t,'tâche')}</b> · ${pluriel(f,'plante')} en fleurs`;
 }
 
+function compteArbustes(data,m){
+  let t=0;
+  data.plantes.forEach(p=>{ t+=((p.taches||{})[m]||[]).length; });
+  t+=(data.ponctuelles||[]).filter(x=>x.m===m).length;
+  // plants encore dans leurs trois ans de reprise
+  const d=new Date();
+  const jeunes=data.plantes.filter(p=>{
+    if(p.etabli||!p.plantation)return false;
+    const [y,mo]=p.plantation.split('-').map(Number);
+    return (d.getFullYear()-y)*12+(d.getMonth()+1-mo) < 36;
+  }).length;
+  // « jeunes plants » s'accorde sur les deux mots, pluriel() n'en fléchit qu'un
+  const libJeunes=`${jeunes} jeune${jeunes>1?'s':''} plant${jeunes>1?'s':''}`;
+  return `${MOIS_N[m-1]} · <b>${pluriel(t,'tâche')}</b> · ${libJeunes}`;
+}
+
 function init(){
   majMillesime();
   compte('data-potager.json',comptePotager,'m-potager');
   compte('data-fleurs.json',compteFleurs,'m-fleurs');
+  compte('data-arbustes.json',compteArbustes,'m-arbustes');
 }
 init();
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)init();});
