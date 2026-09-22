@@ -98,6 +98,43 @@ a.carte.fleurs h2 em{font-style:italic;color:var(--f-accent)}
 a.carte.fleurs .maintenant{border-top-color:var(--f-ligne)}
 a.carte.fleurs .maintenant b,a.carte.fleurs .fleche{color:var(--f-accent)}
 
+/* ---- aujourd'hui ---- */
+section.jour{
+  max-width:760px;margin:30px auto 0;background:var(--p-carte);
+  border:1px solid var(--ligne);border-radius:16px;padding:22px 22px 18px;
+}
+.jour-tete{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.jour-tete h2{
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:25px;letter-spacing:-.01em;
+}
+.jour-tete h2::first-letter{text-transform:uppercase}
+.jour-compte{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--sourdine)}
+.jour-note{font-size:12.5px;color:var(--sourdine);margin:4px 0 14px}
+.alerte{background:#F7E8E2;border:1px solid #A8432F;border-radius:10px;padding:9px 12px;
+  font-size:13.5px;margin-bottom:12px;color:#33291F}
+.alerte b{color:#A8432F}
+.bloc{margin-top:14px}
+.bloc h3{font-family:'Spline Sans Mono',monospace;font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--sourdine);font-weight:500;margin-bottom:6px}
+ul.taches{list-style:none}
+ul.taches li{border-top:1px solid var(--ligne)}
+ul.taches li:first-child{border-top:none}
+ul.taches label{display:flex;gap:10px;align-items:flex-start;padding:8px 0;cursor:pointer;font-size:14px}
+ul.taches input{margin-top:4px;flex:none;width:16px;height:16px;accent-color:var(--p-accent)}
+.src{display:inline-block;vertical-align:1px;font-family:'Spline Sans Mono',monospace;font-size:9px;
+  letter-spacing:.08em;text-transform:uppercase;padding:1px 5px;border-radius:4px;color:#fff;margin-right:7px}
+.titre{font-weight:700}
+.detail{display:block;font-size:12.5px;line-height:1.45;color:var(--sourdine);margin-top:2px}
+.src.potager{background:#4E7A45}.src.fleurs{background:#CE6A2B}.src.arbustes{background:#96713B}
+.txt{flex:1;min-width:0}
+.plus-tard .txt,.plus-tard label{color:var(--sourdine)}
+.quand{display:block;font-size:11.5px;color:var(--sourdine);margin-top:1px}
+details.fait,details.bientot{margin-top:14px;border-top:1px solid var(--ligne);padding-top:10px}
+details summary{cursor:pointer;font-size:13px;color:var(--sourdine)}
+details.fait li label{color:var(--sourdine);text-decoration:line-through}
+.rien-jour{font-size:14px;color:var(--sourdine);font-style:italic;padding:6px 0}
+
 footer{
   margin-top:auto;padding-top:38px;text-align:center;
   font-size:12px;color:var(--sourdine);
@@ -112,6 +149,15 @@ footer code{font-family:'Spline Sans Mono',monospace;font-size:11px}
   <h1>Le jardin <span class="an" id="millesime">2026–27</span></h1>
   <p class="intro">Trois calendriers, une même année : ce qu'on mange, ce qui fleurit, et ce qui dure.</p>
 </header>
+
+<section class="jour" id="jour" aria-labelledby="jour-titre">
+  <div class="jour-tete">
+    <h2 id="jour-titre">Aujourd'hui</h2>
+    <span class="jour-compte" id="jour-compte"></span>
+  </div>
+  <p class="jour-note">Ce qu'il reste à faire, tiré des trois calendriers. Cocher une tâche la range dans « fait » pour le reste du mois ; l'arrosage quotidien se décoche chaque matin.</p>
+  <div id="jour-corps"><p class="rien-jour">Chargement…</p></div>
+</section>
 
 <div class="cartes">
 
@@ -162,16 +208,19 @@ function majMillesime(){
 
 const pluriel=(n,mot)=>`${n} ${mot}${n>1?'s':''}`;
 
+async function charge(fichier){
+  const r=await fetch(fichier,{cache:'no-store'});
+  if(!r.ok)throw new Error('HTTP '+r.status);
+  return r.json();
+}
+
 /* Le compte du mois est un agrément : si le JSON ne répond pas, la carte
    reste parfaitement utilisable, seule la ligne du bas disparaît. */
-async function compte(fichier,calcul,cible){
-  try{
-    const r=await fetch(fichier,{cache:'no-store'});
-    if(!r.ok)throw new Error('HTTP '+r.status);
-    document.getElementById(cible).innerHTML=calcul(await r.json(),moisCourant());
-  }catch(err){
-    document.getElementById(cible).remove();
-  }
+function compte(data,calcul,cible){
+  const el=document.getElementById(cible);
+  if(!el)return;
+  if(data)el.innerHTML=calcul(data,moisCourant());
+  else el.remove();
 }
 
 // mêmes règles de comptage que la page potager
@@ -208,13 +257,159 @@ function compteArbustes(data,m){
   return `${MOIS_N[m-1]} · <b>${pluriel(t,'tâche')}</b> · ${libJeunes}`;
 }
 
-function init(){
+/* ================= Aujourd'hui =================
+   Les calendriers ne connaissent que des mois. La page du jour en tire :
+   - les alertes (⚠, et les arbres qui saignent si on les taille ce mois-ci) ;
+   - l'arrosage quotidien, décoché chaque matin ;
+   - les tâches du mois, rangées dans « fait » une fois cochées ;
+   - « plus tard ce mois » pour celles dont le texte dit « mi- » ou « fin » du mois ;
+   - la dernière semaine, un aperçu du mois suivant. */
+let DONNEES={potager:null,fleurs:null,arbustes:null};
+
+const PREFIXES=['janv','f[ée]v','mars','avr','mai','juin','juil','ao[uû]t','sept','oct','nov','d[ée]c'];
+const DEBUT={'début':1,'debut':1,'mi':11,'fin':21};
+/* Premier jour plausible d'une tâche d'après son texte, pour le mois m : « mi-octobre » → 11.
+   On exige le nom du mois derrière, sinon « mi-ombre » passerait pour une date. */
+function jourDeDepart(txt,m){
+  const re=new RegExp(`(?:^|[^\\p{L}])(d[ée]but|mi|fin)[\\s-]*(?:(?:à fin|de|d')\\s*)?${PREFIXES[m-1]}`,'giu');
+  let min=null,x;
+  while((x=re.exec(txt))){ const d=DEBUT[x[1].toLowerCase()]; if(min===null||d<min)min=d; }
+  return min;
+}
+const estQuotidien=t=>/arros[^.]*(chaque jour|quotidien)|(chaque jour|quotidien)[^.]*arros/i.test(t);
+const estAlerte=t=>t.includes('⚠');
+
+function tachesDuMois(m){
+  const l=[], D=DONNEES;
+  if(D.potager)D.potager.speciales.filter(t=>t.m===m)
+    .forEach(t=>l.push({src:'potager',titre:t.nom,detail:t.extra||''}));
+  if(D.fleurs)(D.fleurs.taches[m]||[])
+    .forEach(([,t])=>l.push({src:'fleurs',...coupe(t)}));
+  if(D.arbustes){
+    D.arbustes.plantes.forEach(p=>((p.taches||{})[m]||[])
+      .forEach(t=>l.push({src:'arbustes',titre:p.nom,detail:t})));
+    (D.arbustes.ponctuelles||[]).filter(t=>t.m===m)
+      .forEach(t=>l.push({src:'arbustes',titre:t.nom,detail:t.extra}));
+  }
+  l.forEach(t=>{
+    // l'identifiant garde la forme d'avant, pour ne pas perdre les cases déjà cochées
+    t.texte=(t.src==='fleurs'?t.brut:(t.titre+(t.detail?' — '+t.detail:''))).replace(/<[^>]+>/g,'');
+    t.id=hache(t.src+'|'+t.texte);
+  });
+  return l;
+}
+
+/* Les tâches des fleurs sont une seule phrase : « Plante : action » ou « Quoi — détail ».
+   On coupe au premier séparateur si ce qui précède est court, sinon tout reste en titre. */
+function coupe(t){
+  const m=t.match(/^(.{3,48}?)\s(?::|—)\s(.+)$/s);
+  return m?{titre:m[1],detail:m[2],brut:t}:{titre:t,detail:'',brut:t};
+}
+function hache(s){ let h=5381; for(const c of s)h=((h<<5)+h+c.codePointAt(0))|0; return (h>>>0).toString(36); }
+const deux=n=>String(n).padStart(2,'0');
+function cles(d){
+  const ym=`${d.getFullYear()}-${deux(d.getMonth()+1)}`;
+  return {mois:ym, jour:`${ym}-${deux(d.getDate())}`};
+}
+function lit(k){ try{return localStorage.getItem(k)==='1';}catch(e){return false;} }
+function ecrit(k,v){ try{ v?localStorage.setItem(k,'1'):localStorage.removeItem(k); }catch(e){} }
+const cleTache=(t,c)=>estQuotidien(t.texte)?`jour:q:${c.jour}:${t.id}`:`jour:f:${c.mois}:${t.id}`;
+
+const ligne=(t,c,{coche=true,quand=''}={})=>{
+  const k=cleTache(t,c);
+  const box=coche?`<input type="checkbox" data-cle="${k}"${lit(k)?' checked':''}>`:'';
+  return `<li><label>${box}<span class="txt"><span class="src ${t.src}">${t.src}</span>`+
+         `<b class="titre">${t.titre}</b>`+
+         `${t.detail?`<span class="detail">${t.detail}</span>`:''}`+
+         `${quand?`<span class="quand">${quand}</span>`:''}</span></label></li>`;
+};
+
+function drawJour(){
+  const d=new Date(), m=d.getMonth()+1, jour=d.getDate(), c=cles(d);
+  document.getElementById('jour-titre').textContent=
+    d.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});
+
+  if(!DONNEES.potager&&!DONNEES.fleurs&&!DONNEES.arbustes){
+    document.getElementById('jour-compte').textContent='';
+    document.getElementById('jour-corps').innerHTML=
+      '<p class="rien-jour">Données indisponibles — vérifiez la connexion, puis rechargez la page.</p>';
+    return;
+  }
+
+  const toutes=tachesDuMois(m);
+  let h='';
+
+  // alertes qui ne se cochent pas : la saison l'interdit, point
+  const saignent=(DONNEES.arbustes?DONNEES.arbustes.plantes:[])
+    .filter(p=>p.saigne&&(p.taille.interdit||[]).includes(m)).map(p=>p.nom);
+  if(saignent.length)
+    h+=`<div class="alerte"><b>Ne pas tailler ce mois-ci :</b> ${saignent.join(', ')} — une coupe hors dormance fait saigner l'arbre.</div>`;
+
+  const quot=toutes.filter(t=>estQuotidien(t.texte));
+  const reste=toutes.filter(t=>!estQuotidien(t.texte));
+  const fait=reste.filter(t=>lit(cleTache(t,c)));
+  const ouvertes=reste.filter(t=>!lit(cleTache(t,c)));
+  const plusTard=ouvertes.filter(t=>{const j=jourDeDepart(t.texte,m); return j!==null&&j>jour;});
+  const aFaire=ouvertes.filter(t=>!plusTard.includes(t))
+    .sort((a,b)=>(estAlerte(b.texte)-estAlerte(a.texte)));   // les ⚠ d'abord
+
+  if(quot.length)
+    h+=`<div class="bloc"><h3>Chaque jour</h3><ul class="taches">${quot.map(t=>ligne(t,c)).join('')}</ul></div>`;
+
+  h+=`<div class="bloc"><h3>À faire</h3>`;
+  h+=aFaire.length?`<ul class="taches">${aFaire.map(t=>ligne(t,c)).join('')}</ul>`
+                  :`<p class="rien-jour">Rien d'autre ce mois-ci — le jardin travaille tout seul.</p>`;
+  h+='</div>';
+
+  if(plusTard.length)
+    h+=`<div class="bloc plus-tard"><h3>Plus tard ce mois-ci</h3><ul class="taches">${
+      plusTard.map(t=>ligne(t,c,{quand:`à partir du ${jourDeDepart(t.texte,m)}`})).join('')}</ul></div>`;
+
+  if(fait.length)
+    h+=`<details class="fait"><summary>Fait ce mois-ci (${fait.length})</summary><ul class="taches">${
+      fait.map(t=>ligne(t,c)).join('')}</ul></details>`;
+
+  // dernière semaine : ce qui arrive
+  const dernier=new Date(d.getFullYear(),m,0).getDate();
+  if(dernier-jour<7){
+    const suiv=new Date(d.getFullYear(),m,1), ms=suiv.getMonth()+1, cs=cles(suiv);
+    const next=tachesDuMois(ms);
+    if(next.length)
+      h+=`<details class="bientot"><summary>${MOIS_N[ms-1]} arrive — ${pluriel(next.length,'tâche')}</summary><ul class="taches">${
+        next.map(t=>ligne(t,cs,{coche:false})).join('')}</ul></details>`;
+  }
+
+  document.getElementById('jour-corps').innerHTML=h;
+  const restantes=aFaire.length+quot.filter(t=>!lit(cleTache(t,c))).length;
+  document.getElementById('jour-compte').textContent=
+    restantes?`${pluriel(restantes,'tâche')} à faire`:'tout est fait';
+}
+
+document.getElementById('jour-corps').addEventListener('change',e=>{
+  const b=e.target.closest('input[data-cle]');
+  if(!b)return;
+  ecrit(b.dataset.cle,b.checked);
+  drawJour();
+});
+
+/* la page reste souvent ouverte : on la redessine au changement de jour */
+function planifierDemain(){
+  const d=new Date(), demain=new Date(d.getFullYear(),d.getMonth(),d.getDate()+1,0,0,5);
+  setTimeout(()=>{ majMillesime(); drawJour(); planifierDemain(); }, Math.min(demain-d,6*3600*1000));
+}
+
+async function init(){
   majMillesime();
-  compte('data-potager.json',comptePotager,'m-potager');
-  compte('data-fleurs.json',compteFleurs,'m-fleurs');
-  compte('data-arbustes.json',compteArbustes,'m-arbustes');
+  const [p,f,a]=await Promise.allSettled(
+    ['data-potager.json','data-fleurs.json','data-arbustes.json'].map(charge));
+  DONNEES={potager:p.value||null, fleurs:f.value||null, arbustes:a.value||null};
+  compte(DONNEES.potager,comptePotager,'m-potager');
+  compte(DONNEES.fleurs,compteFleurs,'m-fleurs');
+  compte(DONNEES.arbustes,compteArbustes,'m-arbustes');
+  drawJour();
 }
 init();
+planifierDemain();
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)init();});
 </script>
 <script>

@@ -116,6 +116,30 @@ Le millésime (« 2026–27 ») est calculé par `libelleSaison()` et bascule le
 Il apparaît dans le titre de l'accueil, dans celui du potager et au centre de la
 roue des fleurs.
 
+## Page du jour (accueil)
+
+`index.html` affiche en tête « Aujourd'hui » : les tâches du mois courant tirées des
+trois JSON — `speciales` du potager, `taches` des fleurs, `taches` et `ponctuelles`
+des arbustes. Elle n'a **aucune donnée propre** : pour qu'une tâche y apparaisse,
+on l'ajoute dans le calendrier concerné. Les fenêtres de culture (tableaux `s`, `p`,
+`r` des cartes) n'y figurent pas — ce sont des périodes, pas des tâches.
+
+Ce que le texte d'une tâche change à son affichage :
+
+- **« chaque jour » ou « quotidien » dans une phrase qui parle d'arrosage** → rangée
+  dans « Chaque jour », décochée chaque matin. Les autres « chaque jour » (dessaler
+  les olives) restent des tâches ordinaires.
+- **« début », « mi- » ou « fin » suivi du nom du mois courant** (« mi-octobre »,
+  « Mi à fin octobre ») → « Plus tard ce mois-ci » jusqu'au 1er, 11 ou 21. Sans le nom
+  du mois derrière, rien : « mi-ombre » n'est pas une date.
+- **« ⚠ » dans le titre** → remontée en tête de liste.
+- Un arbre avec `saigne: true` dont le mois courant est `interdit` → bandeau rouge.
+
+Les cases cochées vivent dans le `localStorage` du navigateur : propres à chaque
+appareil, ni partagées ni sauvegardées. Clé = mois (ou jour pour l'arrosage) + calendrier
++ texte de la tâche : **reformuler une tâche la décoche.** La dernière semaine du mois,
+un aperçu du mois suivant apparaît en bas.
+
 ## Ce qui est encore en suspens
 
 - **Framboisier** : type inconnu. La seule canne vivante est sortie en 2026 et n'a
