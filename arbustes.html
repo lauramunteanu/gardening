@@ -92,6 +92,14 @@ tr.vieux td.nom button .n{text-decoration:underline wavy var(--interdit) 1px;tex
 tr.raison td{padding:2px 2px 10px;}
 .raison-txt{font-size:12.5px;color:var(--sourdine);background:#F4EFE4;border-left:3px solid var(--bronze);padding:8px 11px;border-radius:0 7px 7px 0;}
 .raison-txt b{color:var(--encre);}
+.journal{margin-top:9px;padding-top:8px;border-top:1px solid var(--ligne);}
+.journal h5{
+  font-family:'Karla';font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--sourdine);font-weight:700;margin-bottom:4px;
+}
+.journal li{list-style:none;font-size:12.5px;line-height:1.5;margin-bottom:5px;color:var(--encre);}
+.journal li:last-child{margin-bottom:0;}
+.journal .date{font-weight:700;color:var(--bronze);margin-right:5px;}
 
 /* ---- listes ---- */
 .groupe{margin-bottom:16px;}
@@ -198,6 +206,16 @@ const etat=(p,m)=>{
 const GLYPHE={t:'●',l:'○',i:'✕',b:'?',n:''};
 const MOT={t:'taille',l:'taille légère',i:'interdit',b:'à déterminer',n:'rien de prévu'};
 
+/* Champ optionnel : ce qui a été fait sur la plante, daté. Une plante sans
+   journal rend exactement comme avant. */
+function journalHTML(p){
+  if(!p.journal||!p.journal.length)return '';
+  const jour=d=>{const [y,m,j]=d.split('-');return `${+j} ${MOIS[+m-1].toLowerCase()} ${y}`;};
+  return `<div class="journal"><h5>Journal</h5><ul>${
+    p.journal.slice().sort((a,b)=>b.date.localeCompare(a.date))
+     .map(e=>`<li><span class="date">${jour(e.date)}</span>${e.texte}</li>`).join('')}</ul></div>`;
+}
+
 const badgeBois=p=>{
   if(p.bois==='année')return '<span class="badge annee">bois année</span>';
   if(p.bois==='an passé')return '<span class="badge passe">bois an passé</span>';
@@ -212,9 +230,14 @@ function reprise(p){
   const d=new Date();
   const ecoules=(d.getFullYear()-y)*12+(d.getMonth()+1-m);
   const reste=36-ecoules;
-  return {ecoules,reste,annee:Math.min(3,Math.floor(ecoules/12)+1),fini:reste<=0};
+  // plantation encore à venir : la reprise n'a pas commencé
+  return {ecoules,reste,annee:Math.min(3,Math.floor(ecoules/12)+1),fini:reste<=0,futur:ecoules<0};
 }
-const jeunesPlants=()=>PLANTES.filter(p=>!p.etabli&&p.plantation&&!reprise(p).fini);
+const jeunesPlants=()=>PLANTES.filter(p=>{
+  if(p.etabli||!p.plantation)return false;
+  const r=reprise(p);
+  return !r.fini&&!r.futur;
+});
 
 /* ---------- vue 1 : fenêtres de taille ---------- */
 function vueTaille(){
@@ -237,7 +260,7 @@ function vueTaille(){
       h+=`<td><div class="cell ${e}" title="${p.nom} — ${NOMS_LONGS[m-1]} : ${MOT[e]}" aria-label="${MOT[e]}">${GLYPHE[e]}</div></td>`;
     }
     h+=`</tr><tr class="raison" id="r${i}" hidden><td colspan="13"><div class="raison-txt">
-      <b>${p.nomLatin}</b> · ${p.emplacement} · ${p.rusticite}<br>${p.taille.note}</div></td></tr>`;
+      <b>${p.nomLatin}</b> · ${p.emplacement} · ${p.rusticite}<br>${p.taille.note}${journalHTML(p)}</div></td></tr>`;
   });
   return h+'</tbody></table></div>';
 }
@@ -248,7 +271,7 @@ function vueHivernage(){
     ['hors-gel','Rentrer au hors-gel','g-horsgel','0–8 °C, un peu de lumière, arrosage quasi nul'],
     ['pot emmailloté','Pot emmailloté sur place','g-pot','le contenant, pas le feuillage · sur cales, contre le mur sud'],
     ['feuillage protégé','Feuillage protégé en plus','g-feuillage','pot emmailloté ET voile sur les tiges, à ouvrir par temps doux'],
-    ['souche buttée','Souche buttée','g-souche','20 cm de feuilles sèches ou de paillis, jusqu’en avril']
+    ['souche buttée','Souche buttée','g-souche','paillis monté à 15 cm sur la souche après les premières gelées, jusqu’en avril']
   ];
   let h=`<h2 class="vue">Hivernage</h2>
   <p class="vue-note">Seulement les plantes qui demandent une action d'automne. La liste du bas compte autant : elle évite du travail inutile.</p>`;
@@ -293,6 +316,7 @@ function vueJeunes(){
       <div class="jeune-meta">Planté en ${NOMS_LONGS[m-1].toLowerCase()} ${y} · ${p.emplacement}</div>
       <div class="cases">${CASES.map(([c,lib])=>
         `<label><input type="checkbox" data-plante="${p.nom}" data-case="${c}"${litCase(p.nom,c)?' checked':''}><span>${lib}</span></label>`).join('')}</div>
+      ${journalHTML(p)}
     </div>`;
   });
   return h;

@@ -8,8 +8,12 @@
       "contenant": "pleine terre",
       "bois": "an passé",
       "taille": {
-        "mois": [2],
-        "legere": [6],
+        "mois": [
+          2
+        ],
+        "legere": [
+          6
+        ],
         "interdit": [],
         "bloque": false,
         "note": "Grimpant remontant, pas un rambler. Une coupe sévère ne le contient pas : il répond par des tiges plus longues. La taille structurelle de fin février plus le palissage à l'horizontale font la taille ; la rénovation s'étale sur deux à trois hivers."
@@ -21,8 +25,12 @@
       "plantation": null,
       "etabli": true,
       "taches": {
-        "2": ["Taille structurelle : supprimer un tiers des plus vieilles branches grises au ras, palisser les jeunes à l'horizontale, rabattre les latérales à 2–3 yeux."],
-        "6": ["Nettoyer après la première floraison et raccourcir les rameaux défleuris de quelques yeux — c'est ce qui déclenche la remontée d'août."]
+        "2": [
+          "Taille structurelle : supprimer un tiers des plus vieilles branches grises au ras, palisser les jeunes à l'horizontale, rabattre les latérales à 2–3 yeux."
+        ],
+        "6": [
+          "Nettoyer après la première floraison et raccourcir les rameaux défleuris de quelques yeux — c'est ce qui déclenche la remontée d'août."
+        ]
       }
     },
     {
@@ -34,7 +42,9 @@
       "bois": "an passé",
       "taille": {
         "mois": [],
-        "legere": [4],
+        "legere": [
+          4
+        ],
         "interdit": [],
         "bloque": false,
         "note": "Fructifie sur le bois de l'an passé : ne jamais tailler l'extérieur en boule. Taille légère seulement — ouvrir le centre, supprimer les gourmands du tronc et de la base."
@@ -46,9 +56,16 @@
       "plantation": null,
       "etabli": true,
       "taches": {
-        "4": ["Taille légère : ouvrir le centre, supprimer les gourmands du tronc et de la base.", "Reprise de l'engrais, général ou agrumes, jusqu'en août."],
-        "10": ["Rentrer au hors-gel (0–8 °C, un peu de lumière). Arrosage quasi nul, un peu d'eau les jours doux."],
-        "11": ["Les olives se colorent. Pour les confire : fendre, dessaler dix jours en changeant l'eau chaque jour, puis saumure à 100 g de sel par litre pendant deux mois."]
+        "4": [
+          "Taille légère : ouvrir le centre, supprimer les gourmands du tronc et de la base.",
+          "Reprise de l'engrais, général ou agrumes, jusqu'en août."
+        ],
+        "10": [
+          "Rentrer au hors-gel (0–8 °C, un peu de lumière). Arrosage quasi nul, un peu d'eau les jours doux."
+        ],
+        "11": [
+          "Les olives se colorent. Pour les confire : fendre, dessaler dix jours en changeant l'eau chaque jour, puis saumure à 100 g de sel par litre pendant deux mois."
+        ]
       }
     },
     {
@@ -59,9 +76,15 @@
       "contenant": "pot",
       "bois": "année",
       "taille": {
-        "mois": [4],
+        "mois": [
+          4
+        ],
         "legere": [],
-        "interdit": [9, 10, 11],
+        "interdit": [
+          9,
+          10,
+          11
+        ],
         "bloque": false,
         "note": "Fleurit sur le bois de l'année : taille au printemps, jamais à l'automne. Toute la plante est très toxique et les tailles fanées le restent — gants, et ramasser chaque chute (Taiko)."
       },
@@ -72,10 +95,19 @@
       "plantation": null,
       "etabli": true,
       "taches": {
-        "4": ["Rabattre d'un tiers les rameaux défleuris, éclaircir le centre faible.", "Reprise de l'engrais plantes fleuries."],
-        "6": ["Pucerons (Aphis nerii) et cochenilles : jet d'eau sur les pointes et le revers des feuilles, savon noir à une cuillère à soupe par litre le soir, alcool au coton-tige sur les amas, contrôle des fourmis au pied du pot."],
-        "9": ["Couper les follicules — les « chenilles duveteuses » sont des gousses de graines, pas des insectes — et supprimer les fleurs fanées."],
-        "10": ["Rentrer au hors-gel (0–8 °C, un peu de lumière)."]
+        "4": [
+          "Rabattre d'un tiers les rameaux défleuris, éclaircir le centre faible.",
+          "Reprise de l'engrais plantes fleuries."
+        ],
+        "6": [
+          "Pucerons (Aphis nerii) et cochenilles : jet d'eau sur les pointes et le revers des feuilles, savon noir à une cuillère à soupe par litre le soir, alcool au coton-tige sur les amas, contrôle des fourmis au pied du pot."
+        ],
+        "9": [
+          "Couper les follicules — les « chenilles duveteuses » sont des gousses de graines, pas des insectes — et supprimer les fleurs fanées."
+        ],
+        "10": [
+          "Rentrer au hors-gel (0–8 °C, un peu de lumière)."
+        ]
       }
     },
     {
@@ -86,9 +118,17 @@
       "contenant": "pot",
       "bois": "année",
       "taille": {
-        "mois": [3],
-        "legere": [7],
-        "interdit": [9, 10, 11],
+        "mois": [
+          3
+        ],
+        "legere": [
+          7
+        ],
+        "interdit": [
+          9,
+          10,
+          11
+        ],
         "bloque": false,
         "note": "Fleurit sur les pousses de l'année : taille sévère en mars. Une floraison pauvre vient de trois causes cumulées — pas assez de chaleur, pot trop petit, pas de taille de printemps."
       },
@@ -99,10 +139,19 @@
       "plantation": null,
       "etabli": true,
       "taches": {
-        "3": ["Rempoter d'un tiers plus grand, puis rabattre les pousses de l'an passé à 2–3 yeux.", "Lui donner la position la plus chaude et la plus réverbérante disponible."],
-        "4": ["Reprise de l'engrais plantes fleuries, fin avril, jusqu'en juillet."],
-        "7": ["Supprimer les panicules fanées au fur et à mesure — une seconde vague est possible."],
-        "10": ["Emmailloter le pot (le contenant, pas le feuillage)."]
+        "3": [
+          "Rempoter d'un tiers plus grand, puis rabattre les pousses de l'an passé à 2–3 yeux.",
+          "Lui donner la position la plus chaude et la plus réverbérante disponible."
+        ],
+        "4": [
+          "Reprise de l'engrais plantes fleuries, fin avril, jusqu'en juillet."
+        ],
+        "7": [
+          "Supprimer les panicules fanées au fur et à mesure — une seconde vague est possible."
+        ],
+        "10": [
+          "Emmailloter le pot (le contenant, pas le feuillage)."
+        ]
       }
     },
     {
@@ -113,9 +162,16 @@
       "contenant": "pot",
       "bois": "année",
       "taille": {
-        "mois": [3, 4],
+        "mois": [
+          3,
+          4
+        ],
         "legere": [],
-        "interdit": [9, 10, 11],
+        "interdit": [
+          9,
+          10,
+          11
+        ],
         "bloque": false,
         "note": "Fleurit sur le bois de l'année : taille sévère au printemps. Feuillaison très tardive — ne pas le croire mort en avril. Une chlorose sur les pousses de printemps signifie un substrat trop humide."
       },
@@ -126,8 +182,13 @@
       "plantation": null,
       "etabli": true,
       "taches": {
-        "4": ["Taille sévère sur une charpente basse.", "Aucun engrais : il fleurit mieux maigre."],
-        "10": ["Emmailloter le pot."]
+        "4": [
+          "Taille sévère sur une charpente basse.",
+          "Aucun engrais : il fleurit mieux maigre."
+        ],
+        "10": [
+          "Emmailloter le pot."
+        ]
       }
     },
     {
@@ -139,8 +200,18 @@
       "bois": "an passé",
       "taille": {
         "mois": [],
-        "legere": [4],
-        "interdit": [9, 10, 11, 12, 1, 2, 3],
+        "legere": [
+          4
+        ],
+        "interdit": [
+          9,
+          10,
+          11,
+          12,
+          1,
+          2,
+          3
+        ],
         "bloque": false,
         "note": "Fleurit sur les tiges faites l'an passé : c'est le gel de ces tiges qui explique les belles feuilles sans fleurs. En avril, couper le bois mort seulement, jusqu'au premier gros bouton vert vivant — pas avant d'avoir vu les yeux."
       },
@@ -151,9 +222,17 @@
       "plantation": null,
       "etabli": true,
       "taches": {
-        "4": ["Attendre de voir les yeux vivants, puis couper le bois mort jusqu'au premier gros bouton vert. Pas avant.", "Reprise de l'engrais universel, jusqu'en juin."],
-        "7": ["Très gourmande en eau : arrosage quotidien en juillet. Soleil du matin, ombre l'après-midi. L'eau de pluie garde le bleu."],
-        "10": ["Emmailloter le pot ET voile d'hivernage sur les tiges, à ouvrir par temps doux. Ce sont les boutons de l'an prochain.", "Serrer contre le mur sud, sous l'avancée de toit."]
+        "4": [
+          "Attendre de voir les yeux vivants, puis couper le bois mort jusqu'au premier gros bouton vert. Pas avant.",
+          "Reprise de l'engrais universel, jusqu'en juin."
+        ],
+        "7": [
+          "Très gourmande en eau : arrosage quotidien en juillet. Soleil du matin, ombre l'après-midi. L'eau de pluie garde le bleu."
+        ],
+        "10": [
+          "Emmailloter le pot ET voile d'hivernage sur les tiges, à ouvrir par temps doux. Ce sont les boutons de l'an prochain.",
+          "Serrer contre le mur sud, sous l'avancée de toit."
+        ]
       }
     },
     {
@@ -164,7 +243,10 @@
       "contenant": "pot",
       "bois": "année",
       "taille": {
-        "mois": [2, 3],
+        "mois": [
+          2,
+          3
+        ],
         "legere": [],
         "interdit": [],
         "bloque": false,
@@ -177,10 +259,18 @@
       "plantation": null,
       "etabli": true,
       "taches": {
-        "2": ["Rabattre toutes les tiges à 2–3 yeux au-dessus d'une charpente de 30–40 cm, et retirer les vieilles inflorescences à ce moment-là."],
-        "3": ["Lui trouver un pot plus grand et une place en plein soleil — l'encadrement de porte n'est qu'un provisoire."],
-        "4": ["Reprise de l'engrais universel, jusqu'en juin."],
-        "10": ["Emmailloter le pot."]
+        "2": [
+          "Rabattre toutes les tiges à 2–3 yeux au-dessus d'une charpente de 30–40 cm, et retirer les vieilles inflorescences à ce moment-là."
+        ],
+        "3": [
+          "Lui trouver un pot plus grand et une place en plein soleil — l'encadrement de porte n'est qu'un provisoire."
+        ],
+        "4": [
+          "Reprise de l'engrais universel, jusqu'en juin."
+        ],
+        "10": [
+          "Emmailloter le pot."
+        ]
       }
     },
     {
@@ -191,9 +281,16 @@
       "contenant": "pot",
       "bois": "année",
       "taille": {
-        "mois": [3],
+        "mois": [
+          3
+        ],
         "legere": [],
-        "interdit": [5, 6, 7, 8],
+        "interdit": [
+          5,
+          6,
+          7,
+          8
+        ],
         "bloque": false,
         "note": "Traité en arbuste rabattu chaque printemps — c'est aussi ce qui donne la plus belle panachure rose. Saigne si on le coupe en pleine sève. Supprimer toute pousse entièrement verte (réversion) jusqu'à son origine, et tout rejet sous le point de greffe."
       },
@@ -204,25 +301,48 @@
       "plantation": null,
       "etabli": true,
       "taches": {
-        "3": ["Rabattre les pousses de l'an passé sur une charpente courte.", "Rempoter dans un contenant nettement plus grand."],
-        "4": ["Reprise de l'engrais, général ou retard, plutôt azoté."],
-        "6": ["Marges de feuilles brunes = sécheresse, pas une maladie : arroser copieusement dès que le substrat est sec."],
-        "10": ["Emmailloter le pot."]
+        "3": [
+          "Rabattre les pousses de l'an passé sur une charpente courte.",
+          "Rempoter dans un contenant nettement plus grand."
+        ],
+        "4": [
+          "Reprise de l'engrais, général ou retard, plutôt azoté."
+        ],
+        "6": [
+          "Marges de feuilles brunes = sécheresse, pas une maladie : arroser copieusement dès que le substrat est sec."
+        ],
+        "10": [
+          "Emmailloter le pot."
+        ]
       }
     },
     {
-      "nom": "Mûrier",
+      "nom": "Mûrier platane",
       "nomLatin": "Morus sp.",
-      "emplacement": "Pelouse",
+      "emplacement": "Pelouse — arbre de plein vent",
       "type": "arbre",
       "contenant": "pleine terre",
       "bois": "sans objet",
       "taille": {
-        "mois": [11, 12, 1],
+        "mois": [
+          11,
+          12,
+          1
+        ],
         "legere": [],
-        "interdit": [2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "interdit": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
         "bloque": false,
-        "note": "SAIGNE ABONDAMMENT hors dormance. Toute coupe entre février et octobre lui coûte cher en sève. Novembre à janvier, légèrement, et rien le reste de l'année."
+        "note": "SAIGNE ABONDAMMENT hors dormance. Toute coupe entre février et octobre lui coûte cher en sève. Novembre à janvier, légèrement, et rien le reste de l'année. <b>C'est l'arbre</b> : à ne pas confondre avec la mûre 'Loch Ness', l'arbuste à fruits du massif."
       },
       "vieuxBois": true,
       "saigne": true,
@@ -231,11 +351,26 @@
       "plantation": "2026-04",
       "etabli": false,
       "taches": {
-        "6": ["Un arrosage profond de 15 à 20 l par semaine s'il ne pleut pas vraiment — années 1 à 3."],
-        "9": ["Contrôler les liens : un doigt doit passer entre le lien et le tronc. Attacher bas, au tiers de la hauteur.", "Dégager un cercle d'un mètre dans la pelouse, pailler 7 cm, écorce écartée du tronc."],
-        "10": ["Arrêter l'arrosage à la chute des feuilles."],
-        "11": ["Seule fenêtre de taille, avec décembre et janvier — et légèrement."]
-      }
+        "6": [
+          "Un arrosage profond de 15 à 20 l par semaine s'il ne pleut pas vraiment — années 1 à 3."
+        ],
+        "9": [
+          "Contrôler les liens : un doigt doit passer entre le lien et le tronc. Attacher bas, au tiers de la hauteur.",
+          "Dégager un cercle d'un mètre dans la pelouse, pailler 7 cm, écorce écartée du tronc."
+        ],
+        "10": [
+          "Arrêter l'arrosage à la chute des feuilles."
+        ],
+        "11": [
+          "Seule fenêtre de taille, avec décembre et janvier — et légèrement."
+        ]
+      },
+      "journal": [
+        {
+          "date": "2026-09-27",
+          "texte": "Paillé aux copeaux de chêne, cercle de 1 m, 7–10 cm d'épaisseur, sans carton, dégagé de 10 cm autour du tronc. Taches foliaires (cercosporiose) : ramasser et jeter les feuilles à la chute, ne pas les composter. Retirer le lien brun serré et le tuteur bambou. Branches mortes à tailler en fin d'hiver (test à l'ongle)."
+        }
+      ]
     },
     {
       "nom": "Cotinus",
@@ -245,7 +380,9 @@
       "contenant": "pleine terre",
       "bois": "année",
       "taille": {
-        "mois": [3],
+        "mois": [
+          3
+        ],
         "legere": [],
         "interdit": [],
         "bloque": false,
@@ -258,10 +395,22 @@
       "plantation": "2025-10",
       "etabli": false,
       "taches": {
-        "3": ["Raccourcir d'un tiers les tiges nues, au-dessus d'un œil tourné vers l'extérieur."],
-        "6": ["Un arrosoir entier, versé lentement, par semaine en période sèche — années 1 à 3."],
-        "9": ["Dégager un cercle de 50–60 cm, pailler 5–8 cm."]
-      }
+        "3": [
+          "Raccourcir d'un tiers les tiges nues, au-dessus d'un œil tourné vers l'extérieur."
+        ],
+        "6": [
+          "Un arrosoir entier, versé lentement, par semaine en période sèche — années 1 à 3."
+        ],
+        "9": [
+          "Dégager un cercle de 50–60 cm, pailler 5–8 cm."
+        ]
+      },
+      "journal": [
+        {
+          "date": "2026-09-27",
+          "texte": "Paillé aux copeaux de chêne (~5 cm). Racines découvertes recouvertes de 2–3 cm de terreau plantation + terre de jardin, collet laissé dégagé. À 80 cm du mur : taille annuelle sévère en fin d'hiver, ou déplacement. Vérifier la profondeur de sol au piquet (vide sanitaire) : si dalle à ≤ 40 cm, envisager de le déplacer."
+        }
+      ]
     },
     {
       "nom": "Jasmin officinal",
@@ -271,9 +420,15 @@
       "contenant": "pot",
       "bois": "an passé",
       "taille": {
-        "mois": [8],
+        "mois": [
+          8
+        ],
         "legere": [],
-        "interdit": [3, 4, 5],
+        "interdit": [
+          3,
+          4,
+          5
+        ],
         "bloque": false,
         "note": "Fleurit sur le bois de l'an passé : tailler juste après la fin de la floraison, en fin d'été. Une taille de printemps supprime la floraison de l'année."
       },
@@ -284,9 +439,15 @@
       "plantation": null,
       "etabli": true,
       "taches": {
-        "4": ["Reprise de l'engrais universel, puis tous les mois jusqu'à la fin de l'été."],
-        "8": ["Taille juste après la fin de floraison : supprimer le vieux bois enchevêtré, raccourcir les rameaux défleuris."],
-        "10": ["Emmailloter le pot."]
+        "4": [
+          "Reprise de l'engrais universel, puis tous les mois jusqu'à la fin de l'été."
+        ],
+        "8": [
+          "Taille juste après la fin de floraison : supprimer le vieux bois enchevêtré, raccourcir les rameaux défleuris."
+        ],
+        "10": [
+          "Emmailloter le pot."
+        ]
       }
     },
     {
@@ -297,9 +458,18 @@
       "contenant": "pot",
       "bois": "an passé",
       "taille": {
-        "mois": [7],
+        "mois": [
+          7
+        ],
         "legere": [],
-        "interdit": [9, 10, 11, 12, 1, 2],
+        "interdit": [
+          9,
+          10,
+          11,
+          12,
+          1,
+          2
+        ],
         "bloque": false,
         "note": "Persistant, et le plus gélif des grimpants ici. Ne pas le rabattre à l'automne, quoi qu'en dise l'application. Taille de juillet uniquement, et seulement pour contenir l'encombrement."
       },
@@ -310,9 +480,15 @@
       "plantation": null,
       "etabli": true,
       "taches": {
-        "4": ["Reprise de l'engrais universel, surtout pas riche en potasse."],
-        "7": ["Taille éventuelle, uniquement pour contenir l'encombrement. Palisser à l'horizontale pour couvrir le treillis."],
-        "10": ["Emmailloter le pot."]
+        "4": [
+          "Reprise de l'engrais universel, surtout pas riche en potasse."
+        ],
+        "7": [
+          "Taille éventuelle, uniquement pour contenir l'encombrement. Palisser à l'horizontale pour couvrir le treillis."
+        ],
+        "10": [
+          "Emmailloter le pot."
+        ]
       }
     },
     {
@@ -324,8 +500,15 @@
       "bois": "sans objet",
       "taille": {
         "mois": [],
-        "legere": [4, 5],
-        "interdit": [9, 10, 11],
+        "legere": [
+          4,
+          5
+        ],
+        "interdit": [
+          9,
+          10,
+          11
+        ],
         "bloque": false,
         "note": "Ne repart pas du vieux bois nu : ne jamais couper au-delà des feuilles vertes, et jamais plus d'un tiers. Meurt des pieds mouillés, pas du froid — pas de soucoupe l'hiver, et un mélange pauvre et graveleux."
       },
@@ -336,8 +519,13 @@
       "plantation": null,
       "etabli": true,
       "taches": {
-        "4": ["Mettre en forme après la floraison, un tiers maximum, en laissant des feuilles vertes sur chaque rameau coupé.", "Rempoter dans un mélange pauvre et graveleux. Aucun engrais."],
-        "9": ["Retirer la soucoupe pour l'hiver. Récolter et faire sécher un bouquet."]
+        "4": [
+          "Mettre en forme après la floraison, un tiers maximum, en laissant des feuilles vertes sur chaque rameau coupé.",
+          "Rempoter dans un mélange pauvre et graveleux. Aucun engrais."
+        ],
+        "9": [
+          "Retirer la soucoupe pour l'hiver. Récolter et faire sécher un bouquet."
+        ]
       }
     },
     {
@@ -348,9 +536,19 @@
       "contenant": "pleine terre",
       "bois": "année",
       "taille": {
-        "mois": [4],
+        "mois": [
+          4
+        ],
         "legere": [],
-        "interdit": [9, 10, 11, 12, 1, 2, 3],
+        "interdit": [
+          9,
+          10,
+          11,
+          12,
+          1,
+          2,
+          3
+        ],
         "bloque": false,
         "note": "La plus gélive du jardin, tuée vers −8 °C, et elle est en pleine terre. La perte totale des feuilles est normale. C'est le buttage de la souche qui la sauve, pas la taille — et elle ne repart souvent pas avant fin mai."
       },
@@ -361,10 +559,25 @@
       "plantation": null,
       "etabli": true,
       "taches": {
-        "4": ["Rabattre à 20 cm une fois les pousses vertes visibles à la base. Pas avant : la feuillaison est très tardive."],
-        "9": ["Récolter et faire sécher les feuilles."],
-        "10": ["Butter la souche : 20 cm de feuilles sèches, de paille ou d'écorce, à laisser jusqu'en avril.", "Vérifier que l'eau ne stagne pas au pied, à la descente de gouttière."]
-      }
+        "4": [
+          "Rabattre à 20 cm une fois les pousses vertes visibles à la base. Pas avant : la feuillaison est très tardive."
+        ],
+        "9": [
+          "Récolter et faire sécher les feuilles."
+        ],
+        "10": [
+          "Vérifier que l'eau ne stagne pas au pied, à la descente de gouttière."
+        ],
+        "11": [
+          "Après les premières gelées, monter le paillis de chanvre à 15 cm sur la souche, à laisser jusqu'en avril."
+        ]
+      },
+      "journal": [
+        {
+          "date": "2026-09-27",
+          "texte": "Paillée au chanvre (5–8 cm), en demi-lune contre le mur. En novembre, après les premières gelées : monter à 15 cm sur la souche. Ne pas tailler avant le printemps, à l'apparition des nouvelles pousses."
+        }
+      ]
     },
     {
       "nom": "Sauge arbustive",
@@ -374,9 +587,15 @@
       "contenant": "pot",
       "bois": "année",
       "taille": {
-        "mois": [4],
+        "mois": [
+          4
+        ],
         "legere": [],
-        "interdit": [9, 10, 11],
+        "interdit": [
+          9,
+          10,
+          11
+        ],
         "bloque": false,
         "note": "Ne repart pas du bois nu : rabattre d'un tiers seulement, dans du bois portant des yeux verts visibles. Veut une terre pauvre et sèche — l'engrais la fait s'affaler."
       },
@@ -387,11 +606,14 @@
       "plantation": null,
       "etabli": true,
       "taches": {
-        "4": ["Rabattre d'un tiers dans du bois portant des yeux verts visibles, jamais dans le bois nu.", "Renouveler les 5 premiers centimètres de terreau de la jardinière. Aucun engrais."]
+        "4": [
+          "Rabattre d'un tiers dans du bois portant des yeux verts visibles, jamais dans le bois nu.",
+          "Renouveler les 5 premiers centimètres de terreau de la jardinière. Aucun engrais."
+        ]
       }
     },
     {
-      "nom": "Framboisier",
+      "nom": "Framboisier en place (type inconnu)",
       "nomLatin": "Rubus idaeus",
       "emplacement": "Pied de mur",
       "type": "arbuste",
@@ -402,7 +624,7 @@
         "legere": [],
         "interdit": [],
         "bloque": true,
-        "note": "Type inconnu, donc aucune taille cette année. La seule canne vivante est sortie cette année et n'a pas fructifié, ce qui plaide plutôt contre un remontant — mais la plante a beaucoup souffert et ce n'est pas une preuve. Verdict à la première fructification : en juin sur cette canne-ci = non remontant, supprimer les cannes défructifiées après la récolte ; en septembre sur des cannes neuves = remontant, tout rabattre au ras en février."
+        "note": "Le framboisier <b>déjà au jardin</b>, planté en octobre 2025 — pas le 'Heritage' commandé pour novembre. Type inconnu, donc aucune taille cette année. La seule canne vivante est sortie cette année et n'a pas fructifié, ce qui plaide plutôt contre un remontant — mais la plante a beaucoup souffert et ce n'est pas une preuve. Verdict à la première fructification : en juin sur cette canne-ci = non remontant, supprimer les cannes défructifiées après la récolte ; en septembre sur des cannes neuves = remontant, tout rabattre au ras en février."
       },
       "vieuxBois": true,
       "saigne": false,
@@ -411,13 +633,32 @@
       "plantation": "2025-10",
       "etabli": false,
       "taches": {
-        "2": ["Ne rien tailler tant que le type n'est pas identifié. Une coupe au ras sur un non-remontant supprimerait la récolte de juin — et il ne reste qu'une canne."],
-        "3": ["Poser le fil de palissage entre deux piquets."],
-        "6": ["Observer : si cette canne fructifie maintenant, le framboisier n'est PAS remontant."],
-        "7": ["Deux arrosages par semaine pendant la fructification, paillage épais."],
-        "9": ["Observer : si des cannes neuves fructifient maintenant, il EST remontant.", "Dégager un cercle de 40 cm au pied de la canne, pailler 5 cm."],
-        "10": ["Un arrosage profond tous les 7 à 10 jours en période sèche."]
-      }
+        "2": [
+          "Ne rien tailler tant que le type n'est pas identifié. Une coupe au ras sur un non-remontant supprimerait la récolte de juin — et il ne reste qu'une canne."
+        ],
+        "3": [
+          "Poser le fil de palissage entre deux piquets."
+        ],
+        "6": [
+          "Observer : si cette canne fructifie maintenant, le framboisier n'est PAS remontant."
+        ],
+        "7": [
+          "Deux arrosages par semaine pendant la fructification, paillage épais."
+        ],
+        "9": [
+          "Observer : si des cannes neuves fructifient maintenant, il EST remontant.",
+          "Dégager un cercle de 40 cm au pied de la canne, pailler 5 cm."
+        ],
+        "10": [
+          "Un arrosage profond tous les 7 à 10 jours en période sèche."
+        ]
+      },
+      "journal": [
+        {
+          "date": "2026-09-27",
+          "texte": "Paillé au chanvre, cercle ~1 m. Recharger chaque automne. Les drageons qui percent le paillis sont de nouvelles cannes, pas des mauvaises herbes."
+        }
+      ]
     },
     {
       "nom": "Genévriers & thuyas",
@@ -440,7 +681,9 @@
       "plantation": null,
       "etabli": true,
       "taches": {
-        "11": ["Lierre : couper au ras du sol, décrocher de la couronne, dégager le bois mort. Portée réelle du chantier visible seulement une fois la haie arrachée."]
+        "11": [
+          "Lierre : couper au ras du sol, décrocher de la couronne, dégager le bois mort. Portée réelle du chantier visible seulement une fois la haie arrachée."
+        ]
       }
     },
     {
@@ -464,7 +707,87 @@
       "plantation": null,
       "etabli": true,
       "taches": {
-        "11": ["Arrachage : couper les tiges, lever les plateaux racinaires à la fourche — racines fibreuses et superficielles, pas besoin d'engin.", "Le massif est sur un mur de soutènement : pailler ou replanter la bande le jour même, sinon la première grosse pluie emporte la terre par-dessus le mur.", "En prestation : trois devis, compter 250–700 € pour 10–12 m."]
+        "11": [
+          "Arrachage : couper les tiges, lever les plateaux racinaires à la fourche — racines fibreuses et superficielles, pas besoin d'engin.",
+          "Le massif est sur un mur de soutènement : pailler ou replanter la bande le jour même, sinon la première grosse pluie emporte la terre par-dessus le mur.",
+          "En prestation : trois devis, compter 250–700 € pour 10–12 m."
+        ]
+      }
+    },
+    {
+      "nom": "Mûre 'Loch Ness'",
+      "nomLatin": "Rubus fruticosus 'Loch Ness'",
+      "emplacement": "Massif, palissée sur 2 fils le long de la clôture",
+      "type": "arbuste",
+      "contenant": "pleine terre",
+      "bois": "an passé",
+      "taille": {
+        "mois": [
+          9,
+          10
+        ],
+        "legere": [],
+        "interdit": [
+          3,
+          4,
+          5
+        ],
+        "bloque": false,
+        "note": "Ronce sans épines, port semi-érigé. Fructifie sur les cannes de l'an passé : après la récolte, supprimer au ras les cannes qui ont donné et palisser les jeunes, qui porteront l'an prochain. Une taille de printemps supprimerait la récolte. <b>C'est l'arbuste à fruits</b> — le mûrier platane de la pelouse est un arbre, et ne se taille qu'en plein hiver."
+      },
+      "vieuxBois": true,
+      "saigne": false,
+      "hivernage": "aucun",
+      "rusticite": "Totalement rustique",
+      "plantation": "2026-11",
+      "etabli": false,
+      "journal": [],
+      "taches": {
+        "9": [
+          "Après la récolte : couper au ras les cannes qui ont fructifié, palisser les nouvelles sur les deux fils."
+        ],
+        "11": [
+          "Plantation racines nues à réception (commande Naudet). Poser les deux fils de palissage avant de planter."
+        ]
+      }
+    },
+    {
+      "nom": "Framboisier 'Heritage' (à planter)",
+      "nomLatin": "Rubus idaeus 'Heritage'",
+      "emplacement": "Massif potager, rang à 40 cm",
+      "type": "arbuste",
+      "contenant": "pleine terre",
+      "bois": "année",
+      "taille": {
+        "mois": [
+          2
+        ],
+        "legere": [],
+        "interdit": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "bloque": false,
+        "note": "Remontant : fructifie en fin d'été sur les cannes de l'année, donc on rabat <b>tout au ras du sol en fin d'hiver</b>. À ne pas confondre avec le framboisier déjà en place, dont le type est inconnu et qui ne se taille pas."
+      },
+      "vieuxBois": true,
+      "saigne": false,
+      "hivernage": "aucun",
+      "rusticite": "Totalement rustique",
+      "plantation": "2026-11",
+      "etabli": false,
+      "journal": [],
+      "taches": {
+        "2": [
+          "Rabattre toutes les cannes au ras du sol — celui-ci seulement, pas le framboisier en place."
+        ],
+        "11": [
+          "Plantation racines nues à réception (commande Naudet), 40 cm entre plants."
+        ]
       }
     }
   ],

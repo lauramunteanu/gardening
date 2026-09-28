@@ -85,8 +85,31 @@ Les quatre vues dérivent toutes de `plantes` :
 - `plantation` (`YYYY-MM`) + `etabli: false` alimentent « Jeunes plants » et
   l'entrée disparaît d'elle-même au bout de trois ans.
 
+Champ optionnel `journal` : `[ { date: "YYYY-MM-DD", texte } ]`, ce qui a été fait sur
+la plante. Rendu en liste datée, la plus récente en tête, dans le repli de la ligne
+(« Fenêtres de taille ») et dans la fiche « Jeunes plants ». Une plante sans journal
+rend exactement comme avant.
+
+`plantation` peut être **à venir** : la plante reste hors de « Jeunes plants » jusqu'au
+mois venu, puis y entre toute seule (mûre et framboisier 'Heritage', plantés en
+novembre 2026).
+
 `ponctuelles` est une extension au modèle du spec : elle accueille ce qui n'est
 pas une plante suivie (datura à arracher, semis spontané dans le mur).
+
+## Quatre plantes qu'on confond
+
+Les noms se ressemblent, les tailles sont opposées :
+
+| Plante | Où | Ce que c'est | Taille |
+|---|---|---|---|
+| **Mûrier platane** | arbustes, pelouse | l'**arbre**, planté 04/2026 | nov–janv seulement, il saigne |
+| **Mûre 'Loch Ness'** | arbustes + potager | l'**arbuste à fruits**, à planter 11/2026 | après récolte, sur bois de l'an passé |
+| **Framboisier en place** | arbustes, pied de mur | planté 10/2025, une canne, **type inconnu** | aucune, tant qu'il n'a pas fructifié |
+| **Framboisier 'Heritage'** | arbustes + potager | remontant, à planter 11/2026 | tout au ras en **février** |
+
+Ne jamais faire correspondre une instruction par le seul mot « mûrier » ou
+« framboisier » : vérifier de laquelle des quatre il s'agit.
 
 ## Fichiers
 
@@ -149,11 +172,13 @@ un aperçu du mois suivant apparaît en bas.
 
 ## Ce qui est encore en suspens
 
-- **Framboisier** : type inconnu. La seule canne vivante est sortie en 2026 et n'a
-  pas fructifié, ce qui plaide contre un remontant — mais `data-potager.json`
-  l'appelle encore « Framboisier remontant 'Heritage' ». Tant que ce n'est pas
+- **Framboisier en place** : type inconnu. La seule canne vivante est sortie en 2026
+  et n'a pas fructifié, ce qui plaide contre un remontant. Tant que ce n'est pas
   tranché, aucune taille : une coupe au ras sur un non-remontant supprimerait la
   récolte de juin, et il ne reste qu'une canne. Verdict à la première fructification.
+- **Mûrier platane** : beaucoup de mûriers platanes vendus en France sont des clones
+  ornementaux stériles. Le calendrier ne promet aucune récolte ; à confirmer sur
+  l'étiquette si la question se pose.
 - **Fraisiers 'Charlotte'** : emplacement non tranché (massif en novembre, ou bac
   début mars). La carte, la tâche de plantation de novembre, l'alerte « déplacer la
   courgette » et l'entrée de février sur la terre neuve du bac se décident ensemble.

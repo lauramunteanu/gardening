@@ -55,7 +55,7 @@
             11,
             12
           ],
-          "note": "Monte en graine dès les chaleurs : deux vraies saisons, printemps et fin d'été. Hiver sans lampe : 5–6 semaines jusqu'à la 1re coupe (3–4 semaines au printemps). Semer dans le pot définitif, jamais repiquer (monte en graine).<br>2026 : pot 1 semé le 27/09 en intérieur (8–10 akènes écrasés, 0,5 cm). Pot 2 prévu le 11/10.",
+          "note": "Monte en graine dès les chaleurs : deux vraies saisons, printemps et fin d'été. Hiver sans lampe : 5–6 semaines jusqu'à la 1re coupe (3–4 semaines au printemps). Semer dans le pot définitif, jamais repiquer (monte en graine). Deux conduites en parallèle : <b>dehors</b>, semis direct en pot de 25–30 cm sur la terrasse, en mars–avril puis en août — jamais en plein été, elle monte en graine à la chaleur ; <b>dedans</b>, près de la baie vitrée, de septembre à avril, ce qui couvre les mois où l’extérieur ne donne rien. Reste mai à juillet, sans semis : c’est la récolte des semis de printemps qui tient.<br>2026 : pot 1 semé le 27/09 en intérieur (8–10 akènes écrasés, 0,5 cm). Pot 2 prévu le 11/10.",
           "soins": [
             {
               "freq": "Chaque jour jusqu'à la levée (≈ 4–11/10)",
@@ -558,7 +558,8 @@
           "r": [
             8,
             9
-          ]
+          ],
+          "note": "Arbuste à fruits (ronce sans épines), à ne pas confondre avec le <b>mûrier platane</b> de la pelouse, qui est un arbre. Palissage sur deux fils à poser avant la plantation de novembre."
         },
         {
           "nom": "Courges 'Nutterbutter' + 'Potimarron'",
@@ -878,10 +879,10 @@
       "extra": "phosphate ferrique, à la plantation des choux et brocolis uniquement"
     },
     {
-      "m": 12,
+      "m": 2,
       "g": "c",
       "nom": "Rabattre les framboisiers 'Heritage' — eux seuls",
-      "extra": "Au ras du sol chaque hiver, et uniquement sur les 'Heritage' plantés en novembre. <b>Ne pas toucher à la canne déjà en place</b> : son type est inconnu, elle est sortie en 2026 sans fructifier, et une coupe au ras supprimerait la récolte de juin si elle n'est pas remontante. Il n'en reste qu'une."
+      "extra": "Au ras du sol en fin d'hiver, et uniquement sur les 'Heritage' plantés en novembre. <b>Ne pas toucher à la canne déjà en place</b> : son type est inconnu, elle est sortie en 2026 sans fructifier, et une coupe au ras supprimerait la récolte de juin si elle n'est pas remontante. Il n'en reste qu'une."
     },
     {
       "m": 10,
