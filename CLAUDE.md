@@ -35,6 +35,13 @@ Champs d'une culture : `nom`, `tag`, `ach`, `stype`, `meta`, `note`, `warn`, `wh
 et les tableaux de mois `a` (acheter), `s` (semer), `p` (planter), `r` (récolter),
 `c` (soins).
 
+Champ optionnel `soins` : `[ { freq, quoi } ]`, rendu en petite liste « Soins » sous la
+note. Pour un geste qui se répète à un rythme propre à la culture, pas à un mois — une
+culture sans ce champ rend exactement comme avant.
+
+Les entrées de journal s'ajoutent en fin de `note`, sur une nouvelle ligne
+(`<br>2026 : …`), sans toucher au texte existant.
+
 `data-fleurs.json` :
 
 ```

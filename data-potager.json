@@ -29,21 +29,59 @@
         },
         {
           "nom": "Coriandre",
-          "tag": "semis direct",
+          "tag": "semis intérieur échelonné",
           "ach": "✔ en stock",
-          "meta": "<b>Baumaux / Ste Marthe</b> · pot 25–30 cm sur la terrasse",
+          "meta": "<b>Baumaux / Ste Marthe</b> · pot ≥ 15 cm de profondeur · intérieur près de la baie vitrée en automne-hiver, terrasse au printemps · terreau potager",
           "s": [
+            1,
+            2,
             3,
             4,
-            8
+            8,
+            9,
+            10,
+            11,
+            12
           ],
           "r": [
+            1,
+            2,
+            3,
+            4,
             5,
             6,
             9,
-            10
+            10,
+            11,
+            12
           ],
-          "note": "Monte en graine dès les chaleurs : deux vraies saisons, printemps et fin d'été."
+          "note": "Monte en graine dès les chaleurs : deux vraies saisons, printemps et fin d'été. Hiver sans lampe : 5–6 semaines jusqu'à la 1re coupe (3–4 semaines au printemps). Semer dans le pot définitif, jamais repiquer (monte en graine).<br>2026 : pot 1 semé le 27/09 en intérieur (8–10 akènes écrasés, 0,5 cm). Pot 2 prévu le 11/10.",
+          "soins": [
+            {
+              "freq": "Chaque jour jusqu'à la levée (≈ 4–11/10)",
+              "quoi": "Vérifier la surface ; vaporiser si elle sèche. Humide, jamais détrempé."
+            },
+            {
+              "freq": "Tous les 2–3 jours après la levée",
+              "quoi": "Arroser quand les 2 premiers cm sont secs ; vider la soucoupe après 15 min. Tourner le pot d'un demi-tour vers la lumière."
+            },
+            {
+              "freq": "≈ 2 semaines après la levée",
+              "quoi": "Éclaircir aux ciseaux à 5–6 plants (ou laisser dense pour des jeunes feuilles)."
+            },
+            {
+              "freq": "Chaque semaine dès 3–4 semaines",
+              "quoi": "Couper au plus 1/3 des tiges, en commençant par l'extérieur."
+            },
+            {
+              "freq": "Toutes les 3–4 semaines",
+              "quoi": "Semer un nouveau pot (prochain : 11/10/2026)."
+            },
+            {
+              "freq": "Si les tiges filent",
+              "quoi": "Rapprocher de la vitre, ou passer sous la lampe de culture une fois installée."
+            }
+          ]
         },
         {
           "nom": "Menthe",
@@ -97,7 +135,7 @@
             9,
             10
           ],
-          "note": "Un semis toutes les 3 semaines de mars à septembre. Le voile règle le problème d'altises. Éclairci à 8–9 plants à 3–4 cm le 20/09 : garder une humidité régulière, récolte vers la mi-octobre."
+          "note": "Un semis toutes les 3 semaines de mars à septembre. Le voile règle le problème d'altises. Éclairci à 8–9 plants à 3–4 cm le 20/09 : garder une humidité régulière, récolte vers la mi-octobre.<br>2026 : 2e semis le 27/09 en pot, deux semaines après le 1er, sous voile anti-insectes. Vieux terreau plantation (appauvri) : convient aux radis, qui font des feuilles plutôt que des racines en terreau riche. À l'automne compter 4–5 semaines jusqu'à la récolte."
         },
         {
           "nom": "Carotte 'Marché de Paris' / 'Nantaise demi-longue'",
@@ -274,7 +312,7 @@
             10,
             11
           ],
-          "note": "En pot plutôt qu'en bac : un semis de mi-septembre à 500 m est encore petit aux gelées de mi-octobre, et le pot se déplace contre le mur sud ou sous voile d'hivernage. Amère dès qu'elle sèche : ne jamais la laisser manquer d'eau. Une huitaine de plants par pot au 20/09 : repiquer, garder le plus fort au centre, arroser au pied et jamais sur le cœur."
+          "note": "En pot plutôt qu'en bac : un semis de mi-septembre à 500 m est encore petit aux gelées de mi-octobre, et le pot se déplace contre le mur sud ou sous voile d'hivernage. Amère dès qu'elle sèche : ne jamais la laisser manquer d'eau. Une huitaine de plants par pot au 20/09 : repiquer, garder le plus fort au centre, arroser au pied et jamais sur le cœur.<br>2026 : semée le 13/09, répartie le 27/09 en 4 pots (terreau potager), éclaircie à 2–3 plants par pot pour une récolte feuille à feuille. Rentrer à l'abri dès les premières gelées."
         }
       ]
     },
@@ -299,7 +337,7 @@
             2,
             3
           ],
-          "note": "Apprécie justement les sols calcaires. Récolte en rosettes entières de novembre à mars — la salade d'hiver la plus fiable ici, et zéro entretien. Germination médiocre au-dessus de 20 °C — ressemer les manques début octobre si le semis est clairsemé."
+          "note": "Apprécie justement les sols calcaires. Récolte en rosettes entières de novembre à mars — la salade d'hiver la plus fiable ici, et zéro entretien. Germination médiocre au-dessus de 20 °C — ressemer les manques début octobre si le semis est clairsemé.<br>2026 : levée dense fin septembre. Éclaircir à ~5 cm au stade 2–3 vraies feuilles (vers mi-octobre), en coupant plutôt qu'en arrachant."
         },
         {
           "nom": "Roquette cultivée",
@@ -317,7 +355,7 @@
             3,
             4
           ],
-          "note": "Éclaircie à 5 cm le 20/09. Se récolte feuille à feuille de la mi-octobre jusqu'en décembre, puis repart au printemps — le goût s'affine avec le froid. Le voile règle les altises, même si la pression d'automne est plus faible qu'au printemps."
+          "note": "Éclaircie à 5 cm le 20/09. Se récolte feuille à feuille de la mi-octobre jusqu'en décembre, puis repart au printemps — le goût s'affine avec le froid. Le voile règle les altises, même si la pression d'automne est plus faible qu'au printemps.<br>2026 : premières vraies feuilles le 27/09. Éclaircir à ~5 cm, puis 10 cm pour des plants à couper."
         },
         {
           "nom": "Épinard 'Géant d'hiver'",
@@ -335,7 +373,7 @@
             2,
             3
           ],
-          "note": "Le cœur de la production d'hiver. Récolte feuille à feuille d'octobre à mars. Aux cotylédons et clairsemé au 20/09 : ressemer les trous, puis éclaircir à 10–15 cm aux 1–2 vraies feuilles. Le voile est facultatif ici — l'épinard n'est pas une crucifère. Le bac fait 1 m × 40 cm, en trois blocs du fond vers l'avant : 60 cm d'épinard, 25 cm de mâche, 15 cm de roquette."
+          "note": "Le cœur de la production d'hiver. Récolte feuille à feuille d'octobre à mars. Aux cotylédons et clairsemé au 20/09 : ressemer les trous, puis éclaircir à 10–15 cm aux 1–2 vraies feuilles. Le voile est facultatif ici — l'épinard n'est pas une crucifère. Le bac fait 1 m × 40 cm, en trois blocs du fond vers l'avant : 60 cm d'épinard, 25 cm de mâche, 15 cm de roquette.<br>2026 : semé le 13/09, éclairci le 27/09 à 12 plants (grille 3×4, ~12–15 cm)."
         },
         {
           "nom": "Fraisier Mara des bois — fin de cycle",

@@ -180,6 +180,18 @@ details summary:focus-visible{outline:2px solid var(--recolte);outline-offset:-2
   border:1.5px solid var(--carte);
 }
 .crop-note{font-size:13px;margin-top:9px}
+.crop-soins{margin-top:10px;border-top:1px solid var(--ligne);padding-top:8px}
+.crop-soins h4{
+  font-family:'Spline Sans Mono',monospace;font-size:9.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--sourdine);font-weight:400;margin-bottom:5px;
+}
+.crop-soins ul{list-style:none}
+.crop-soins li{font-size:12.5px;line-height:1.5;margin-bottom:5px}
+.crop-soins li:last-child{margin-bottom:0}
+.crop-soins .freq{
+  font-family:'Spline Sans Mono',monospace;font-size:10.5px;color:var(--soin);
+}
+.crop-soins .freq::after{content:" · ";color:var(--sourdine)}
 
 footer{
   margin-top:40px;padding-top:14px;border-top:3px solid var(--encre);
@@ -310,6 +322,12 @@ function drawPanneau(){
 }
 
 // ---- fiches ----
+/* Champ optionnel : une culture sans « soins » rend exactement comme avant. */
+function soinsHTML(c){
+  if(!c.soins||!c.soins.length)return '';
+  return `<div class="crop-soins"><h4>Soins</h4><ul>${c.soins.map(x=>
+    `<li><span class="freq">${x.freq}</span>${x.quoi}</li>`).join('')}</ul></div>`;
+}
 function stripHTML(c){
   let mois='<div class="mois-row">'+MOIS_L.map((m,i)=>`<div class="${i+1===NOW?'now':''}">${m}</div>`).join('')+'</div>';
   let r1='<div class="act-row">';
@@ -339,6 +357,7 @@ document.getElementById('fiches').innerHTML=sections.map(sec=>`
       <div class="crop-meta">${c.meta}</div>
       ${stripHTML(c)}
       ${c.note?`<div class="crop-note">${c.note}</div>`:''}
+      ${soinsHTML(c)}
     </div>`).join('')}
   </div>
 </details>`).join('');
