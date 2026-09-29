@@ -1004,5 +1004,21 @@
       "nom": "Récolte de la cima di rapa",
       "extra": "À la mi-novembre, sur les jets et les jeunes feuilles, avant l'ouverture des fleurs · voile sur les arceaux si le gel menace avant les boutons."
     }
+  ],
+  "quotidiennes": [
+    {
+      "nom": "Coriandre d’intérieur — vérifier le pot",
+      "extra": "Vaporiser tant que ça n’a pas levé, puis arroser seulement quand les 2 premiers cm sont secs, et vider la soucoupe après 15 min. Le détail des phases est dans la fiche Coriandre.",
+      "mois": [
+        9,
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4
+      ]
+    }
   ]
 }

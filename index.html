@@ -295,6 +295,22 @@ function tachesDuMois(m){
     // l'identifiant garde la forme d'avant, pour ne pas perdre les cases déjà cochées
     t.texte=(t.src==='fleurs'?t.brut:(t.titre+(t.detail?' — '+t.detail:''))).replace(/<[^>]+>/g,'');
     t.id=hache(t.src+'|'+t.texte);
+    t.quot=estQuotidien(t.texte);
+  });
+  return l;
+}
+
+/* Les tâches vraiment quotidiennes ne dépendent pas d'un mois précis mais d'une
+   saison : « quotidiennes » porte la liste des mois où le geste s'applique.
+   Elles ne figurent pas dans l'aperçu du mois suivant — ce ne sont pas des échéances. */
+function quotidiennesDuMois(m){
+  const l=[];
+  if(DONNEES.potager)(DONNEES.potager.quotidiennes||[])
+    .filter(t=>(t.mois||[]).includes(m))
+    .forEach(t=>l.push({src:'potager',titre:t.nom,detail:t.extra||'',quot:true}));
+  l.forEach(t=>{
+    t.texte=(t.titre+(t.detail?' — '+t.detail:'')).replace(/<[^>]+>/g,'');
+    t.id=hache(t.src+'|'+t.texte);
   });
   return l;
 }
@@ -313,7 +329,7 @@ function cles(d){
 }
 function lit(k){ try{return localStorage.getItem(k)==='1';}catch(e){return false;} }
 function ecrit(k,v){ try{ v?localStorage.setItem(k,'1'):localStorage.removeItem(k); }catch(e){} }
-const cleTache=(t,c)=>estQuotidien(t.texte)?`jour:q:${c.jour}:${t.id}`:`jour:f:${c.mois}:${t.id}`;
+const cleTache=(t,c)=>t.quot?`jour:q:${c.jour}:${t.id}`:`jour:f:${c.mois}:${t.id}`;
 
 const ligne=(t,c,{coche=true,quand=''}={})=>{
   const k=cleTache(t,c);
@@ -345,8 +361,8 @@ function drawJour(){
   if(saignent.length)
     h+=`<div class="alerte"><b>Ne pas tailler ce mois-ci :</b> ${saignent.join(', ')} — une coupe hors dormance fait saigner l'arbre.</div>`;
 
-  const quot=toutes.filter(t=>estQuotidien(t.texte));
-  const reste=toutes.filter(t=>!estQuotidien(t.texte));
+  const quot=[...quotidiennesDuMois(m),...toutes.filter(t=>t.quot)];
+  const reste=toutes.filter(t=>!t.quot);
   const fait=reste.filter(t=>lit(cleTache(t,c)));
   const ouvertes=reste.filter(t=>!lit(cleTache(t,c)));
   const plusTard=ouvertes.filter(t=>{const j=jourDeDepart(t.texte,m); return j!==null&&j>jour;});

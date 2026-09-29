@@ -26,10 +26,17 @@ Chacun charge son JSON au démarrage et n'embarque aucune donnée de jardin.
 
 ```
 {
-  "sections":  [ { id, titre, lieu, note?, crops: [ … ] } ],
-  "speciales": [ { m, g, nom, extra? } ]
+  "sections":     [ { id, titre, lieu, note?, crops: [ … ] } ],
+  "speciales":    [ { m, g, nom, extra? } ],
+  "quotidiennes": [ { nom, extra?, mois: [ … ] } ]
 }
 ```
+
+`quotidiennes` : les gestes à refaire **tous les jours** pendant une saison, et non à
+une date. Ils remontent dans « Chaque jour » sur la page d'accueil pendant les `mois`
+indiqués, se décochent chaque matin, et ne figurent pas dans l'aperçu du mois suivant —
+ce ne sont pas des échéances. Garder l'`extra` court : le détail appartient à la fiche
+de la culture (`soins`), sinon les deux divergent.
 
 Champs d'une culture : `nom`, `tag`, `ach`, `stype`, `meta`, `note`, `warn`, `wheel`,
 et les tableaux de mois `a` (acheter), `s` (semer), `p` (planter), `r` (récolter),
@@ -156,6 +163,8 @@ on l'ajoute dans le calendrier concerné. Les fenêtres de culture (tableaux `s`
 
 Ce que le texte d'une tâche change à son affichage :
 
+- une entrée de `quotidiennes` dont le mois courant figure dans `mois` → « Chaque jour ».
+  C'est la façon explicite, à préférer.
 - **« chaque jour » ou « quotidien » dans une phrase qui parle d'arrosage** → rangée
   dans « Chaque jour », décochée chaque matin. Les autres « chaque jour » (dessaler
   les olives) restent des tâches ordinaires.
