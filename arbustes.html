@@ -106,7 +106,7 @@ tr.raison td{padding:2px 2px 10px;}
 .groupe:last-child{margin-bottom:0;}
 .g-tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:2px 9px;border-radius:20px;color:#fff;margin-bottom:7px;}
 .g-horsgel{background:var(--interdit);} .g-pot{background:var(--bronze);} .g-feuillage{background:var(--abricot);}
-.g-souche{background:var(--prune);} .g-rien{background:var(--sourdine);} .g-taille{background:var(--feuille);}
+.g-souche{background:var(--prune);} .g-autre{background:var(--bronze);} .g-rien{background:var(--sourdine);} .g-taille{background:var(--feuille);}
 ul.liste{list-style:none;}
 ul.liste li{padding:5px 0 5px 15px;position:relative;font-size:13.5px;border-bottom:1px solid var(--ligne);}
 ul.liste li:last-child{border-bottom:none;}
@@ -282,6 +282,15 @@ function vueHivernage(){
       <p class="vue-note">${detail}</p>
       <ul class="liste">${l.map(p=>`<li>${p.nom} <span class="ou">— ${p.emplacement} · ${p.rusticite}</span></li>`).join('')}</ul></div>`;
   });
+  // Toute protection formulée librement (papier bulle, pot sur cales…) : sans ce
+  // groupe, elle ne correspondrait à aucune clé et la plante disparaîtrait de la vue.
+  const connu=G.map(([c])=>c).concat('aucun');
+  const autres=PLANTES.filter(p=>!connu.includes(p.hivernage));
+  if(autres.length)
+    h+=`<div class="groupe"><span class="g-tag g-autre">Autres protections</span>
+      <p class="vue-note">Protections propres à une plante, souvent le premier hiver seulement.</p>
+      <ul class="liste">${autres.map(p=>`<li>${p.nom} <span class="ou">— ${p.hivernage} · ${p.emplacement}</span></li>`).join('')}</ul></div>`;
+
   const rien=PLANTES.filter(p=>p.hivernage==='aucun');
   h+=`<div class="groupe"><span class="g-tag g-rien">Rien à faire</span>
     <p class="vue-note">Rustiques sur place. Les emmailloter serait du travail perdu.</p>

@@ -733,28 +733,28 @@
           5
         ],
         "bloque": false,
-        "note": "Ronce sans épines, port semi-érigé. Fructifie sur les cannes de l'an passé : après la récolte, supprimer au ras les cannes qui ont donné et palisser les jeunes, qui porteront l'an prochain. Une taille de printemps supprimerait la récolte. <b>C'est l'arbuste à fruits</b> — le mûrier platane de la pelouse est un arbre, et ne se taille qu'en plein hiver."
+        "note": "Ronce sans épines, port semi-érigé. Fructifie sur les cannes de l'an passé : après la récolte, supprimer au ras les cannes qui ont donné et palisser les jeunes, qui porteront l'an prochain. Une taille de printemps supprimerait la récolte. <b>C'est l'arbuste à fruits</b> — le mûrier platane de la pelouse est un arbre, et ne se taille qu'en plein hiver. Livrée en pot (1,5–2 L) : plantable toute l'année hors gel et canicule. Commande PdF groupée avec 'Heritage'."
       },
       "vieuxBois": true,
       "saigne": false,
       "hivernage": "aucun",
       "rusticite": "Totalement rustique",
-      "plantation": "2026-11",
+      "plantation": "2027-02",
       "etabli": false,
       "journal": [],
       "taches": {
+        "2": [
+          "Plantation racines nues à réception (commande PdF). Poser les deux fils de palissage avant de planter."
+        ],
         "9": [
           "Après la récolte : couper au ras les cannes qui ont fructifié, palisser les nouvelles sur les deux fils."
-        ],
-        "11": [
-          "Plantation racines nues à réception (commande Naudet). Poser les deux fils de palissage avant de planter."
         ]
       }
     },
     {
       "nom": "Framboisier 'Heritage' (à planter)",
       "nomLatin": "Rubus idaeus 'Heritage'",
-      "emplacement": "Massif potager, rang à 40 cm",
+      "emplacement": "À côté du framboisier existant, fond du jardin",
       "type": "arbuste",
       "contenant": "pleine terre",
       "bois": "année",
@@ -772,9 +772,215 @@
           10
         ],
         "bloque": false,
-        "note": "Remontant : fructifie en fin d'été sur les cannes de l'année, donc on rabat <b>tout au ras du sol en fin d'hiver</b>. À ne pas confondre avec le framboisier déjà en place, dont le type est inconnu et qui ne se taille pas."
+        "note": "Remontant : fructifie en fin d'été sur les cannes de l'année, donc on rabat <b>tout au ras du sol en fin d'hiver</b>. À ne pas confondre avec le framboisier déjà en place, dont le type est inconnu et qui ne se taille pas. Commande PdF en décembre, livraison fin février. Racines nues : plantation possible jusqu'à mi-mars."
       },
       "vieuxBois": true,
+      "saigne": false,
+      "hivernage": "aucun",
+      "rusticite": "Totalement rustique",
+      "plantation": "2027-02",
+      "etabli": false,
+      "journal": [],
+      "taches": {
+        "2": [
+          "Rabattre toutes les cannes au ras du sol — celui-ci seulement, pas le framboisier en place.",
+          "Plantation racines nues à réception (commande PdF), 40 cm entre plants."
+        ]
+      }
+    },
+    {
+      "nom": "Rosier 'Eva'",
+      "nomLatin": "Rosa 'Eva'",
+      "emplacement": "Pot 50 cm, terrasse",
+      "type": "arbuste",
+      "contenant": "pot",
+      "bois": "année",
+      "taille": {
+        "mois": [
+          3
+        ],
+        "legere": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "interdit": [
+          11,
+          12,
+          1
+        ],
+        "bloque": false,
+        "note": "Hybride de thé. En mars (forsythias en fleur) : garder 3–5 tiges saines, rabattre à 3–5 yeux (15–20 cm) sur un œil extérieur. Été : supprimer les fleurs fanées au-dessus d'une feuille à 5 folioles."
+      },
+      "vieuxBois": false,
+      "saigne": false,
+      "hivernage": "1er hiver : papier bulle autour du pot si < −5 °C",
+      "rusticite": "Rustique ; racines en pot plus exposées",
+      "plantation": "2026-11",
+      "etabli": false,
+      "journal": [],
+      "taches": {
+        "3": [
+          "Taille de printemps + poignée d'engrais rosiers."
+        ],
+        "6": [
+          "Fleurs fanées au fur et à mesure."
+        ]
+      }
+    },
+    {
+      "nom": "Rosier 'Anastasia'",
+      "nomLatin": "Rosa 'Anastasia'",
+      "emplacement": "Pot 50 cm, terrasse",
+      "type": "arbuste",
+      "contenant": "pot",
+      "bois": "année",
+      "taille": {
+        "mois": [
+          3
+        ],
+        "legere": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "interdit": [
+          11,
+          12,
+          1
+        ],
+        "bloque": false,
+        "note": "Hybride de thé. En mars (forsythias en fleur) : garder 3–5 tiges saines, rabattre à 3–5 yeux (15–20 cm) sur un œil extérieur. Été : supprimer les fleurs fanées au-dessus d'une feuille à 5 folioles."
+      },
+      "vieuxBois": false,
+      "saigne": false,
+      "hivernage": "1er hiver : papier bulle autour du pot si < −5 °C",
+      "rusticite": "Rustique ; racines en pot plus exposées",
+      "plantation": "2026-11",
+      "etabli": false,
+      "journal": [],
+      "taches": {
+        "3": [
+          "Taille de printemps + poignée d'engrais rosiers."
+        ],
+        "6": [
+          "Fleurs fanées au fur et à mesure."
+        ]
+      }
+    },
+    {
+      "nom": "Rosier 'Black Magic'",
+      "nomLatin": "Rosa 'Black Magic'",
+      "emplacement": "Pot 35 cm provisoire, à l'écart des pots roses/abricot",
+      "type": "arbuste",
+      "contenant": "pot",
+      "bois": "année",
+      "taille": {
+        "mois": [
+          3
+        ],
+        "legere": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "interdit": [
+          11,
+          12,
+          1
+        ],
+        "bloque": false,
+        "note": "Hybride de thé. En mars (forsythias en fleur) : garder 3–5 tiges saines, rabattre à 3–5 yeux (15–20 cm) sur un œil extérieur. Été : supprimer les fleurs fanées au-dessus d'une feuille à 5 folioles."
+      },
+      "vieuxBois": false,
+      "saigne": false,
+      "hivernage": "1er hiver : papier bulle autour du pot si < −5 °C",
+      "rusticite": "Rustique ; racines en pot plus exposées",
+      "plantation": "2026-11",
+      "etabli": false,
+      "journal": [],
+      "taches": {
+        "3": [
+          "Taille de printemps + poignée d'engrais rosiers."
+        ],
+        "6": [
+          "Fleurs fanées au fur et à mesure."
+        ],
+        "10": [
+          "Rempoter en pot ≥ 45 cm ou mettre en terre."
+        ]
+      }
+    },
+    {
+      "nom": "Rosier 'Roald Dahl' (à commander)",
+      "nomLatin": "Rosa 'Roald Dahl' (Ausowlish)",
+      "emplacement": "Pot 50 cm réservé, terrasse",
+      "type": "arbuste",
+      "contenant": "pot",
+      "bois": "année",
+      "taille": {
+        "mois": [
+          2,
+          3
+        ],
+        "legere": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "interdit": [
+          11,
+          12,
+          1
+        ],
+        "bloque": false,
+        "note": "Arbuste anglais David Austin : fin février–mars, raccourcir d'un tiers à la moitié, supprimer bois mort et tiges faibles. Remontant : ôter les fleurs fanées."
+      },
+      "vieuxBois": false,
+      "saigne": false,
+      "hivernage": "1er hiver en pot : papier bulle si < −5 °C",
+      "rusticite": "Rustique",
+      "plantation": "2027-03",
+      "etabli": false,
+      "journal": [],
+      "taches": {
+        "3": [
+          "Planter avant mi-mars, trempage 2–6 h avant."
+        ],
+        "12": [
+          "Commander en racines nues (PdF)."
+        ]
+      }
+    },
+    {
+      "nom": "Pivoine (de maman)",
+      "nomLatin": "Paeonia lactiflora (variété inconnue)",
+      "emplacement": "Pot 35 cm provisoire → massif d'ici 1–2 ans",
+      "type": "vivace",
+      "contenant": "pot",
+      "bois": "—",
+      "taille": {
+        "mois": [
+          10,
+          11
+        ],
+        "legere": [],
+        "interdit": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "bloque": false,
+        "note": "Vivace herbacée : couper les tiges au ras quand le feuillage jaunit en automne. Rien d'autre."
+      },
+      "vieuxBois": false,
       "saigne": false,
       "hivernage": "aucun",
       "rusticite": "Totalement rustique",
@@ -782,13 +988,42 @@
       "etabli": false,
       "journal": [],
       "taches": {
-        "2": [
-          "Rabattre toutes les cannes au ras du sol — celui-ci seulement, pas le framboisier en place."
-        ],
-        "11": [
-          "Plantation racines nues à réception (commande Naudet), 40 cm entre plants."
+        "5": [
+          "Tuteurer légèrement si les fleurs penchent."
         ]
       }
+    },
+    {
+      "nom": "Lavande (de maman)",
+      "nomLatin": "Lavandula sp.",
+      "emplacement": "Pot Living Creation 30 cm, terrasse, plein soleil",
+      "type": "arbuste",
+      "contenant": "pot",
+      "bois": "année",
+      "taille": {
+        "mois": [
+          8
+        ],
+        "legere": [
+          3
+        ],
+        "interdit": [
+          11,
+          12,
+          1,
+          2
+        ],
+        "bloque": false,
+        "note": "Après floraison, raccourcir d'un tiers en gardant du feuillage vert. Ne jamais couper dans le vieux bois nu."
+      },
+      "vieuxBois": false,
+      "saigne": false,
+      "hivernage": "Pot surélevé sur cales, au sec ; pas de soucoupe",
+      "rusticite": "Rustique si le pied reste sec",
+      "plantation": "2026-11",
+      "etabli": false,
+      "journal": [],
+      "taches": {}
     }
   ],
   "ponctuelles": [

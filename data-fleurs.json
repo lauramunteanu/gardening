@@ -19,7 +19,7 @@
             3,
             4
           ],
-          "note": "Floraison discrète en plein hiver, explosion en mars–avril juste quand les bulbes percent."
+          "note": "Floraison discrète en plein hiver, explosion en mars–avril juste quand les bulbes percent. <br>2026–27 : 4 jardinières = 5 violas 'Kitty Surprise' + 3 Cool Wave White chacune (les violas blanches commandées n'ont pas été livrées, remboursées)."
         },
         {
           "nom": "Narcisses (manchons)",
@@ -129,7 +129,7 @@
             3,
             4
           ],
-          "note": "Fine et effilée, la silhouette clusiana. Basse, précoce, indifférente à la bise — et vivace, contrairement aux grandes."
+          "note": "Fine et effilée, la silhouette clusiana. Basse, précoce, indifférente à la bise — et vivace, contrairement aux grandes. <br>Toujours à planter (avant fin novembre) : sol trop dur pour la pleine terre en ce moment → pot de récup ≥ 25 cm, 10–12 cm de profondeur, un peu de pouzzolane, plein soleil."
         },
         {
           "nom": "Tulipe kaufmanniana 'Heart's Delight' ×10",
@@ -155,24 +155,25 @@
           "flo": [
             3
           ],
-          "note": "Reportée à la commande d'octobre (bon d'achat). Feuillage strié de pourpre, décoratif avant même la fleur."
+          "note": "Reportée à la commande d'octobre (bon d'achat). Feuillage strié de pourpre, décoratif avant même la fleur. <br>Nov. 2026 : bulbes introuvables à la plantation, remplacés dans les pots par 'Salmon Impression' et 'China Pink'."
         },
         {
-          "nom": "Rosier 'Lady of Shalott' (nouveau)",
-          "meta": "Grand pot 50 cm · orange-abricot · 1,2–1,4 m",
-          "tag": "grand pot à acheter",
-          "chaud": 1,
+          "nom": "Rosier 'Roald Dahl' (à commander)",
+          "meta": "David Austin, orange doux à pêche, parfumé · racines nues (PdF, ~21 €) · grand pot 50 cm déjà réservé",
           "pla": [
-            11
+            11,
+            12,
+            1,
+            2,
+            3
           ],
           "flo": [
             6,
             7,
             8,
-            9,
-            10
+            9
           ],
-          "note": "Commande en octobre, plantation racines nues en novembre. Taille d'un tiers + engrais rosier en mars, engrais après chaque vague. Arrosage profond et espacé, goutteur généreux pendant les absences."
+          "note": "Remplace 'Lady of Shalott' (trop orange cuivré). Commande séparée de la commande de bulbes ; date de livraison au choix dans le panier PdF. Planter au plus tard mi-mars."
         },
         {
           "nom": "Sauges arbustives (2–3 nouvelles)",
@@ -298,6 +299,95 @@
           "note": "Parfumée, tendre, elle adoucit l'abricot de 'Gipsy Queen'. Un blanc ('Carnegie') viendra compléter le trio une autre année."
         },
         {
+          "nom": "Lasagnes de bulbes (bac zinc, grande coupe, pots, étagère)",
+          "meta": "Plantées fin oct. 2026 · palette rose, saumon, abricot, blanc, bleu poudré",
+          "pla": [
+            10
+          ],
+          "flo": [
+            3,
+            4,
+            5
+          ],
+          "note": "Tulipes 'Apricot Beauty', 'Salmon Dynasty', 'Salmon Impression', 'Stunning Apricot', 'Heart's Delight' · jacinthes 'Sweet Invitation', 'China Pink', 'Gipsy Queen' · muscaris 'White Magic' et 'Valerie Finnis' · chionodoxas 'Pink Giant' et 'Rosy Queen' · myosotis Rosylva et Snowsylva · pensées Carrera Pink Shades · Cool Wave White · iberis 'Snowflake'. Narcisse 'British Gamble' seul dans le pot vert foncé. Détail pot par pot : plan de la terrasse (artifact Claude)."
+        },
+        {
+          "nom": "Rosiers de maman : 'Eva' (rose) et 'Anastasia' (blanc)",
+          "meta": "Hybrides de thé · racines nues · un pot de 50 cm chacun",
+          "pla": [
+            11
+          ],
+          "flo": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "note": "Plantés mi-nov. 2026 après 2–6 h de trempage. Point de greffe au ras du terreau. 1er hiver : emmailloter le pot si < −5 °C."
+        },
+        {
+          "nom": "Rosier 'Black Magic' (rouge très foncé)",
+          "meta": "Hybride de thé · racines nues · pot 35 cm provisoire",
+          "pla": [
+            11
+          ],
+          "flo": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "note": "Hors palette de la terrasse : à placer à l'écart des pots roses/abricot. À rempoter plus grand ou mettre en terre à l'automne 2027."
+        },
+        {
+          "nom": "Pivoine (cadeau de maman)",
+          "meta": "Racines · pot 35 cm provisoire · terreau + 1/4 perlite ou pouzzolane",
+          "pla": [
+            11
+          ],
+          "flo": [
+            5,
+            6
+          ],
+          "note": "Bourgeons roses (« yeux ») à 3–5 cm sous la surface, jamais plus profond, sinon pas de fleurs. Destinée à la pleine terre (massif) d'ici 1–2 ans ; déteste être déplacée ensuite."
+        },
+        {
+          "nom": "Iris (rhizomes de maman)",
+          "meta": "Petite jardinière rectangulaire · terreau + 1/3 pouzzolane · plein soleil",
+          "pla": [
+            11
+          ],
+          "flo": [
+            5,
+            6
+          ],
+          "note": "Dessus du rhizome affleurant, à l'air. Ne pas tremper. Arrosage quasi nul en hiver."
+        },
+        {
+          "nom": "Muguet (lăcrămioare)",
+          "meta": "Petite jardinière rectangulaire · mi-ombre, mur nord",
+          "pla": [
+            11
+          ],
+          "flo": [
+            5
+          ],
+          "note": "Griffes, pointes juste sous la surface, ~10 cm d'écart. Toxique : hors de portée des chats, se laver les mains."
+        },
+        {
+          "nom": "Narcisses (bulbes de maman)",
+          "meta": "Pot Living Creation 30 cm · 10–15 bulbes",
+          "pla": [
+            11,
+            12
+          ],
+          "flo": [
+            3,
+            4
+          ],
+          "note": "Variété inconnue. Planter avant fin décembre. Il reste aussi un sachet non identifié reçu avec le colis : à identifier."
+        },
+        {
           "nom": "Narcisses (manchons en cache-pots)",
           "meta": "Petits pots plastiques du stock",
           "pla": [
@@ -397,7 +487,7 @@
             9,
             10
           ],
-          "note": "Le duo qui marche, on n'y touche pas. C'est la profondeur et le drainage du pot qui font la différence — le gaura a un pivot. Romarin : pas de soucoupe l'hiver, et ne jamais couper au-delà des feuilles vertes."
+          "note": "Le duo qui marche, on n'y touche pas. C'est la profondeur et le drainage du pot qui font la différence — le gaura a un pivot. Romarin : pas de soucoupe l'hiver, et ne jamais couper au-delà des feuilles vertes. <br>Nov. 2026 : gaura en pot sec, mousse en surface = terreau trop humide. Rabattre à 5–10 cm, gratter la mousse, ne plus arroser, pot sous l'avancée sur cales. Si la souche repart en avril–mai : pleine terre ou grand pot avec beaucoup de sable/gravier."
         }
       ]
     },
@@ -513,7 +603,7 @@
             5,
             6
           ],
-          "note": "Le seul blanc du lot, et c'est lui qui fait chanter le pourpre de 'Purple Sensation'. L'œil sombre au cœur de chaque fleuron lui donne son reflet argenté."
+          "note": "Le seul blanc du lot, et c'est lui qui fait chanter le pourpre de 'Purple Sensation'. L'œil sombre au cœur de chaque fleuron lui donne son reflet argenté. <br>Toujours à planter avant fin novembre, avec les clusiana (pot de récup si le sol reste trop dur), 15 cm de profondeur."
         },
         {
           "nom": "Allium 'Purple Sensation' ×15",
@@ -552,7 +642,7 @@
             3,
             4
           ],
-          "note": "Énorme trompette froufroutante, citron pâle puis rose abricot — au frais du 500 m, elle tirera sur le pêche. Se naturalise en touffes. Quelques bulbes en manchons contre le mur de la terrasse si envie."
+          "note": "Énorme trompette froufroutante, citron pâle puis rose abricot — au frais du 500 m, elle tirera sur le pêche. Se naturalise en touffes. Quelques bulbes en manchons contre le mur de la terrasse si envie. <br>2026 : plantés en pot (pot vert foncé 30 cm, terrasse), pas au massif. Après floraison, sortir le pot de la vue et laisser jaunir le feuillage."
         },
         {
           "nom": "Narcisses (pleine terre)",
@@ -789,6 +879,10 @@
       [
         "x",
         "Cotinus : raccourcir d'un tiers les tiges nues, au-dessus d'un œil tourné vers l'extérieur."
+      ],
+      [
+        "p",
+        "Planter 'Roald Dahl' dans le pot de 50 cm réservé : dernier délai mi-mars pour des racines nues."
       ]
     ],
     "4": [
@@ -946,7 +1040,7 @@
       ],
       [
         "a",
-        "Commander le rosier 'Lady of Shalott' et le grand pot de 50 cm."
+        "Rosier : 'Lady of Shalott' abandonné au profit de 'Roald Dahl' ; grand pot de 50 cm reçu de maman."
       ],
       [
         "x",
@@ -980,7 +1074,19 @@
     "11": [
       [
         "p",
-        "Planter le rosier racines nues dans le grand pot, par temps doux."
+        "Rosiers de maman : tremper 2–6 h, puis 'Eva' et 'Anastasia' en pots 50 cm, 'Black Magic' en pot 35 cm. Garder le 3e pot de 50 cm pour 'Roald Dahl'."
+      ],
+      [
+        "p",
+        "Pivoine, iris, muguet : planter à réception (voir fiches)."
+      ],
+      [
+        "p",
+        "Clusiana 'Cynthia' ×10 + allium 'Silver Spring' ×3 : planter avant le 30."
+      ],
+      [
+        "x",
+        "Avant la 1re nuit < −5 °C : papier bulle autour des pots (pas du feuillage) de l'agapanthe et des rosiers de 1re année ; voile d'hivernage sur la Batavia et le feuillage fragile."
       ],
       [
         "p",
@@ -999,6 +1105,10 @@
       [
         "x",
         "Repos. Un œil sur la caisse des mufliers après grosse bise ou neige."
+      ],
+      [
+        "a",
+        "Commander chez PdF : rosier 'Roald Dahl' (racines nues) + framboisiers 'Heritage' + mûre 'Loch Ness'. Choisir une livraison fin février / début mars."
       ]
     ]
   }

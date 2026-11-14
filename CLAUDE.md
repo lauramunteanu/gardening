@@ -88,7 +88,9 @@ Les quatre vues dérivent toutes de `plantes` :
   conifères). C'est un drapeau permanent, pas un mois.
 - `saigne: true` déclenche l'alerte rouge de la vue « Le mois ».
 - `hivernage` : `hors-gel`, `pot emmailloté`, `feuillage protégé`, `souche buttée`
-  ou `aucun`. `feuillage protégé` implique aussi l'emmaillotage du pot.
+  ou `aucun`. `feuillage protégé` implique aussi l'emmaillotage du pot. Toute autre
+  valeur est traitée comme du texte libre et rendue sous « Autres protections » —
+  c'est le cas des rosiers de 1re année et de la lavande.
 - `plantation` (`YYYY-MM`) + `etabli: false` alimentent « Jeunes plants » et
   l'entrée disparaît d'elle-même au bout de trois ans.
 
@@ -111,9 +113,9 @@ Les noms se ressemblent, les tailles sont opposées :
 | Plante | Où | Ce que c'est | Taille |
 |---|---|---|---|
 | **Mûrier platane** | arbustes, pelouse | l'**arbre**, planté 04/2026 | nov–janv seulement, il saigne |
-| **Mûre 'Loch Ness'** | arbustes + potager | l'**arbuste à fruits**, à planter 11/2026 | après récolte, sur bois de l'an passé |
+| **Mûre 'Loch Ness'** | arbustes + potager | l'**arbuste à fruits**, à planter 02/2027 | après récolte, sur bois de l'an passé |
 | **Framboisier en place** | arbustes, pied de mur | planté 10/2025, une canne, **type inconnu** | aucune, tant qu'il n'a pas fructifié |
-| **Framboisier 'Heritage'** | arbustes + potager | remontant, à planter 11/2026 | tout au ras en **février** |
+| **Framboisier 'Heritage'** | arbustes + potager | remontant, à planter 02/2027 | tout au ras en **février** |
 
 Ne jamais faire correspondre une instruction par le seul mot « mûrier » ou
 « framboisier » : vérifier de laquelle des quatre il s'agit.
@@ -135,7 +137,7 @@ Ne jamais faire correspondre une instruction par le seul mot « mûrier » ou
 - Un `data-*.json` seul : pousser sur `main`, rien d'autre. Le service worker les
   récupère en réseau d'abord, la nouvelle version apparaît au chargement suivant.
 - Un fichier HTML, `sw.js` ou un asset : incrémenter `CACHE` dans `sw.js`
-  (`calendrier-v8` → `calendrier-v9`, …) pour que les appareils déjà visités
+  (`calendrier-v14` → `calendrier-v15`, …) pour que les appareils déjà visités
   ne restent pas sur l'ancienne version.
 - Toute nouvelle page navigable doit être ajoutée à `SHELL` **et** à `PAGES`
   dans `sw.js` : chaque page a sa propre copie en cache, l'accueil ne peut pas
@@ -193,5 +195,10 @@ un aperçu du mois suivant apparaît en bas.
   courgette » et l'entrée de février sur la terre neuve du bac se décident ensemble.
 - **Appleblossom** : cité dans le semis de février de `data-fleurs.json` sans carte
   correspondante. Soit la variété sort de la commande, soit il lui faut une carte.
+- **Commande Naudet de novembre** : `data-potager.json` la liste encore avec le
+  framboisier 'Heritage' et la mûre 'Loch Ness', alors que les deux passent
+  désormais par la commande PdF de décembre (livraison fin février). Les cartes
+  potager de ces deux plantes portent toujours `a:[11] p:[11]` et le tag
+  « Naudet nov. ». À réconcilier.
 - **AquaBloom** : plus utilisé, toutes les références sont retirées des calendriers
   jusqu'à nouvel ordre.

@@ -25,7 +25,7 @@
             9,
             10
           ],
-          "note": "Sortie sur la terrasse à la mi-mai. Pincer sans arrêt pour retarder la floraison."
+          "note": "Sortie sur la terrasse à la mi-mai. Pincer sans arrêt pour retarder la floraison. <br>Substrat : 2 terreau + 1 perlite (le terreau Botanic seul se tasse et moisit). Arrosage par le dessous, laisser sécher 2 cm en surface. Engrais liquide (algues ou feuillage) à demi-dose toutes les 2–3 semaines, à partir de mi-décembre."
         },
         {
           "nom": "Coriandre",
@@ -55,7 +55,7 @@
             11,
             12
           ],
-          "note": "Monte en graine dès les chaleurs : deux vraies saisons, printemps et fin d'été. Hiver sans lampe : 5–6 semaines jusqu'à la 1re coupe (3–4 semaines au printemps). Semer dans le pot définitif, jamais repiquer (monte en graine). Deux conduites en parallèle : <b>dehors</b>, semis direct en pot de 25–30 cm sur la terrasse, en mars–avril puis en août — jamais en plein été, elle monte en graine à la chaleur ; <b>dedans</b>, près de la baie vitrée, de septembre à avril, ce qui couvre les mois où l’extérieur ne donne rien. Reste mai à juillet, sans semis : c’est la récolte des semis de printemps qui tient.<br>2026 : pot 1 semé le 27/09 en intérieur (8–10 akènes écrasés, 0,5 cm). Pot 2 prévu le 11/10.",
+          "note": "Monte en graine dès les chaleurs : deux vraies saisons, printemps et fin d'été. Hiver sans lampe : 5–6 semaines jusqu'à la 1re coupe (3–4 semaines au printemps). Semer dans le pot définitif, jamais repiquer (monte en graine). Deux conduites en parallèle : <b>dehors</b>, semis direct en pot de 25–30 cm sur la terrasse, en mars–avril puis en août — jamais en plein été, elle monte en graine à la chaleur ; <b>dedans</b>, près de la baie vitrée, de septembre à avril, ce qui couvre les mois où l’extérieur ne donne rien. Reste mai à juillet, sans semis : c’est la récolte des semis de printemps qui tient.<br>2026 : pot 1 semé le 27/09 en intérieur (8–10 akènes écrasés, 0,5 cm). Pot 2 prévu le 11/10. <br>Substrat : 2 terreau + 1 perlite (le terreau Botanic seul se tasse et moisit). Arrosage par le dessous, laisser sécher 2 cm en surface. Engrais liquide (algues ou feuillage) à demi-dose toutes les 2–3 semaines, à partir de mi-décembre.",
           "soins": [
             {
               "freq": "Chaque jour jusqu'à la levée (≈ 4–11/10)",
@@ -103,6 +103,20 @@
             10
           ],
           "note": "Envahissante par ses rhizomes : le pot est une prison, pas une option. Diviser chaque printemps."
+        },
+        {
+          "nom": "Laitue (cuisine, sous lampes)",
+          "tag": "intérieur",
+          "ach": "✔",
+          "meta": "Petits pots sous les barres Barrina · substrat 2 terreau + 1 perlite",
+          "r": [
+            11,
+            12,
+            1,
+            2,
+            3
+          ],
+          "note": "Culture courte : un ou deux arrosages à l'engrais demi-dose avant la récolte suffisent."
         }
       ]
     },
@@ -110,7 +124,7 @@
       "id": "terrasse",
       "titre": "Terrasse — pots",
       "lieu": "terrasse",
-      "note": "Tous à l'arrosoir, humidité régulière. Les racines en pot esquivent la mouche de la carotte (vol bas) et les altises.",
+      "note": "Tous à l'arrosoir, humidité régulière. Les racines en pot esquivent la mouche de la carotte (vol bas) et les altises. <b>Mélanges de terreau</b> (le terreau Botanic toutes plantes, sans tourbe, se tasse) : herbes et semis = 2 terreau + 1 perlite · ail, iris, lavande, bulbes = 2 terreau + 1 pouzzolane 7–15 mm · grands pots (rosiers, pivoine) = 3 terreau + 1 perlite/pouzzolane, billes d'argile au fond. Vieux terreau réutilisable avec 1/3 de neuf, sauf après pourriture des racines (→ massif, pas les pots).",
       "crops": [
         {
           "nom": "Radis 'de 18 jours'",
@@ -123,8 +137,7 @@
             5,
             6,
             7,
-            8,
-            9
+            8
           ],
           "r": [
             4,
@@ -135,7 +148,7 @@
             9,
             10
           ],
-          "note": "Un semis toutes les 3 semaines de mars à septembre. Le voile règle le problème d'altises. Éclairci à 8–9 plants à 3–4 cm le 20/09 : garder une humidité régulière, récolte vers la mi-octobre.<br>2026 : 2e semis le 27/09 en pot, deux semaines après le 1er, sous voile anti-insectes. Vieux terreau plantation (appauvri) : convient aux radis, qui font des feuilles plutôt que des racines en terreau riche. À l'automne compter 4–5 semaines jusqu'à la récolte."
+          "note": "Un semis toutes les 3 semaines de mars à septembre. Le voile règle le problème d'altises. Éclairci à 8–9 plants à 3–4 cm le 20/09 : garder une humidité régulière, récolte vers la mi-octobre.<br>2026 : 2e semis le 27/09 en pot, deux semaines après le 1er, sous voile anti-insectes. Vieux terreau plantation (appauvri) : convient aux radis, qui font des feuilles plutôt que des racines en terreau riche. À l'automne compter 4–5 semaines jusqu'à la récolte. <br>Bilan automne 2026 : racines minuscules, plantules filées (jours courts, terreau détrempé, semis trop serré). Ne plus semer après fin août ; terreau allégé (sable ou billes d'argile) ; éclaircir à 3–5 cm ; plein soleil."
         },
         {
           "nom": "Carotte 'Marché de Paris' / 'Nantaise demi-longue'",
@@ -293,9 +306,11 @@
             9
           ],
           "r": [
-            11
+            11,
+            2,
+            3
           ],
-          "note": "60 jours du semis à la récolte : le brocoli sans les dix mois d'occupation. Ce sont les jets et jeunes feuilles qui se mangent, avant l'ouverture des fleurs. En pot — il monte à graine au moindre stress hydrique. Peut se resemer début printemps. En touffes non éclaircies au 20/09 : éclaircir à 15 cm, soit environ 4 plants par jardinière de 60 cm. Récolte attendue à la mi-novembre ; voile sur les arceaux existants si le gel vient avant les boutons."
+          "note": "60 jours du semis à la récolte : le brocoli sans les dix mois d'occupation. Ce sont les jets et jeunes feuilles qui se mangent, avant l'ouverture des fleurs. En pot — il monte à graine au moindre stress hydrique. Peut se resemer début printemps. En touffes non éclaircies au 20/09 : éclaircir à 15 cm, soit environ 4 plants par jardinière de 60 cm. Récolte attendue à la mi-novembre ; voile sur les arceaux existants si le gel vient avant les boutons. <br>Mi-nov. 2026 : beaux plants, voile anti-insectes retiré (ravageurs finis). Arroser seulement si sec à 3–4 cm (sous l'avancée, la pluie n'arrive pas). Pas d'engrais avant fin février. Boutons attendus fév.–mars : couper la tête avant les fleurs jaunes, les pousses latérales suivent. Voile si ≤ −6 °C."
         },
         {
           "nom": "Batavia 'Blonde de Paris'",
@@ -312,7 +327,21 @@
             10,
             11
           ],
-          "note": "En pot plutôt qu'en bac : un semis de mi-septembre à 500 m est encore petit aux gelées de mi-octobre, et le pot se déplace contre le mur sud ou sous voile d'hivernage. Amère dès qu'elle sèche : ne jamais la laisser manquer d'eau. Une huitaine de plants par pot au 20/09 : repiquer, garder le plus fort au centre, arroser au pied et jamais sur le cœur.<br>2026 : semée le 13/09, répartie le 27/09 en 4 pots (terreau potager), éclaircie à 2–3 plants par pot pour une récolte feuille à feuille. Rentrer à l'abri dès les premières gelées."
+          "note": "En pot plutôt qu'en bac : un semis de mi-septembre à 500 m est encore petit aux gelées de mi-octobre, et le pot se déplace contre le mur sud ou sous voile d'hivernage. Amère dès qu'elle sèche : ne jamais la laisser manquer d'eau. Une huitaine de plants par pot au 20/09 : repiquer, garder le plus fort au centre, arroser au pied et jamais sur le cœur.<br>2026 : semée le 13/09, répartie le 27/09 en 4 pots (terreau potager), éclaircie à 2–3 plants par pot pour une récolte feuille à feuille. Rentrer à l'abri dès les premières gelées. <br>La plus fragile au froid : voile dès −3 °C annoncé."
+        },
+        {
+          "nom": "Ail 'Germidour'",
+          "tag": "en pots",
+          "ach": "✔ ~40 caïeux (Botanic)",
+          "meta": "Caïeux pointe en haut à 3–5 cm, 8–10 cm d'écart · <b>en pots sur la terrasse</b> (sol trop dur) : 2 pots ronds radis (4–5 caïeux), petite jardinière (~8), petits pots ≥ 20 cm (3) · terreau + 1/3 pouzzolane",
+          "p": [
+            11
+          ],
+          "r": [
+            6,
+            7
+          ],
+          "note": "Rien à faire entre plantation et récolte : la culture la plus compatible avec les absences. <br>2026 : ~25–30 plus gros caïeux plantés mi-nov., les petits en cuisine. Pots de 35 cm volontairement gardés libres pour les tomates de mai."
         }
       ]
     },
@@ -320,7 +349,7 @@
       "id": "bac",
       "titre": "Bac surélevé (1 m × 40 cm)",
       "lieu": "bac",
-      "note": "Rotation continue : salades au printemps, fraisiers renouvelés l'été, épinard tout l'hiver.",
+      "note": "Rotation continue : salades au printemps, fraisiers renouvelés l'été, épinard tout l'hiver. Hiver : aucun engrais (pousses molles = gel). Arrosage seulement après 2 semaines sans pluie. Fin février : engrais organique léger ou fine couche de compost.",
       "crops": [
         {
           "nom": "Mâche 'Verte de Cambrai'",
@@ -487,20 +516,6 @@
             9,
             10
           ]
-        },
-        {
-          "nom": "Ail 'Germidour'",
-          "tag": "sur butte",
-          "ach": "bulbes (Botanic mi-oct.)",
-          "meta": "Caïeux à 3–4 cm, <b>sur butte</b> (l'argile hivernale fait pourrir l'ail à plat)",
-          "p": [
-            10
-          ],
-          "r": [
-            6,
-            7
-          ],
-          "note": "Rien à faire entre plantation et récolte : la culture la plus compatible avec les absences."
         },
         {
           "nom": "Oignon rouge 'Red Baron'",
@@ -1003,6 +1018,12 @@
       "g": "r",
       "nom": "Récolte de la cima di rapa",
       "extra": "À la mi-novembre, sur les jets et les jeunes feuilles, avant l'ouverture des fleurs · voile sur les arceaux si le gel menace avant les boutons."
+    },
+    {
+      "m": 12,
+      "g": "a",
+      "nom": "Commande PdF fruits + rosier",
+      "extra": "Framboisiers 'Heritage' (racines nues, 4,90 € les 2, expédiés dès le 20/11) · mûre 'Loch Ness' (pot 1,5–2 L, 17,50 €) · rosier 'Roald Dahl'. Livraison fin fév./début mars."
     }
   ],
   "quotidiennes": [

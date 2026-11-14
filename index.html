@@ -250,7 +250,10 @@ function compteArbustes(data,m){
   const jeunes=data.plantes.filter(p=>{
     if(p.etabli||!p.plantation)return false;
     const [y,mo]=p.plantation.split('-').map(Number);
-    return (d.getFullYear()-y)*12+(d.getMonth()+1-mo) < 36;
+    const ecoules=(d.getFullYear()-y)*12+(d.getMonth()+1-mo);
+    // une plantation encore à venir n'est pas une reprise en cours : même règle
+    // que « Jeunes plants » dans arbustes.html, sinon les deux comptes divergent
+    return ecoules>=0 && ecoules<36;
   }).length;
   // « jeunes plants » s'accorde sur les deux mots, pluriel() n'en fléchit qu'un
   const libJeunes=`${jeunes} jeune${jeunes>1?'s':''} plant${jeunes>1?'s':''}`;
