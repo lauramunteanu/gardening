@@ -203,20 +203,21 @@
         },
         {
           "nom": "Figuier 'Ronde de Bordeaux'",
-          "tag": "pérenne",
-          "ach": "arbre (commande Naudet)",
-          "meta": "Commande nov. · bac 50–60 L contre le mur sud · hivernage avec le laurier-rose",
+          "tag": "à décider mi-mars",
+          "ach": "à acheter : Botanic (demi-tige variété nommée) ou PdF (demi-tige 75 €)",
+          "meta": "Demi-tige · pot 25–30 L la 1re année, puis bac 50–60 L · contre le mur sud · hivernage avec le laurier-rose",
           "a": [
-            11
+            3
           ],
           "p": [
-            11
+            3,
+            4
           ],
           "r": [
             8,
             9
           ],
-          "note": "La seule figue assez précoce pour cette altitude. Vraies récoltes dès la 2e–3e année."
+          "note": "La seule figue assez précoce pour cette altitude. Vraies récoltes dès la 2e–3e année. <br>2026 : retiré de la commande PdF du 23/11 (gardé en liste d'envies PdF). Décision le 13/03/2027 : demi-tige à Botanic Saint-Genis seulement si la variété est nommée et précoce ('Ronde de Bordeaux', 'Madeleine des Deux Saisons', 'Dalmatie') ; sinon PdF 'Ronde de Bordeaux' demi-tige. Gel tardif < −2 °C en avril : abriter."
         },
         {
           "nom": "Tomate naine 'Maskotka'",
@@ -542,39 +543,59 @@
       "note": "Le massif en terre, non surélevé. Pression d'altises élevée : voile obligatoire sur toute crucifère, scellé dès le semis.",
       "crops": [
         {
-          "nom": "Framboisier 'Heritage' (commande nov.)",
-          "tag": "Naudet nov.",
-          "ach": "racines nues (Naudet)",
+          "nom": "Framboisier 'Heritage' (automne)",
+          "tag": "PdF, livr. 23/02",
+          "ach": "✔ racines nues ×2 (PdF, 4,90 €)",
           "meta": "Rang, 40 cm entre plants · rabattre au ras chaque hiver <b>une fois planté</b> (le remontant fructifie sur les cannes de l'année)",
           "a": [
             11
           ],
           "p": [
-            11
+            2,
+            3
           ],
           "r": [
             8,
             9,
             10
           ],
-          "note": "Prolonge la saison des framboises jusqu'aux gelées. Récolte dès l'an prochain. <b>À ne pas confondre avec le framboisier déjà en place</b> (planté en octobre 2025, une seule canne survivante) : son type n'est pas identifié et il ne se taille pas — voir le calendrier des arbustes."
+          "note": "Prolonge la saison des framboises jusqu'aux gelées. Récolte dès l'an prochain. <b>À ne pas confondre avec le framboisier déjà en place</b> (planté en octobre 2025, une seule canne survivante) : son type n'est pas identifié et il ne se taille pas — voir le calendrier des arbustes. <br>2026 : Commande PdF passée le 23/11/2026, livraison « Quand je veux » à partir du 23/02/2027 (fenêtre 23/02–01/03). Plantation à réception, au plus tard mi-mars. 1re récolte dès août 2027 (fructifie sur les cannes de l'année)."
         },
         {
           "nom": "Mûre 'Loch Ness' (sans épines)",
-          "tag": "Naudet nov.",
-          "ach": "racines nues (Naudet)",
+          "tag": "PdF, livr. 23/02",
+          "ach": "✔ pot 1,5–2 L (PdF, 17,50 €)",
           "meta": "Palissée sur 2 fils le long d'une clôture",
           "a": [
             11
           ],
           "p": [
-            11
+            2,
+            3
           ],
           "r": [
             8,
             9
           ],
-          "note": "Arbuste à fruits (ronce sans épines), à ne pas confondre avec le <b>mûrier platane</b> de la pelouse, qui est un arbre. Palissage sur deux fils à poser avant la plantation de novembre."
+          "note": "Arbuste à fruits (ronce sans épines), à ne pas confondre avec le <b>mûrier platane</b> de la pelouse, qui est un arbre. Palissage sur deux fils à poser avant la plantation. <br>2026 : Commande PdF passée le 23/11/2026, livraison « Quand je veux » à partir du 23/02/2027 (fenêtre 23/02–01/03). Fructifie sur le bois de l'an passé : vraie récolte à partir de 2028."
+        },
+        {
+          "nom": "Framboisier 'Glen Ample' (été, sans épines)",
+          "tag": "PdF, livr. 23/02",
+          "ach": "✔ pot 1,5–2 L (PdF, 9,50 €)",
+          "meta": "Non remontant · à ~1 m du framboisier en place, <b>étiqueté</b> · palissé comme les autres",
+          "a": [
+            11
+          ],
+          "p": [
+            2,
+            3
+          ],
+          "r": [
+            7,
+            8
+          ],
+          "note": "Framboise d'été : fructifie en juillet–août sur les cannes de l'an passé. Associé à 'Heritage' (août–gelées) pour étaler la saison. 1re vraie récolte en 2028 ; en pot, quelques fruits possibles dès 2027. Après la récolte, couper au ras les cannes qui ont donné. <b>À ne pas confondre</b> avec le framboisier en place (type inconnu) ni avec 'Heritage' : garder 1 m d'écart, les drageons mélangeraient les touffes. <br>2026 : Commande PdF passée le 23/11/2026, livraison « Quand je veux » à partir du 23/02/2027 (fenêtre 23/02–01/03)."
         },
         {
           "nom": "Courges 'Nutterbutter' + 'Potimarron'",
@@ -872,8 +893,8 @@
     {
       "m": 11,
       "g": "a",
-      "nom": "Commande Naudet racines nues",
-      "extra": "framboisier 'Heritage', mûre 'Loch Ness', figuier 'Ronde de Bordeaux', fraisiers 'Charlotte' ×10 — à grouper avec les lilas et hortensias"
+      "nom": "Commande racines nues : fraisiers 'Charlotte'",
+      "extra": "Framboisiers, mûre et rosier passés par PdF (commande du 23/11/2026) ; figuier reporté à mars. Restent les fraisiers 'Charlotte' ×10 : en rupture chez PdF, emplacement non tranché."
     },
     {
       "m": 10,
@@ -1020,10 +1041,16 @@
       "extra": "À la mi-novembre, sur les jets et les jeunes feuilles, avant l'ouverture des fleurs · voile sur les arceaux si le gel menace avant les boutons."
     },
     {
-      "m": 12,
+      "m": 2,
+      "g": "p",
+      "nom": "Réception commande PdF (dès le 23/02)",
+      "extra": "Rosier 'Roald Dahl' et 2 'Heritage' en racines nues (tremper 2–6 h, planter avant mi-mars) · 'Glen Ample' et mûre 'Loch Ness' en pot. Poser les 2 fils de palissage de la mûre avant. Si absente : carton fermé au frais hors gel, ou mise en jauge."
+    },
+    {
+      "m": 3,
       "g": "a",
-      "nom": "Commande PdF fruits + rosier",
-      "extra": "Framboisiers 'Heritage' (racines nues, 4,90 € les 2, expédiés dès le 20/11) · mûre 'Loch Ness' (pot 1,5–2 L, 17,50 €) · rosier 'Roald Dahl'. Livraison fin fév./début mars."
+      "nom": "Figuier : décider le 13/03",
+      "extra": "Botanic Saint-Genis (demi-tige 10 L ~42 € / 18 L ~59 €, seulement si variété nommée et précoce) ou PdF 'Ronde de Bordeaux' demi-tige 75 € (liste d'envies). Prévoir un pot de 25–30 L."
     }
   ],
   "quotidiennes": [

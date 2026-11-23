@@ -101,12 +101,12 @@ rend exactement comme avant.
 
 `plantation` peut être **à venir** : la plante reste hors de « Jeunes plants » jusqu'au
 mois venu, puis y entre toute seule (mûre et framboisier 'Heritage', plantés en
-novembre 2026).
+février 2027 : commande PdF du 23/11/2026, livraison à partir du 23/02).
 
 `ponctuelles` est une extension au modèle du spec : elle accueille ce qui n'est
 pas une plante suivie (datura à arracher, semis spontané dans le mur).
 
-## Quatre plantes qu'on confond
+## Cinq plantes qu'on confond
 
 Les noms se ressemblent, les tailles sont opposées :
 
@@ -115,10 +115,11 @@ Les noms se ressemblent, les tailles sont opposées :
 | **Mûrier platane** | arbustes, pelouse | l'**arbre**, planté 04/2026 | nov–janv seulement, il saigne |
 | **Mûre 'Loch Ness'** | arbustes + potager | l'**arbuste à fruits**, à planter 02/2027 | après récolte, sur bois de l'an passé |
 | **Framboisier en place** | arbustes, pied de mur | planté 10/2025, une canne, **type inconnu** | aucune, tant qu'il n'a pas fructifié |
-| **Framboisier 'Heritage'** | arbustes + potager | remontant, à planter 02/2027 | tout au ras en **février** |
+| **Framboisier 'Heritage'** | arbustes + potager | remontant (automne), à planter 02/2027 | tout au ras en **février** |
+| **Framboisier 'Glen Ample'** | arbustes + potager | d'été, non remontant, sans épines, à planter 02/2027 | cannes défructifiées au ras en **août**, jamais au ras en février |
 
 Ne jamais faire correspondre une instruction par le seul mot « mûrier » ou
-« framboisier » : vérifier de laquelle des quatre il s'agit.
+« framboisier » : vérifier de laquelle des cinq il s'agit.
 
 ## Fichiers
 
@@ -195,10 +196,8 @@ un aperçu du mois suivant apparaît en bas.
   courgette » et l'entrée de février sur la terre neuve du bac se décident ensemble.
 - **Appleblossom** : cité dans le semis de février de `data-fleurs.json` sans carte
   correspondante. Soit la variété sort de la commande, soit il lui faut une carte.
-- **Commande Naudet de novembre** : `data-potager.json` la liste encore avec le
-  framboisier 'Heritage' et la mûre 'Loch Ness', alors que les deux passent
-  désormais par la commande PdF de décembre (livraison fin février). Les cartes
-  potager de ces deux plantes portent toujours `a:[11] p:[11]` et le tag
-  « Naudet nov. ». À réconcilier.
+- **Figuier 'Ronde de Bordeaux'** : retiré de la commande PdF du 23/11/2026.
+  Décision le 13/03/2027 entre un demi-tige de variété nommée chez Botanic et le
+  demi-tige PdF (75 €, en liste d'envies). La carte potager porte `a:[3] p:[3,4]`.
 - **AquaBloom** : plus utilisé, toutes les références sont retirées des calendriers
   jusqu'à nouvel ordre.

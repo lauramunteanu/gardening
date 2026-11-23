@@ -733,7 +733,7 @@
           5
         ],
         "bloque": false,
-        "note": "Ronce sans épines, port semi-érigé. Fructifie sur les cannes de l'an passé : après la récolte, supprimer au ras les cannes qui ont donné et palisser les jeunes, qui porteront l'an prochain. Une taille de printemps supprimerait la récolte. <b>C'est l'arbuste à fruits</b> — le mûrier platane de la pelouse est un arbre, et ne se taille qu'en plein hiver. Livrée en pot (1,5–2 L) : plantable toute l'année hors gel et canicule. Commande PdF groupée avec 'Heritage'."
+        "note": "Ronce sans épines, port semi-érigé. Fructifie sur les cannes de l'an passé : après la récolte, supprimer au ras les cannes qui ont donné et palisser les jeunes, qui porteront l'an prochain. Une taille de printemps supprimerait la récolte. <b>C'est l'arbuste à fruits</b> — le mûrier platane de la pelouse est un arbre, et ne se taille qu'en plein hiver. Livrée en pot (1,5–2 L) : plantable toute l'année hors gel et canicule. Commandée chez PdF le 23/11/2026, livraison à partir du 23/02/2027."
       },
       "vieuxBois": true,
       "saigne": false,
@@ -741,10 +741,15 @@
       "rusticite": "Totalement rustique",
       "plantation": "2027-02",
       "etabli": false,
-      "journal": [],
+      "journal": [
+        {
+          "date": "2026-11-23",
+          "texte": "Commandée chez PdF (pot 1,5–2 L, 17,50 €), livraison à partir du 23/02/2027."
+        }
+      ],
       "taches": {
         "2": [
-          "Plantation racines nues à réception (commande PdF). Poser les deux fils de palissage avant de planter."
+          "Plantation à réception (pot, commande PdF). Poser les deux fils de palissage avant de planter."
         ],
         "9": [
           "Après la récolte : couper au ras les cannes qui ont fructifié, palisser les nouvelles sur les deux fils."
@@ -772,7 +777,7 @@
           10
         ],
         "bloque": false,
-        "note": "Remontant : fructifie en fin d'été sur les cannes de l'année, donc on rabat <b>tout au ras du sol en fin d'hiver</b>. À ne pas confondre avec le framboisier déjà en place, dont le type est inconnu et qui ne se taille pas. Commande PdF en décembre, livraison fin février. Racines nues : plantation possible jusqu'à mi-mars."
+        "note": "Remontant : fructifie en fin d'été sur les cannes de l'année, donc on rabat <b>tout au ras du sol en fin d'hiver</b>. À ne pas confondre avec le framboisier déjà en place, dont le type est inconnu et qui ne se taille pas. Commandé chez PdF le 23/11/2026, livraison à partir du 23/02/2027. Racines nues : plantation possible jusqu'à mi-mars."
       },
       "vieuxBois": true,
       "saigne": false,
@@ -780,11 +785,61 @@
       "rusticite": "Totalement rustique",
       "plantation": "2027-02",
       "etabli": false,
-      "journal": [],
+      "journal": [
+        {
+          "date": "2026-11-23",
+          "texte": "Commandé chez PdF : 2 plants racines nues (4,90 €), livraison à partir du 23/02/2027."
+        }
+      ],
       "taches": {
         "2": [
           "Rabattre toutes les cannes au ras du sol — celui-ci seulement, pas le framboisier en place.",
           "Plantation racines nues à réception (commande PdF), 40 cm entre plants."
+        ]
+      }
+    },
+    {
+      "nom": "Framboisier 'Glen Ample' (à planter)",
+      "nomLatin": "Rubus idaeus 'Glen Ample'",
+      "emplacement": "Fond du jardin, à ~1 m du framboisier en place, étiqueté",
+      "type": "arbuste",
+      "contenant": "pleine terre",
+      "bois": "an passé",
+      "taille": {
+        "mois": [
+          8
+        ],
+        "legere": [
+          2
+        ],
+        "interdit": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "bloque": false,
+        "note": "Framboisier <b>d'été, non remontant, sans épines</b> : fructifie en juillet–août sur les cannes de l'an passé. Après la récolte, couper au ras les cannes qui ont donné et garder 6–8 jeunes cannes par pied ; en février, seulement épointer leur sommet. Une taille au ras en février (comme 'Heritage') supprimerait toute la récolte. À ne pas confondre avec 'Heritage' ni avec le framboisier en place."
+      },
+      "vieuxBois": true,
+      "saigne": false,
+      "hivernage": "aucun",
+      "rusticite": "Totalement rustique",
+      "plantation": "2027-02",
+      "etabli": false,
+      "journal": [
+        {
+          "date": "2026-11-23",
+          "texte": "Commandé chez PdF (pot 1,5–2 L, 9,50 €), livraison à partir du 23/02/2027."
+        }
+      ],
+      "taches": {
+        "2": [
+          "Plantation à réception (pot, commande PdF), à ~1 m du framboisier en place. Étiqueter."
+        ],
+        "8": [
+          "Après la récolte : couper au ras les cannes qui ont fructifié, palisser les nouvelles."
         ]
       }
     },
@@ -915,7 +970,7 @@
       }
     },
     {
-      "nom": "Rosier 'Roald Dahl' (à commander)",
+      "nom": "Rosier 'Roald Dahl'",
       "nomLatin": "Rosa 'Roald Dahl' (Ausowlish)",
       "emplacement": "Pot 50 cm réservé, terrasse",
       "type": "arbuste",
@@ -944,15 +999,20 @@
       "saigne": false,
       "hivernage": "1er hiver en pot : papier bulle si < −5 °C",
       "rusticite": "Rustique",
-      "plantation": "2027-03",
+      "plantation": "2027-02",
       "etabli": false,
-      "journal": [],
+      "journal": [
+        {
+          "date": "2026-11-23",
+          "texte": "Commandé chez PdF (racines nues, 22,90 €), livraison à partir du 23/02/2027."
+        }
+      ],
       "taches": {
-        "3": [
-          "Planter avant mi-mars, trempage 2–6 h avant."
+        "2": [
+          "Réception PdF (dès le 23/02) : trempage 2–6 h, planter dans le pot de 50 cm réservé, point de greffe au ras du terreau."
         ],
-        "12": [
-          "Commander en racines nues (PdF)."
+        "3": [
+          "Taille de printemps légère la 1re année, poignée d'engrais rosiers."
         ]
       }
     },
@@ -1038,9 +1098,9 @@
       "extra": "Dans la face du mur de soutènement. Plus il attend, plus les racines travaillent le mur."
     },
     {
-      "m": 11,
-      "nom": "Commande Naudet racines nues",
-      "extra": "Tout ce qui arrive entre dans « Jeunes plants » avec sa date de plantation — trois ans de cercle désherbé, de paillage et d'arrosage profond."
+      "m": 2,
+      "nom": "Commande PdF du 23/11 : arrivée le 23/02",
+      "extra": "Rosier 'Roald Dahl', framboisiers 'Heritage' ×2 et 'Glen Ample', mûre 'Loch Ness'. Tout entre dans « Jeunes plants » avec sa date de plantation — trois ans de cercle désherbé, de paillage et d'arrosage profond."
     },
     {
       "m": 1,

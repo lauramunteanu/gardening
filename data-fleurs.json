@@ -158,12 +158,9 @@
           "note": "Reportée à la commande d'octobre (bon d'achat). Feuillage strié de pourpre, décoratif avant même la fleur. <br>Nov. 2026 : bulbes introuvables à la plantation, remplacés dans les pots par 'Salmon Impression' et 'China Pink'."
         },
         {
-          "nom": "Rosier 'Roald Dahl' (à commander)",
+          "nom": "Rosier 'Roald Dahl'",
           "meta": "David Austin, orange doux à pêche, parfumé · racines nues (PdF, ~21 €) · grand pot 50 cm déjà réservé",
           "pla": [
-            11,
-            12,
-            1,
             2,
             3
           ],
@@ -173,7 +170,8 @@
             8,
             9
           ],
-          "note": "Remplace 'Lady of Shalott' (trop orange cuivré). Commande séparée de la commande de bulbes ; date de livraison au choix dans le panier PdF. Planter au plus tard mi-mars."
+          "note": "Remplace 'Lady of Shalott' (trop orange cuivré). Commande séparée de la commande de bulbes ; date de livraison au choix dans le panier PdF. Planter au plus tard mi-mars. <br>2026 : Commande PdF passée le 23/11/2026, livraison « Quand je veux » à partir du 23/02/2027 (fenêtre 23/02–01/03). Trempage 2–6 h à réception, puis pot de 50 cm réservé.",
+          "tag": "PdF, livr. 23/02"
         },
         {
           "nom": "Sauges arbustives (2–3 nouvelles)",
@@ -853,6 +851,10 @@
       [
         "x",
         "Hortensia paniculata : rabattre toutes les tiges à 2–3 yeux au-dessus d'une charpente de 30–40 cm, et retirer les vieilles inflorescences à ce moment-là."
+      ],
+      [
+        "p",
+        "Réception PdF (dès le 23/02) : rosier 'Roald Dahl' racines nues, tremper 2–6 h puis le pot de 50 cm réservé."
       ]
     ],
     "3": [
@@ -1105,10 +1107,6 @@
       [
         "x",
         "Repos. Un œil sur la caisse des mufliers après grosse bise ou neige."
-      ],
-      [
-        "a",
-        "Commander chez PdF : rosier 'Roald Dahl' (racines nues) + framboisiers 'Heritage' + mûre 'Loch Ness'. Choisir une livraison fin février / début mars."
       ]
     ]
   }
