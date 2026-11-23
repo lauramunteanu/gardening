@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les soins — arrosage et engrais</title>
+<meta name="theme-color" content="#EDEFE6">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Soins">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Karla:wght@400;500;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papier:#EDEFE6; --carte:#F8F9F3; --encre:#243120; --sourdine:#5C6553; --ligne:#C9CEBD;
+  --eau:#4F6D8A; --eau-pale:#D5E0EA; --vert:#4E7A45; --vert-pale:#D3E0C9; --alerte:#A8432F;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--papier);color:var(--encre);font-family:'Karla',system-ui,sans-serif;font-size:15px;line-height:1.5;padding:20px 14px 60px}
+.page{max-width:760px;margin:0 auto}
+nav.retour{margin-bottom:14px}
+nav.retour a{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--sourdine);text-decoration:none;border-bottom:1px solid var(--ligne);padding-bottom:2px}
+nav.retour a:hover,nav.retour a:focus-visible{color:var(--encre);border-color:var(--encre)}
+header{text-align:center;margin-bottom:22px}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:34px;line-height:1.1;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--eau)}
+.sous{color:var(--sourdine);font-size:13px;margin-top:6px}
+
+section{background:var(--carte);border:1px solid var(--ligne);border-radius:16px;padding:18px 18px 8px;margin-top:18px}
+h2{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:22px;margin-bottom:2px}
+.intro{font-size:13px;color:var(--sourdine);margin-bottom:10px}
+
+.ligne{border-top:1px solid var(--ligne);padding:11px 0}
+.ligne:first-of-type{border-top:none}
+.nom{font-weight:700}
+.quoi{font-size:13.5px;color:var(--sourdine)}
+.faits{font-size:12.5px;color:var(--sourdine);margin-top:5px;display:flex;flex-wrap:wrap;gap:4px 12px}
+.faits b{color:var(--encre);font-weight:500}
+.etiq{display:inline-block;font-family:'Spline Sans Mono',monospace;font-size:9.5px;letter-spacing:.06em;
+  text-transform:uppercase;padding:1px 6px;border-radius:4px;border:1px solid var(--ligne);color:var(--sourdine);margin:3px 4px 0 0}
+.etiq.pluie{border-color:var(--eau);color:var(--eau)}
+.etiq.abri{border-color:#96713B;color:#96713B}
+.etiq.terre{border-color:var(--vert);color:var(--vert)}
+.aujourdhui{display:inline-block;font-size:11.5px;font-weight:700;color:#fff;background:var(--eau);border-radius:5px;padding:1px 7px;margin-left:6px;vertical-align:1px}
+.aujourdhui.engrais{background:var(--vert)}
+.repos{opacity:.62}
+.supposition{font-size:12px;font-style:italic;color:var(--alerte);margin-top:3px}
+
+/* douze mois */
+.mois{display:grid;grid-template-columns:repeat(12,1fr);gap:2px;margin-top:7px;max-width:360px}
+.mois span{font-family:'Spline Sans Mono',monospace;font-size:9px;text-align:center;padding:2px 0;border-radius:3px;
+  background:#E3E6DA;color:#98A08D}
+.mois.eau span.on{background:var(--eau-pale);color:var(--eau)}
+.mois.engrais span.on{background:var(--vert-pale);color:var(--vert)}
+.mois span.cur{outline:1.5px solid var(--encre);outline-offset:-1.5px;color:var(--encre)}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-bottom:10px}
+td{padding:7px 0;border-top:1px solid var(--ligne);vertical-align:top}
+tr:first-child td{border-top:none}
+td.seuil{font-family:'Spline Sans Mono',monospace;font-size:12.5px;white-space:nowrap;padding-right:12px;color:var(--alerte)}
+td .quand{display:block;font-size:12px;color:var(--sourdine)}
+
+footer{margin-top:26px;font-size:12.5px;color:var(--sourdine)}
+footer p{margin-top:8px}
+.vide{font-style:italic;color:var(--sourdine);padding:8px 0 12px}
+</style>
+</head>
+<body>
+<div class="page">
+<nav class="retour"><a href="./">← Tous les calendriers</a></nav>
+<header>
+  <h1>Les <em>soins</em></h1>
+  <div class="sous" id="sous">Arrosage et engrais · décidés chaque matin d'après la météo</div>
+</header>
+
+<section id="engrais"><h2>Engrais</h2><p class="vide">Chargement…</p></section>
+<section id="arrosage"><h2>Arrosage</h2><p class="vide">Chargement…</p></section>
+<section id="gel"><h2>Seuils de gel</h2><p class="vide">Chargement…</p></section>
+
+<footer>
+<p><b>Comment c'est décidé.</b> Chaque matin, la vérification météo compte l'eau évaporée depuis le dernier arrosage ou la dernière pluie utile, pot par pot. Un pot sous l'avancée ne reçoit pas la pluie. Quand la réserve du pot est épuisée, l'arrosage apparaît dans « Météo du jour » sur l'accueil et dans la notification. Jamais par gel, ni juste avant une pluie annoncée.</p>
+<p><b>Supposé fait.</b> La vérification ne voit pas les cases cochées (elles restent sur l'appareil) : un arrosage ou un engrais annoncé est compté comme fait le jour même.</p>
+<p><b>Rythmes indicatifs.</b> Les « environ tous les N jours » sont une moyenne pour le mois en cours sans pluie ; la date réelle suit la météo. Les règles se corrigent dans <code>meteo/regles.json</code>.</p>
+</footer>
+</div>
+
+<script>
+/* Tout vient de meteo/regles.json (les règles) et de data-meteo.json (ce que la
+   vérification a décidé et retenu). Aucune donnée de jardin dans cette page. */
+const MOIS_C=['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+const INIT=['J','F','M','A','M','J','J','A','S','O','N','D'];
+
+/* Mêmes constantes que meteo/verifie.py : à modifier ensemble. */
+const COEF_SOIF={faible:0.6,moyenne:1.2,forte:2.0};
+const RESERVE_PAR_CM=0.4, RESERVE_TERRE=25, JOURS_MAX_ABRI=21;
+/* Évapotranspiration moyenne d'un jour, mm, pays de Gex à 500 m, mois par mois. */
+const ET0_MOIS=[0.4,0.8,1.6,2.6,3.5,4.2,4.4,3.6,2.3,1.2,0.5,0.3];
+
+const deux=n=>String(n).padStart(2,'0');
+const iso=d=>`${d.getFullYear()}-${deux(d.getMonth()+1)}-${deux(d.getDate())}`;
+const jour=s=>new Date(s+'T12:00');
+const quantieme=j=>j===1?'1er':String(j);
+const court=d=>`${quantieme(d.getDate())} ${MOIS_C[d.getMonth()]}`;
+const avecAn=(d,auj)=>court(d)+(d.getFullYear()!==auj.getFullYear()?' '+d.getFullYear():'');
+const ajoute=(d,n)=>new Date(d.getFullYear(),d.getMonth(),d.getDate()+n,12);
+const md=d=>`${deux(d.getMonth()+1)}-${deux(d.getDate())}`;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function bande(mois,classe,courant){
+  return `<div class="mois ${classe}" aria-hidden="true">${INIT.map((l,i)=>
+    `<span class="${mois.includes(i+1)?'on':''}${i+1===courant?' cur':''}">${l}</span>`).join('')}</div>`;
+}
+
+/* --- fenêtres d'engrais : du / au en MM-JJ, éventuellement à cheval sur le 1er janvier */
+const dansFenetre=(d,du,au)=>{const x=md(d);return du<=au?(du<=x&&x<=au):(x>=du||x<=au);};
+function debutOccurrence(d,du){
+  const [m,j]=du.split('-').map(Number), x=new Date(d.getFullYear(),m-1,j,12);
+  return x<=d?x:new Date(d.getFullYear()-1,m-1,j,12);
+}
+function finOccurrence(debut,du,au){
+  const [m,j]=au.split('-').map(Number);
+  return new Date(debut.getFullYear()+(du>au?1:0),m-1,j,12);
+}
+function prochaineOuverture(d,du){
+  const [m,j]=du.split('-').map(Number), x=new Date(d.getFullYear(),m-1,j,12);
+  return x>d?x:new Date(d.getFullYear()+1,m-1,j,12);
+}
+function moisDeFenetre(du,au){
+  const a=+du.slice(0,2), b=+au.slice(0,2), l=[];
+  for(let m=a;;m=m%12+1){ l.push(m); if(m===b)break; }
+  return l;
+}
+function prochainEngrais(e,dernier,auj){
+  if(dansFenetre(auj,e.du,e.au)){
+    const deb=debutOccurrence(auj,e.du), fin=finOccurrence(deb,e.du,e.au);
+    if(!dernier||dernier<deb)return {date:auj,maintenant:true};
+    const n=ajoute(dernier,e.tous_les_jours);
+    if(n<=fin)return {date:n<auj?auj:n,maintenant:n<=auj};
+  }
+  return {date:prochaineOuverture(auj,e.du)};
+}
+function rythme(n){
+  if(n>=365)return 'une fois par saison';
+  if(n%7===0)return n===7?'chaque semaine':`toutes les ${n/7} semaines`;
+  if(n>=28&&n<=31)return 'chaque mois';
+  return `tous les ${n} jours`;
+}
+
+function drawEngrais(R,M,auj){
+  const etat=(M&&M.etat&&M.etat.engrais)||{};
+  const duJour=new Set(M&&M.jour===iso(auj)?(M.taches||[]).filter(t=>t.type==='engrais').map(t=>t.id):[]);
+  const l=R.engrais.map(e=>{
+    const dernier=etat[e.id]?jour(etat[e.id]):null;
+    return {e,dernier,p:prochainEngrais(e,dernier,auj)};
+  }).sort((a,b)=>a.p.date-b.p.date);
+  const deb=d=>{const [m,j]=d.split('-').map(Number);return `${quantieme(j)} ${MOIS_C[m-1]}`;};
+  document.getElementById('engrais').innerHTML=`<h2>Engrais</h2>
+    <p class="intro">Par ordre d'échéance. Dehors, un apport attend tant qu'il fait trop froid (moyenne des 3 jours sous 8 °C ou gel annoncé).</p>`+
+    l.map(({e,dernier,p})=>{
+      const auj_=duJour.has('engrais:'+e.id);
+      const quand=auj_?'aujourd\'hui':p.maintenant?'dès qu\'il fait assez doux':avecAn(p.date,auj);
+      return `<div class="ligne">
+        <div><span class="nom">${esc(e.nom)}</span>${auj_?'<span class="aujourdhui engrais">aujourd\'hui</span>':''}</div>
+        <div class="quoi">${esc(e.quoi)}</div>
+        ${bande(moisDeFenetre(e.du,e.au),'engrais',auj.getMonth()+1)}
+        <div class="faits"><span>${rythme(e.tous_les_jours)}, du ${deb(e.du)} au ${deb(e.au)}</span>
+          <span>dernier : <b>${dernier?avecAn(dernier,auj):'—'}</b></span>
+          <span>prochain : <b>${quand}</b></span>
+          ${e.exterieur===false?'<span>intérieur, sans condition de météo</span>':''}</div>
+      </div>`;}).join('');
+}
+
+function drawArrosage(R,M,auj){
+  const etat=(M&&M.etat&&M.etat.arrosage)||{};
+  const duJour=new Set(M&&M.jour===iso(auj)?(M.taches||[]).filter(t=>t.type==='arrosage').map(t=>t.id):[]);
+  const m=auj.getMonth()+1;
+  const actif=g=>g.mois.includes(m)&&(!g.depuis||iso(auj)>=g.depuis);
+  const l=[...R.arrosage].sort((a,b)=>actif(b)-actif(a));
+  const ABRI={pluie:'sous la pluie',abri:'sous l\'avancée',terre:'pleine terre'};
+  document.getElementById('arrosage').innerHTML=`<h2>Arrosage</h2>
+    <p class="intro">Ceux qui sont dehors ce mois-ci d'abord. Une date « dernier » est le dernier arrosage annoncé ou la dernière pluie qui a rempli le pot.</p>`+
+    l.map(g=>{
+      const on=actif(g), abri=g.abri==='abri';
+      const reserve=g.pot_cm==null?RESERVE_TERRE:g.pot_cm*RESERVE_PAR_CM;
+      let n=Math.max(1,Math.round(reserve/(ET0_MOIS[m-1]*COEF_SOIF[g.soif])));
+      if(abri)n=Math.min(n,JOURS_MAX_ABRI);
+      const freq=n>30?'moins d\'une fois par mois':n===1?'chaque jour':`environ tous les ${n} jours`;
+      const ref=etat[g.id]?jour(etat[g.id]):null;
+      const avant=g.depuis&&iso(auj)<g.depuis;
+      const rythme_=!on?(avant?`à partir du ${avecAn(jour(g.depuis),auj)}`:'au repos ce mois-ci, pas d\'arrosage proposé')
+        :abri?`${freq} ce mois-ci`:`sans pluie, ${freq} ce mois-ci`;
+      return `<div class="ligne${on?'':' repos'}">
+        <div><span class="nom">${esc(g.nom)}</span>${duJour.has('arrosage:'+g.id)?'<span class="aujourdhui">aujourd\'hui</span>':''}</div>
+        <div><span class="etiq ${g.abri}">${ABRI[g.abri]}</span>${g.pot_cm?`<span class="etiq">pot ${g.pot_cm} cm</span>`:''}<span class="etiq">soif ${g.soif}</span></div>
+        ${bande(g.mois,'eau',m)}
+        <div class="faits"><span>${rythme_}</span>${on&&ref?`<span>dernier : <b>${avecAn(ref,auj)}</b></span>`:''}</div>
+        ${g.a_verifier?`<div class="supposition">Supposition à vérifier : ${esc(g.a_verifier)}</div>`:''}
+      </div>`;}).join('');
+}
+
+function drawGel(R,auj){
+  const deb=d=>{const [m,j]=d.split('-').map(Number);return `${quantieme(j)} ${MOIS_C[m-1]}`;};
+  const deg=t=>(t<0?'−':'')+Math.abs(t)+' °C';
+  const l=[...R.protections].sort((a,b)=>a.seuil-b.seuil);
+  document.getElementById('gel').innerHTML=`<h2>Seuils de gel</h2>
+    <p class="intro">Le geste remonte dans « Météo du jour » le jour où la nuit annoncée descend au seuil, avec une alerte le soir si la prévision du matin ne l'annonçait pas.</p>
+    <table>${l.map(p=>`<tr><td class="seuil">${p.seuil>0?'≤ ':''}${deg(p.seuil)}</td>
+      <td>${esc(p.quoi)}<span class="quand">du ${deb(p.du)} au ${deb(p.au)}${p.une_fois?' · une fois par saison':''}</span></td></tr>`).join('')}</table>`;
+}
+
+async function charge(f){
+  const r=await fetch(f,{cache:'no-store'});
+  if(!r.ok)throw new Error('HTTP '+r.status);
+  return r.json();
+}
+async function init(){
+  const auj=new Date(); auj.setHours(12,0,0,0);
+  const [r,m]=await Promise.allSettled([charge('meteo/regles.json'),charge('data-meteo.json')]);
+  if(!r.value){
+    document.querySelectorAll('section .vide').forEach(e=>e.textContent='Impossible de charger meteo/regles.json : vérifiez la connexion, puis rechargez la page.');
+    return;
+  }
+  const M=m.value||null;
+  if(M&&M.maj){
+    const t=new Date(M.maj);
+    document.getElementById('sous').textContent=
+      `Arrosage et engrais · décidés chaque matin d'après la météo · dernière vérification le ${court(t)} à ${t.getHours()} h ${deux(t.getMinutes())}`;
+  }
+  drawEngrais(r.value,M,auj);
+  drawArrosage(r.value,M,auj);
+  drawGel(r.value,auj);
+}
+init();
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)init();});
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{ navigator.serviceWorker.register('./sw.js').catch(()=>{}); });
+}
+</script>
+</body>
+</html>

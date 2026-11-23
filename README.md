@@ -14,6 +14,7 @@ y a à faire ce mois-ci.
 ## Fichiers
 
 - `index.html` — page d'accueil
+- `soins.html` — arrosage et engrais plante par plante, seuils de gel
 - `potager.html`, `fleurs.html`, `arbustes.html` — les calendriers : mise en page et logique
 - `data-potager.json`, `data-fleurs.json`, `data-arbustes.json` — **tout le contenu
   du jardin** ; ce sont les seuls fichiers à modifier pour ajouter une plante ou

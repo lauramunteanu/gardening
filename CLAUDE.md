@@ -10,6 +10,7 @@ Site publié sur GitHub Pages : https://lauramunteanu.github.io/gardening/
 | `potager.html` | légumes & aromatiques | `data-potager.json` |
 | `fleurs.html` | fleurs & floraisons | `data-fleurs.json` |
 | `arbustes.html` | arbres, arbustes, grimpants | `data-arbustes.json` |
+| `soins.html` | arrosage, engrais, seuils de gel | `meteo/regles.json` + `data-meteo.json` |
 
 ## Où modifier quoi
 
@@ -125,6 +126,7 @@ Ne jamais faire correspondre une instruction par le seul mot « mûrier » ou
 
 - `index.html` — page d'accueil, choix entre les trois calendriers
 - `potager.html`, `fleurs.html`, `arbustes.html` — les calendriers : mise en page et logique
+- `soins.html` — arrosage et engrais plante par plante (lien sous « Aujourd'hui »)
 - `data-potager.json`, `data-fleurs.json`, `data-arbustes.json` — le contenu
 - `sw.js` — service worker (hors ligne)
 - `data-meteo.json` — écrit par la vérification météo, jamais à la main
@@ -216,6 +218,11 @@ Open-Meteo, `meteo/regles.json` et les trois calendriers, puis écrit `data-mete
   tâche nouvelle autre qu'une simple levée de report ; le soir, seulement pour un gel
   nouveau. Le détail des reports reste sur le site.
 - Le workflow ne commite `data-meteo.json` que s'il a changé.
+
+`soins.html` affiche les règles et l'état de la vérification : rythme d'arrosage estimé
+pour le mois, dernier arrosage supposé, prochain engrais, seuils de gel. Ses constantes
+(`COEF_SOIF`, `RESERVE_PAR_CM`, `RESERVE_TERRE`, `JOURS_MAX_ABRI`) recopient celles de
+`verifie.py` : **les modifier ensemble.**
 
 Essai local : `python3 meteo/verifie.py --essai --force`, ou avec une prévision
 enregistrée : `--meteo fichier.json --maintenant 2026-11-23T07:30 --precedent vide.json`.
