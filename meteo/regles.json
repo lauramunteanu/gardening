@@ -1,0 +1,116 @@
+{
+  "_lisez_moi": "Règles de la vérification météo (meteo/verifie.py). Le script lit ce fichier deux fois par jour et écrit data-meteo.json. Les entrées marquées a_verifier reposent sur une supposition : corriger abri, pot_cm ou soif si elle est fausse.",
+
+  "lieu": {
+    "nom": "Saint-Jean-de-Gonville",
+    "latitude": 46.21,
+    "longitude": 5.95,
+    "altitude": 500,
+    "fuseau": "Europe/Paris",
+    "site": "https://lauramunteanu.github.io/gardening/"
+  },
+
+  "_arrosage": "abri : « pluie » (la pluie arrive au pot), « abri » (sous l'avancée, la pluie n'arrive pas) ou « terre » (pleine terre). soif : faible, moyenne ou forte. mois : mois où le pot est dehors et à surveiller ; hors de ces mois, aucun arrosage n'est proposé (repos hivernal au sec, par exemple). depuis : date AAAA-MM-JJ avant laquelle le groupe est ignoré.",
+  "arrosage": [
+    { "id": "bulbes-terrasse", "nom": "Pots de bulbes de la terrasse (bac zinc, grande coupe, pots noir et vert, bidon, jardinières de l'entrée)",
+      "abri": "pluie", "pot_cm": 30, "soif": "moyenne", "mois": [10,11,12,1,2,3,4,5],
+      "a_verifier": "Supposés sous la pluie." },
+    { "id": "etagere", "nom": "Étagère de la terrasse (petits pots de bulbes, Cool Wave, iberis, joubarbes)",
+      "abri": "abri", "pot_cm": 15, "soif": "moyenne", "mois": [10,11,12,1,2,3,4,5,6,7,8,9],
+      "a_verifier": "Supposée contre le mur, sous l'avancée." },
+    { "id": "balcon-hiver", "nom": "Jardinières du balcon (violas, Cool Wave)",
+      "abri": "pluie", "pot_cm": 20, "soif": "moyenne", "mois": [10,11,12,1,2,3,4],
+      "a_verifier": "Supposées sous la pluie." },
+    { "id": "balcon-ete", "nom": "Balcon et étagère en été (lantana, gomphrena, scaevola, portulaca, pélargoniums)",
+      "abri": "pluie", "pot_cm": 20, "soif": "forte", "mois": [5,6,7,8,9] },
+    { "id": "rosiers-50", "nom": "Rosiers 'Eva' et 'Anastasia' (pots 50 cm)",
+      "abri": "pluie", "pot_cm": 50, "soif": "moyenne", "mois": [1,2,3,4,5,6,7,8,9,10,11,12] },
+    { "id": "rosier-black-magic", "nom": "Rosier 'Black Magic' (pot 35 cm)",
+      "abri": "pluie", "pot_cm": 35, "soif": "moyenne", "mois": [1,2,3,4,5,6,7,8,9,10,11,12] },
+    { "id": "rosier-roald-dahl", "nom": "Rosier 'Roald Dahl' (pot 50 cm)",
+      "abri": "pluie", "pot_cm": 50, "soif": "moyenne", "mois": [1,2,3,4,5,6,7,8,9,10,11,12], "depuis": "2027-03-01" },
+    { "id": "pivoine", "nom": "Pivoines (pots 35 et 30 cm)",
+      "abri": "pluie", "pot_cm": 35, "soif": "moyenne", "mois": [3,4,5,6,7,8,9] },
+    { "id": "iris", "nom": "Iris (pot 35 cm et 2 jardinières)",
+      "abri": "pluie", "pot_cm": 30, "soif": "faible", "mois": [4,5,6,7,8,9] },
+    { "id": "muguet", "nom": "Muguet (pot, mur nord)",
+      "abri": "pluie", "pot_cm": 30, "soif": "moyenne", "mois": [3,4,5,6,7,8,9] },
+    { "id": "lavande", "nom": "Lavande (pot ~30 cm, sur cales)",
+      "abri": "abri", "pot_cm": 30, "soif": "faible", "mois": [4,5,6,7,8,9,10],
+      "a_verifier": "« Au sec » compris comme sous l'avancée." },
+    { "id": "gaura", "nom": "Gaura 'Blush' + romarin (pot sous l'avancée)",
+      "abri": "abri", "pot_cm": 30, "soif": "faible", "mois": [4,5,6,7,8,9,10] },
+    { "id": "ail-pots", "nom": "Ail 'Germidour' (4 pots de 20 cm + 2 pots ronds)",
+      "abri": "pluie", "pot_cm": 20, "soif": "moyenne", "mois": [11,12,1,2,3,4,5,6] },
+    { "id": "cima-di-rapa", "nom": "Cima di rapa (jardinière terre cuite, sous l'avancée)",
+      "abri": "abri", "pot_cm": 30, "soif": "moyenne", "mois": [9,10,11,12,1,2,3] },
+    { "id": "batavia", "nom": "Batavia 'Blonde de Paris' (pot déplaçable)",
+      "abri": "pluie", "pot_cm": 25, "soif": "moyenne", "mois": [3,4,5,6,9,10,11] },
+    { "id": "bac", "nom": "Bac surélevé (mâche, roquette, épinard)",
+      "abri": "pluie", "pot_cm": 35, "soif": "moyenne", "mois": [9,10,11,12,1,2,3,4] },
+    { "id": "agapanthe", "nom": "Agapanthe (pot)",
+      "abri": "pluie", "pot_cm": 35, "soif": "moyenne", "mois": [4,5,6,7,8,9,10] },
+    { "id": "hortensias", "nom": "Hortensias macrophylla et paniculata (pots)",
+      "abri": "pluie", "pot_cm": 40, "soif": "forte", "mois": [4,5,6,7,8,9,10] },
+    { "id": "arbustes-pot", "nom": "Arbustes en pot (olivier, laurier-rose, lilas des Indes, gattilier, érable, jasmins, sauge)",
+      "abri": "pluie", "pot_cm": 45, "soif": "moyenne", "mois": [4,5,6,7,8,9,10] },
+    { "id": "legumes-pots-ete", "nom": "Légumes d'été en pots (tomate 'Maskotka', piments, poivron)",
+      "abri": "pluie", "pot_cm": 35, "soif": "forte", "mois": [5,6,7,8,9] },
+    { "id": "potager-ete", "nom": "Potager (tomates cerises, aubergine, concombre, courgette, courges)",
+      "abri": "terre", "pot_cm": null, "soif": "forte", "mois": [5,6,7,8,9] },
+    { "id": "jeunes-plants-terre", "nom": "Jeunes plants en pleine terre (mûrier platane, cotinus, framboisiers, mûre)",
+      "abri": "terre", "pot_cm": null, "soif": "moyenne", "mois": [4,5,6,7,8,9] }
+  ],
+
+  "_engrais": "du / au : fenêtre au format MM-JJ (une fenêtre qui passe par le 1er janvier est permise). tous_les_jours : intervalle entre deux apports. exterieur : false pour les plantes d'intérieur, que la météo ne retarde pas.",
+  "engrais": [
+    { "id": "rosiers", "nom": "Rosiers en pot (Eva, Anastasia, Black Magic, Roald Dahl)", "du": "04-01", "au": "07-31", "tous_les_jours": 28, "quoi": "une poignée d'engrais rosiers" },
+    { "id": "olivier", "nom": "Olivier", "du": "04-01", "au": "08-31", "tous_les_jours": 30, "quoi": "engrais général ou agrumes" },
+    { "id": "laurier-rose", "nom": "Laurier-rose", "du": "04-01", "au": "08-31", "tous_les_jours": 14, "quoi": "engrais plantes fleuries" },
+    { "id": "lilas-des-indes", "nom": "Lilas des Indes", "du": "04-25", "au": "07-31", "tous_les_jours": 14, "quoi": "engrais plantes fleuries" },
+    { "id": "hortensias", "nom": "Hortensias", "du": "04-01", "au": "06-30", "tous_les_jours": 14, "quoi": "engrais universel" },
+    { "id": "agapanthe", "nom": "Agapanthe", "du": "04-01", "au": "07-31", "tous_les_jours": 14, "quoi": "engrais tomate" },
+    { "id": "jasmins", "nom": "Jasmins", "du": "04-01", "au": "08-31", "tous_les_jours": 30, "quoi": "engrais universel (jasmin étoilé : pas riche en potasse)" },
+    { "id": "dahlia", "nom": "Dahlia pêche", "du": "06-01", "au": "09-15", "tous_les_jours": 14, "quoi": "engrais plantes fleuries" },
+    { "id": "annuelles", "nom": "Annuelles du balcon et de l'étagère", "du": "05-15", "au": "09-15", "tous_les_jours": 14, "quoi": "engrais plantes fleuries à demi-dose" },
+    { "id": "tomates", "nom": "Tomates, piments, poivron, aubergine", "du": "06-15", "au": "09-15", "tous_les_jours": 10, "quoi": "engrais tomate, dès les premières fleurs" },
+    { "id": "cucurbitacees", "nom": "Courgette, concombre, courges", "du": "06-15", "au": "08-31", "tous_les_jours": 14, "quoi": "engrais tomate ou purin de consoude" },
+    { "id": "cima-di-rapa", "nom": "Cima di rapa", "du": "02-25", "au": "03-20", "tous_les_jours": 365, "quoi": "engrais organique léger, pour relancer les jets" },
+    { "id": "bac-hiver", "nom": "Bac surélevé (mâche, roquette, épinard)", "du": "02-20", "au": "03-15", "tous_les_jours": 365, "quoi": "engrais organique léger ou fine couche de compost" },
+    { "id": "herbes-cuisine", "nom": "Herbes de cuisine (basilic, coriandre, laitue)", "du": "12-15", "au": "10-31", "tous_les_jours": 18, "quoi": "engrais liquide algues ou feuillage, demi-dose", "exterieur": false }
+  ],
+
+  "_protections": "seuil : température de la nuit (2 m) à partir de laquelle le geste s'impose, en °C. Pour un seuil positif (plants frileux), le geste s'impose dès que la nuit descend à ce niveau. une_fois : un seul rappel par saison (septembre → août).",
+  "protections": [
+    { "id": "voile-batavia", "seuil": -3, "du": "10-01", "au": "04-30", "quoi": "Voile d'hivernage sur la Batavia" },
+    { "id": "papier-bulle", "seuil": -5, "du": "11-01", "au": "03-15", "quoi": "Papier bulle autour des pots de l'agapanthe et des rosiers de 1re année (Eva, Anastasia, Black Magic)" },
+    { "id": "voile-cima", "seuil": -6, "du": "11-01", "au": "03-31", "quoi": "Voile sur les arceaux de la cima di rapa" },
+    { "id": "premieres-gelees", "seuil": -2, "du": "10-01", "au": "12-31", "une_fois": true, "quoi": "Premières vraies gelées : paillis de chanvre à 15 cm sur la verveine citronnelle ; vérifier que les pots à emmailloter le sont et que l'olivier et le laurier-rose sont au hors-gel" },
+    { "id": "frileux-automne", "seuil": 1, "du": "09-15", "au": "10-31", "quoi": "Rentrer ou voiler les pots gélifs (pélargoniums, lantana, dahlias nains, portulaca)" },
+    { "id": "endurcissement", "seuil": 4, "du": "04-15", "au": "05-31", "quoi": "Rentrer les plants en endurcissement pour la nuit (tomates, piments, courges, basilic…)" }
+  ],
+
+  "_reports": "Tâches des calendriers que la météo peut repousser. motifs reconnus dans le texte de la tâche (expression régulière, sans tenir compte de la casse).",
+  "reports": {
+    "plantation": {
+      "motif": "\\b(planter|plantation|plantés?|mettre en terre|en pleine terre|au massif|repiquer|rempoter|arrachage|arracher|diviser)\\b",
+      "sauf": "\\b(commander|acheter|réserver|ranger|voile)\\b|jusqu'à la plantation|à la plantation",
+      "conditions": "travail du sol : sol gelé à 6 cm, journée sous 2 °C, plus de 15 mm de pluie ou de la neige"
+    },
+    "plantation_frileux": {
+      "motif": "\\b(tomates?|courgettes?|concombres?|courges?|basilic|piments?|poivrons?|aubergines?|patate douce|zinnias?|cosmos|annuelles|dahlias?|angelonia|gomphrena|portulaca)\\b",
+      "nuit_min": 6,
+      "nuits": 5,
+      "mois": [4,5,6]
+    },
+    "taille": {
+      "motif": "\\b(taill\\w*|rabatt\\w*|élagu\\w*)",
+      "sauf": "\\b(ne pas|ne rien) taill",
+      "conditions": "gel dans la journée (sous 0 °C) ou nuit sous −3 °C"
+    },
+    "traitement": {
+      "motif": "\\b(bouillie|traitement|traiter|pulvéris\\w*|purin|savon noir|huile blanche)\\b",
+      "conditions": "pluie dans la journée (1 mm ou plus) ou journée sous 5 °C"
+    }
+  }
+}

@@ -20,6 +20,11 @@ y a à faire ce mois-ci.
   changer un mois
 - `sw.js` — service worker : les pages, les données et les polices sont mises en
   cache à la première visite, puis consultables hors ligne
+- `meteo/regles.json` — règles de la vérification météo : pots et leur exposition,
+  engrais, seuils de gel, tâches que la météo peut reporter
+- `meteo/verifie.py`, `.github/workflows/meteo.yml` — la vérification elle-même,
+  lancée par GitHub Actions vers 7 h 30 et 17 h 30
+- `data-meteo.json` — **écrit par la vérification, jamais à la main**
 - `manifest.webmanifest`, `icon.svg` — ajout à l'écran d'accueil
 - `calendrier-cultures.html`, `calendrier-fleurs.html` — sources d'origine, conservées
   telles quelles et **non servies** : les modifier ne change rien sur le site
@@ -36,3 +41,19 @@ la nouvelle version.
 
 Le mois affiché et le millésime (« 2026–27 », qui bascule le 1er septembre) sont
 déduits de l'horloge de l'appareil : rien à modifier au fil des mois ni des années.
+
+## Vérification météo
+
+Deux fois par jour, GitHub Actions lit la prévision Open-Meteo du jardin et écrit
+`data-meteo.json` : arrosage, engrais, protections contre le gel, et tâches du mois
+à reporter (sol gelé, pluie, bois gelé). La page d'accueil l'affiche dans « Météo du
+jour » et « Reporté par la météo ».
+
+Une notification [ntfy](https://ntfy.sh) part au plus une fois par jour, le matin,
+seulement s'il y a quelque chose à faire ; le soir, seulement pour un gel que la
+prévision du matin n'annonçait pas. Le sujet ntfy est le secret `NTFY_TOPIC` du dépôt
+(Settings → Secrets and variables → Actions).
+
+Pour corriger une exposition, un diamètre de pot ou un seuil de gel : modifier
+`meteo/regles.json`. Essai sans rien écrire ni envoyer : onglet Actions →
+« Vérification météo » → Run workflow, case « Essai » cochée.

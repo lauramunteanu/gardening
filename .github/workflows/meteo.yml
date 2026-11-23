@@ -1,0 +1,63 @@
+name: Vérification météo
+
+# Deux passages par jour, à 7 h 30 et 17 h 30 heure de Paris. Les horaires de GitHub
+# sont en UTC : chaque créneau a deux déclenchements (hiver / été), et le script
+# ignore celui qui tombe trop tôt. GitHub peut retarder un déclenchement de 10 à 30 min.
+on:
+  schedule:
+    - cron: '30 5,6 * * *'
+    - cron: '30 15,16 * * *'
+  workflow_dispatch:
+    inputs:
+      essai:
+        description: "Essai : afficher le résultat sans rien écrire ni notifier"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: meteo
+  cancel-in-progress: false
+
+jobs:
+  verifie:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Vérifier la météo
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ "${{ inputs.essai }}" = "true" ]; then
+              python3 meteo/verifie.py --force --essai
+            else
+              python3 meteo/verifie.py --force
+            fi
+          else
+            python3 meteo/verifie.py
+          fi
+
+      - name: Enregistrer data-meteo.json
+        run: |
+          if git diff --quiet -- data-meteo.json; then
+            echo "Rien à enregistrer."
+            exit 0
+          fi
+          git config user.name "meteo-jardin[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data-meteo.json
+          git commit -m "Météo du $(TZ=Europe/Paris date '+%d/%m %H:%M')"
+          for essai in 1 2 3; do
+            git pull --rebase --quiet origin "${GITHUB_REF_NAME}" && git push && exit 0
+            sleep 5
+          done
+          exit 1
