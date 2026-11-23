@@ -191,9 +191,10 @@ un aperçu du mois suivant apparaît en bas.
 - **Mûrier platane** : beaucoup de mûriers platanes vendus en France sont des clones
   ornementaux stériles. Le calendrier ne promet aucune récolte ; à confirmer sur
   l'étiquette si la question se pose.
-- **Fraisiers 'Charlotte'** : emplacement non tranché (massif en novembre, ou bac
-  début mars). La carte, la tâche de plantation de novembre, l'alerte « déplacer la
-  courgette » et l'entrée de février sur la terre neuve du bac se décident ensemble.
+- **Fraisiers remontants** : 'Charlotte' abandonnée (rupture PdF). Une dizaine de
+  remontants à gros fruits ('Gento', 'Mariguette', 'Cirafine'…) à choisir et commander
+  en mars 2027 pour une récolte dès l'été. L'emplacement (bac, jardinières de la
+  terrasse ou carré de la courgette) décide aussi de l'alerte « déplacer la courgette ».
 - **Appleblossom** : cité dans le semis de février de `data-fleurs.json` sans carte
   correspondante. Soit la variété sort de la commande, soit il lui faut une carte.
 - **Figuier 'Ronde de Bordeaux'** : retiré de la commande PdF du 23/11/2026.

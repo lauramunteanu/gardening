@@ -419,7 +419,7 @@
             8,
             9
           ],
-          "note": "Le stolon sert de secours, pas de renouvellement : le bac est passé aux légumes d'hiver. Renouvellement par achat de racines nues en novembre (voir massif potager)."
+          "note": "Le stolon sert de secours, pas de renouvellement : le bac est passé aux légumes d'hiver. Renouvellement par des remontants à gros fruits, à décider en mars 2027 (voir massif potager)."
         }
       ]
     },
@@ -795,15 +795,16 @@
           "note": "Exige une humidité constante tout l'été. Deuxième candidat au sacrifice."
         },
         {
-          "nom": "Fraisier 'Charlotte' ×10",
-          "tag": "Naudet nov.",
-          "ach": "racines nues (Naudet)",
+          "nom": "Fraisiers remontants à gros fruits ×10",
+          "tag": "à décider en mars",
+          "ach": "à acheter en mars : racines nues (PdF) ou godets (Botanic)",
           "meta": "Plantation <b>novembre</b>, à réception · 5 pieds à 30 cm dans le carré libéré par la courgette · terreau + compost incorporés · 5 en réserve",
           "a": [
-            11
+            3
           ],
           "p": [
-            11
+            3,
+            4
           ],
           "r": [
             6,
@@ -812,7 +813,7 @@
             9,
             10
           ],
-          "note": "Remontante : fruits deux fois plus gros que Mara des bois, récolte de juin aux gelées plutôt qu'une seule vague de trois semaines — le seul rythme compatible avec les absences. Plantation d'automne pour un enracinement avant l'hiver et une vraie récolte dès l'été 2027. <b>Ne pas planter là où étaient les tomates</b> (verticilliose commune aux deux). Durée de vie utile : 3 ans."
+          "note": "Remontants : récolte de juin aux gelées plutôt qu'une seule vague de trois semaines — le seul rythme compatible avec les absences. Plantés en mars, ils fructifient dès l'été 2027 (petite vague en juin, puis continu de juillet à octobre). Pistes vues le 23/11/2026 chez PdF (racines nues, ~0,70–0,90 € pièce) : <b>'Gento'</b> (gros fruits juteux, mai–oct.), 'Mariguette' (Gariguette × Mara, très parfumée), 'Cirafine' (sucrée) ; 'Charlotte' en rupture. Emplacement à choisir : bac surélevé (4–5 plants), jardinières de 60 cm sur la terrasse (3–4 par bac), ou le carré de la courgette (qu'il faudrait alors déplacer). <b>Ne pas planter là où étaient les tomates</b> (verticilliose commune aux deux). Durée de vie utile : 3 ans."
         }
       ]
     },
@@ -891,12 +892,6 @@
       "extra": "seule graine qui ne se garde pas plus d'un an"
     },
     {
-      "m": 11,
-      "g": "a",
-      "nom": "Commande racines nues : fraisiers 'Charlotte'",
-      "extra": "Framboisiers, mûre et rosier passés par PdF (commande du 23/11/2026) ; figuier reporté à mars. Restent les fraisiers 'Charlotte' ×10 : en rupture chez PdF, emplacement non tranché."
-    },
-    {
       "m": 10,
       "g": "c",
       "nom": "Rentrer les piments — QUARANTAINE",
@@ -963,22 +958,10 @@
       "extra": "Classement par mois de semis, pas par famille · silice à contrôler à chaque ouverture · panais en tête de janvier (à racheter, ne pas semer les vieilles)"
     },
     {
-      "m": 11,
-      "g": "c",
-      "nom": "Vérifier que Naudet vend des fraisiers",
-      "extra": "Naudet est un pépiniériste d'arbres et d'arbustes : confirmer qu'il liste les fraisiers avant de compter dessus. Sinon commander les 'Charlotte' ailleurs, en automne et en racines nues — jamais au printemps ni en godets"
-    },
-    {
-      "m": 11,
-      "g": "p",
-      "nom": "Planter les fraisiers 'Charlotte'",
-      "extra": "Même séance que framboisier, mûre et alliums · carré de la courgette, compost incorporé · pas sur l'emplacement des tomates"
-    },
-    {
       "m": 5,
       "g": "c",
       "nom": "⚠ Déplacer la courgette",
-      "extra": "Les fraisiers occupent désormais le mètre carré de la courgette, et pour 3 ans. Prévoir un autre emplacement dès 2027 — la courgette demande 1 m² à elle seule"
+      "extra": "Seulement si les fraisiers remontants prennent le mètre carré de la courgette (décision de mars), et pour 3 ans. La courgette demande 1 m² à elle seule."
     },
     {
       "m": 9,
@@ -1051,6 +1034,12 @@
       "g": "a",
       "nom": "Figuier : décider le 13/03",
       "extra": "Botanic Saint-Genis (demi-tige 10 L ~42 € / 18 L ~59 €, seulement si variété nommée et précoce) ou PdF 'Ronde de Bordeaux' demi-tige 75 € (liste d'envies). Prévoir un pot de 25–30 L."
+    },
+    {
+      "m": 3,
+      "g": "a",
+      "nom": "Fraisiers remontants : décider et commander",
+      "extra": "Une dizaine de remontants à gros fruits pour une récolte dès l'été 2027 : 'Gento', 'Mariguette' ou 'Cirafine' en racines nues (PdF, livraison en quelques jours) ou en godets (Botanic). Choisir l'emplacement : bac surélevé, jardinières de la terrasse ou carré de la courgette. Planter avant fin avril."
     }
   ],
   "quotidiennes": [
