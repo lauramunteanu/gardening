@@ -127,6 +127,8 @@ Ne jamais faire correspondre une instruction par le seul mot « mûrier » ou
 - `potager.html`, `fleurs.html`, `arbustes.html` — les calendriers : mise en page et logique
 - `data-potager.json`, `data-fleurs.json`, `data-arbustes.json` — le contenu
 - `sw.js` — service worker (hors ligne)
+- `data-meteo.json` — écrit par la vérification météo, jamais à la main
+- `meteo/regles.json`, `meteo/verifie.py`, `.github/workflows/meteo.yml` — la vérification météo
 - `manifest.webmanifest`, `icon.svg` — ajout à l'écran d'accueil
 - `calendrier-cultures.html`, `calendrier-fleurs.html` — sources d'origine, figées, non servies.
   **Attention** : un spec qui vise `calendrier-fleurs.html` vise en réalité
@@ -160,8 +162,9 @@ roue des fleurs.
 
 `index.html` affiche en tête « Aujourd'hui » : les tâches du mois courant tirées des
 trois JSON — `speciales` du potager, `taches` des fleurs, `taches` et `ponctuelles`
-des arbustes. Elle n'a **aucune donnée propre** : pour qu'une tâche y apparaisse,
-on l'ajoute dans le calendrier concerné. Les fenêtres de culture (tableaux `s`, `p`,
+des arbustes — plus les consignes de `data-meteo.json` (voir « Vérification météo »).
+Pour qu'une tâche datée y apparaisse, on l'ajoute dans le calendrier concerné ;
+`data-meteo.json` n'est jamais édité à la main. Les fenêtres de culture (tableaux `s`, `p`,
 `r` des cartes) n'y figurent pas — ce sont des périodes, pas des tâches.
 
 Ce que le texte d'une tâche change à son affichage :
@@ -181,6 +184,41 @@ Les cases cochées vivent dans le `localStorage` du navigateur : propres à chaq
 appareil, ni partagées ni sauvegardées. Clé = mois (ou jour pour l'arrosage) + calendrier
 + texte de la tâche : **reformuler une tâche la décoche.** La dernière semaine du mois,
 un aperçu du mois suivant apparaît en bas.
+
+## Vérification météo
+
+`.github/workflows/meteo.yml` lance `meteo/verifie.py` vers 7 h 30 et 17 h 30, heure de
+Paris (deux déclenchements UTC par créneau pour suivre l'heure d'été ; le script
+ignore celui qui tombe avant 7 h ou entre 14 h et 17 h). Le script lit la prévision
+Open-Meteo, `meteo/regles.json` et les trois calendriers, puis écrit `data-meteo.json` :
+
+```
+{ version, jour, maj,
+  taches:    [ { id, type: gel|levee|arrosage|engrais, titre, detail, alerte? } ],
+  reportees: [ { id, src, texte, motif, jusqu_a } ],
+  etat:      { arrosage, engrais, une_fois, notifie } }
+```
+
+- `taches` vaut pour `jour` seulement ; la page ignore un fichier d'un autre jour et
+  signale une vérification en retard. Arrosage et engrais sont décidés au premier
+  passage du jour ; les alertes de gel sont recalculées à chaque passage.
+- `reportees[].id` est l'empreinte `hache(src + '|' + texte)` de la page d'accueil :
+  **reformuler une tâche change son id**, comme pour les cases cochées. La page la
+  range alors dans « Reporté par la météo » jusqu'à `jusqu_a`.
+- Le script ne voit pas les cases cochées (elles restent sur l'appareil) : un pot
+  signalé à arroser est supposé arrosé le jour même, un engrais signalé supposé donné.
+- Arrosage : bilan quotidien ET0 × coefficient de soif − pluie (nulle pour un pot
+  `abri`), signalé quand il dépasse la réserve du pot (0,4 mm par cm de diamètre,
+  25 mm en pleine terre). Jamais par gel (max < 4 °C ou nuit < −3 °C), ni avant 5 mm
+  de pluie annoncés pour un pot qui la reçoit. Un pot `abri` est vérifié au moins
+  toutes les 3 semaines pendant ses `mois`.
+- Notification ntfy (secret `NTFY_TOPIC`) : au plus une le matin, seulement si une
+  tâche nouvelle autre qu'une simple levée de report ; le soir, seulement pour un gel
+  nouveau. Le détail des reports reste sur le site.
+- Le workflow ne commite `data-meteo.json` que s'il a changé.
+
+Essai local : `python3 meteo/verifie.py --essai --force`, ou avec une prévision
+enregistrée : `--meteo fichier.json --maintenant 2026-11-23T07:30 --precedent vide.json`.
 
 ## Ce qui est encore en suspens
 

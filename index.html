@@ -127,6 +127,11 @@ ul.taches input{margin-top:4px;flex:none;width:16px;height:16px;accent-color:var
 .titre{font-weight:700}
 .detail{display:block;font-size:12.5px;line-height:1.45;color:var(--sourdine);margin-top:2px}
 .src.potager{background:#4E7A45}.src.fleurs{background:#CE6A2B}.src.arbustes{background:#96713B}
+.src.meteo{background:#4F6D8A}
+.jour-meteo{font-family:'Spline Sans Mono',monospace;font-size:11.5px;color:#4F6D8A;margin:2px 0 0}
+.bloc.meteo li.alerte-meteo .titre{color:#A8432F}
+.reporte .txt,.reporte label{color:var(--sourdine)}
+.retard{font-size:12px;color:var(--sourdine);font-style:italic;margin-top:12px}
 .txt{flex:1;min-width:0}
 .plus-tard .txt,.plus-tard label{color:var(--sourdine)}
 .quand{display:block;font-size:11.5px;color:var(--sourdine);margin-top:1px}
@@ -155,7 +160,8 @@ footer code{font-family:'Spline Sans Mono',monospace;font-size:11px}
     <h2 id="jour-titre">Aujourd'hui</h2>
     <span class="jour-compte" id="jour-compte"></span>
   </div>
-  <p class="jour-note">Ce qu'il reste à faire, tiré des trois calendriers. Cocher une tâche la range dans « fait » pour le reste du mois ; l'arrosage quotidien se décoche chaque matin.</p>
+  <p class="jour-meteo" id="jour-meteo"></p>
+  <p class="jour-note">Ce qu'il reste à faire, tiré des trois calendriers et de la vérification météo. Cocher une tâche la range dans « fait » pour le reste du mois ; l'arrosage quotidien se décoche chaque matin.</p>
   <div id="jour-corps"><p class="rien-jour">Chargement…</p></div>
 </section>
 
@@ -189,7 +195,8 @@ footer code{font-family:'Spline Sans Mono',monospace;font-size:11px}
 
 <footer>
   Consultable hors ligne une fois les deux pages ouvertes.<br>
-  Contenu dans <code>data-potager.json</code>, <code>data-fleurs.json</code> et <code>data-arbustes.json</code>.
+  Contenu dans <code>data-potager.json</code>, <code>data-fleurs.json</code> et <code>data-arbustes.json</code> ;
+  consignes météo dans <code>data-meteo.json</code>, mises à jour deux fois par jour.
 </footer>
 
 <script>
@@ -267,7 +274,7 @@ function compteArbustes(data,m){
    - les tâches du mois, rangées dans « fait » une fois cochées ;
    - « plus tard ce mois » pour celles dont le texte dit « mi- » ou « fin » du mois ;
    - la dernière semaine, un aperçu du mois suivant. */
-let DONNEES={potager:null,fleurs:null,arbustes:null};
+let DONNEES={potager:null,fleurs:null,arbustes:null,meteo:null};
 
 const PREFIXES=['janv','f[ée]v','mars','avr','mai','juin','juil','ao[uû]t','sept','oct','nov','d[ée]c'];
 const DEBUT={'début':1,'debut':1,'mi':11,'fin':21};
@@ -332,16 +339,66 @@ function cles(d){
 }
 function lit(k){ try{return localStorage.getItem(k)==='1';}catch(e){return false;} }
 function ecrit(k,v){ try{ v?localStorage.setItem(k,'1'):localStorage.removeItem(k); }catch(e){} }
-const cleTache=(t,c)=>t.quot?`jour:q:${c.jour}:${t.id}`:`jour:f:${c.mois}:${t.id}`;
+const cleTache=(t,c)=>t.meteo?`jour:m:${c.jour}:${t.id}`:t.quot?`jour:q:${c.jour}:${t.id}`:`jour:f:${c.mois}:${t.id}`;
 
 const ligne=(t,c,{coche=true,quand=''}={})=>{
   const k=cleTache(t,c);
   const box=coche?`<input type="checkbox" data-cle="${k}"${lit(k)?' checked':''}>`:'';
-  return `<li><label>${box}<span class="txt"><span class="src ${t.src}">${t.src}</span>`+
+  return `<li${t.alerte?' class="alerte-meteo"':''}><label>${box}<span class="txt"><span class="src ${t.src}">${t.lib||t.src}</span>`+
          `<b class="titre">${t.titre}</b>`+
          `${t.detail?`<span class="detail">${t.detail}</span>`:''}`+
          `${quand?`<span class="quand">${quand}</span>`:''}</span></label></li>`;
 };
+
+/* ================= Météo =================
+   data-meteo.json est écrit deux fois par jour par la vérification météo
+   (meteo/verifie.py, lancée par GitHub Actions). Il porte les gestes que la météo
+   demande aujourd'hui et les tâches du mois qu'elle repousse. Un fichier d'un autre
+   jour est ignoré : ses consignes ne valent plus. */
+const iso=d=>`${d.getFullYear()}-${deux(d.getMonth()+1)}-${deux(d.getDate())}`;
+const MOIS_C=['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+const JOURS_S=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+function quandReprise(j,d){
+  if(!j)return 'date à revoir';
+  const x=new Date(j+'T12:00'), demain=new Date(d.getFullYear(),d.getMonth(),d.getDate()+1);
+  return iso(x)===iso(demain)?'demain':`${JOURS_S[x.getDay()]} ${x.getDate()} ${MOIS_C[x.getMonth()]}`;
+}
+function meteoDuJour(d){
+  const M=DONNEES.meteo;
+  if(!M||M.jour!==iso(d))return {taches:[],reportees:new Map()};
+  const taches=(M.taches||[]).map(t=>({src:'meteo',lib:'météo',titre:t.titre,detail:t.detail,
+    id:t.id,meteo:true,alerte:!!t.alerte,texte:t.titre+' — '+t.detail}));
+  return {taches, reportees:new Map((M.reportees||[]).map(r=>[r.id,r]))};
+}
+/* La vérification a lieu vers 7 h 30 : avant 10 h, le fichier de la veille est normal. */
+function retardMeteo(d){
+  const M=DONNEES.meteo;
+  if(!M||!M.jour)return '';
+  const j=new Date(M.jour+'T00:00'), auj=new Date(d.getFullYear(),d.getMonth(),d.getDate());
+  const ecart=Math.round((auj-j)/864e5);
+  if(ecart<=0||(ecart===1&&d.getHours()<10))return '';
+  return `<p class="retard">Vérification météo en retard (dernière le ${j.getDate()} ${MOIS_C[j.getMonth()]})</p>`;
+}
+
+/* Une ligne de prévision en direct, pour situer les consignes. Facultative : sans
+   réseau, elle disparaît. Mêmes coordonnées que meteo/regles.json. */
+const deg=t=>{const n=Math.round(t);return (n<0?'−':'')+Math.abs(n)+'°';};
+async function meteoEnDirect(){
+  const el=document.getElementById('jour-meteo');
+  if(!el)return;
+  try{
+    const u='https://api.open-meteo.com/v1/forecast?latitude=46.21&longitude=5.95&elevation=500'+
+      '&timezone=Europe%2FParis&forecast_days=2&daily=temperature_2m_max,temperature_2m_min,precipitation_sum'+
+      '&hourly=temperature_2m';
+    const r=await fetch(u,{cache:'no-store'});
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    const j=await r.json();
+    const nuit=Math.min(...j.hourly.temperature_2m.slice(18,33).filter(v=>v!==null));
+    const pluie=Math.round(j.daily.precipitation_sum[0]*10)/10;
+    el.textContent=`${deg(j.daily.temperature_2m_min[0])} / ${deg(j.daily.temperature_2m_max[0])}`+
+      ` · ${pluie?String(pluie).replace('.',',')+' mm':'sec'} · cette nuit ${deg(nuit)}`;
+  }catch(e){ el.textContent=''; }
+}
 
 function drawJour(){
   const d=new Date(), m=d.getMonth()+1, jour=d.getDate(), c=cles(d);
@@ -368,9 +425,15 @@ function drawJour(){
   const reste=toutes.filter(t=>!t.quot);
   const fait=reste.filter(t=>lit(cleTache(t,c)));
   const ouvertes=reste.filter(t=>!lit(cleTache(t,c)));
-  const plusTard=ouvertes.filter(t=>{const j=jourDeDepart(t.texte,m); return j!==null&&j>jour;});
-  const aFaire=ouvertes.filter(t=>!plusTard.includes(t))
+  const meteo=meteoDuJour(d);
+  const reportees=ouvertes.filter(t=>meteo.reportees.has(t.id));
+  const plusTard=ouvertes.filter(t=>{const j=jourDeDepart(t.texte,m); return j!==null&&j>jour&&!reportees.includes(t);});
+  const aFaire=ouvertes.filter(t=>!plusTard.includes(t)&&!reportees.includes(t))
     .sort((a,b)=>(estAlerte(b.texte)-estAlerte(a.texte)));   // les ⚠ d'abord
+
+  // ce que la météo demande aujourd'hui, alertes de gel en tête
+  if(meteo.taches.length)
+    h+=`<div class="bloc meteo"><h3>Météo du jour</h3><ul class="taches">${meteo.taches.map(t=>ligne(t,c)).join('')}</ul></div>`;
 
   if(quot.length)
     h+=`<div class="bloc"><h3>Chaque jour</h3><ul class="taches">${quot.map(t=>ligne(t,c)).join('')}</ul></div>`;
@@ -379,6 +442,11 @@ function drawJour(){
   h+=aFaire.length?`<ul class="taches">${aFaire.map(t=>ligne(t,c)).join('')}</ul>`
                   :`<p class="rien-jour">Rien d'autre ce mois-ci — le jardin travaille tout seul.</p>`;
   h+='</div>';
+
+  if(reportees.length)
+    h+=`<div class="bloc reporte"><h3>Reporté par la météo</h3><ul class="taches">${
+      reportees.map(t=>{const r=meteo.reportees.get(t.id);
+        return ligne(t,c,{quand:`${r.motif} · à reprendre ${quandReprise(r.jusqu_a,d)}`});}).join('')}</ul></div>`;
 
   if(plusTard.length)
     h+=`<div class="bloc plus-tard"><h3>Plus tard ce mois-ci</h3><ul class="taches">${
@@ -398,8 +466,11 @@ function drawJour(){
         next.map(t=>ligne(t,cs,{coche:false})).join('')}</ul></details>`;
   }
 
+  h+=retardMeteo(d);
+
   document.getElementById('jour-corps').innerHTML=h;
-  const restantes=aFaire.length+quot.filter(t=>!lit(cleTache(t,c))).length;
+  const restantes=aFaire.length+quot.filter(t=>!lit(cleTache(t,c))).length+
+    meteo.taches.filter(t=>!lit(cleTache(t,c))).length;
   document.getElementById('jour-compte').textContent=
     restantes?`${pluriel(restantes,'tâche')} à faire`:'tout est fait';
 }
@@ -419,13 +490,14 @@ function planifierDemain(){
 
 async function init(){
   majMillesime();
-  const [p,f,a]=await Promise.allSettled(
-    ['data-potager.json','data-fleurs.json','data-arbustes.json'].map(charge));
-  DONNEES={potager:p.value||null, fleurs:f.value||null, arbustes:a.value||null};
+  const [p,f,a,mt]=await Promise.allSettled(
+    ['data-potager.json','data-fleurs.json','data-arbustes.json','data-meteo.json'].map(charge));
+  DONNEES={potager:p.value||null, fleurs:f.value||null, arbustes:a.value||null, meteo:mt.value||null};
   compte(DONNEES.potager,comptePotager,'m-potager');
   compte(DONNEES.fleurs,compteFleurs,'m-fleurs');
   compte(DONNEES.arbustes,compteArbustes,'m-arbustes');
   drawJour();
+  meteoEnDirect();
 }
 init();
 planifierDemain();
