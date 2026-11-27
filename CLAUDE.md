@@ -189,16 +189,18 @@ un aperçu du mois suivant apparaît en bas.
 
 ## Vérification météo
 
-`.github/workflows/meteo.yml` lance `meteo/verifie.py` vers 7 h 30 et 17 h 30, heure de
-Paris (deux déclenchements UTC par créneau pour suivre l'heure d'été ; le script
-ignore celui qui tombe avant 7 h ou entre 14 h et 17 h). Le script lit la prévision
+`.github/workflows/meteo.yml` lance `meteo/verifie.py` toutes les heures (GitHub
+retarde ou saute souvent les déclenchements planifiés, parfois de plusieurs heures).
+Le script fait le passage du matin au premier lancement à partir de 7 h, heure de
+Paris, celui du soir au premier à partir de 17 h, et ignore les autres
+(`etat.passages`). Un premier passage tombé le soir tient lieu des deux. Le script lit la prévision
 Open-Meteo, `meteo/regles.json` et les trois calendriers, puis écrit `data-meteo.json` :
 
 ```
 { version, jour, maj,
   taches:    [ { id, type: gel|levee|arrosage|engrais, titre, detail, alerte? } ],
   reportees: [ { id, src, texte, motif, jusqu_a } ],
-  etat:      { arrosage, engrais, une_fois, notifie } }
+  etat:      { arrosage, engrais, une_fois, notifie, passages } }
 ```
 
 - `taches` vaut pour `jour` seulement ; la page ignore un fichier d'un autre jour et

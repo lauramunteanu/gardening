@@ -207,6 +207,7 @@ class Verification:
             'engrais': dict(etat.get('engrais') or {}),
             'une_fois': dict(etat.get('une_fois') or {}),
             'notifie': dict(etat.get('notifie') or {}),
+            'passages': dict(etat.get('passages') or {}),
         }
         self.premier_passage = self.prec.get('jour') != self.auj.isoformat()
 
@@ -458,27 +459,37 @@ def main():
     tz = ZoneInfo(lieu['fuseau'])
     maintenant = datetime.fromisoformat(a.maintenant) if a.maintenant else datetime.now(tz).replace(tzinfo=None)
 
-    # Deux tâches planifiées par créneau (l'heure d'été décale tout d'une heure) :
-    # seules celles qui tombent à partir de 7 h et de 17 h, heure de Paris, travaillent.
+    # GitHub lance le workflow toutes les heures, mais retarde ou saute souvent les
+    # déclenchements planifiés. Le script ne dépend donc pas de l'heure exacte : il fait
+    # le passage du matin au premier lancement à partir de 7 h, celui du soir au premier
+    # lancement à partir de 17 h, et laisse filer les autres sans rien télécharger.
+    chemin_prec = Path(a.precedent) if a.precedent else SORTIE
+    try:
+        precedent = json.loads(chemin_prec.read_text(encoding='utf-8'))
+    except (OSError, ValueError):
+        precedent = {}
     h = maintenant.hour
-    creneau = 'matin' if h < 14 else 'soir'
-    if not a.force and not (7 <= h < 14 or 17 <= h < 24):
-        print(f"Hors créneau ({maintenant:%H:%M} à Paris) : rien à faire.")
-        return
+    creneau = 'matin' if h < 17 else 'soir'
+    faits = (precedent.get('etat') or {}).get('passages') or {}
+    faits = set(faits.get('faits', [])) if faits.get('jour') == maintenant.date().isoformat() else set()
+    if not a.force:
+        if h < 7:
+            print(f"Trop tôt ({maintenant:%H:%M} à Paris) : rien à faire.")
+            return
+        if creneau in faits or (creneau == 'matin' and 'soir' in faits):
+            print(f"Passage du {creneau} déjà fait aujourd'hui ({maintenant:%H:%M} à Paris).")
+            return
 
     brut = json.loads(Path(a.meteo).read_text()) if a.meteo else telecharge_meteo(lieu)
     meteo = Meteo(brut)
     if maintenant.date() not in meteo.jours:
         sys.exit(f"La prévision ne couvre pas le {maintenant.date()}.")
 
-    chemin_prec = Path(a.precedent) if a.precedent else SORTIE
-    try:
-        precedent = json.loads(chemin_prec.read_text(encoding='utf-8'))
-    except (OSError, ValueError):
-        precedent = {}
-
     v = Verification(regles, meteo, maintenant, precedent)
     res = v.lance()
+    # un premier passage tardif (le soir) tient lieu des deux
+    res['etat']['passages'] = {'jour': maintenant.date().isoformat(),
+                               'faits': sorted(faits | {creneau} | ({'matin'} if v.premier_passage else set()))}
 
     # ---- notification : au plus une par jour, sauf un gel nouveau le soir
     aujourd = maintenant.date()

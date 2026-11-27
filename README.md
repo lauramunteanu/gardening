@@ -24,7 +24,7 @@ y a à faire ce mois-ci.
 - `meteo/regles.json` — règles de la vérification météo : pots et leur exposition,
   engrais, seuils de gel, tâches que la météo peut reporter
 - `meteo/verifie.py`, `.github/workflows/meteo.yml` — la vérification elle-même,
-  lancée par GitHub Actions vers 7 h 30 et 17 h 30
+  lancée par GitHub Actions le matin et le soir
 - `data-meteo.json` — **écrit par la vérification, jamais à la main**
 - `manifest.webmanifest`, `icon.svg` — ajout à l'écran d'accueil
 - `calendrier-cultures.html`, `calendrier-fleurs.html` — sources d'origine, conservées

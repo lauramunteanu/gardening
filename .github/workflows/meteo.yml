@@ -1,12 +1,12 @@
 name: Vérification météo
 
-# Deux passages par jour, à 7 h 30 et 17 h 30 heure de Paris. Les horaires de GitHub
-# sont en UTC : chaque créneau a deux déclenchements (hiver / été), et le script
-# ignore celui qui tombe trop tôt. GitHub peut retarder un déclenchement de 10 à 30 min.
+# Lancé toutes les heures (à la 17e minute, moins chargée que :00 et :30) : GitHub
+# retarde ou saute souvent les déclenchements planifiés. Le script fait le passage du
+# matin au premier lancement à partir de 7 h (heure de Paris), celui du soir au premier
+# à partir de 17 h, et ignore les autres sans rien télécharger ni enregistrer.
 on:
   schedule:
-    - cron: '30 5,6 * * *'
-    - cron: '30 15,16 * * *'
+    - cron: '17 * * * *'
   workflow_dispatch:
     inputs:
       essai:
