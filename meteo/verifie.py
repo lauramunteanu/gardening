@@ -452,12 +452,31 @@ def main():
     ap.add_argument('--maintenant', help='date et heure locales simulées, AAAA-MM-JJTHH:MM')
     ap.add_argument('--precedent', help='data-meteo.json de départ (par défaut celui du dépôt)')
     ap.add_argument('--sortie', help='où écrire (par défaut data-meteo.json)')
+    ap.add_argument('--test', action='store_true',
+                    help="envoie une notification d'essai avec la nuit prévue, sans rien écrire")
     a = ap.parse_args()
 
     regles = json.loads(REGLES.read_text(encoding='utf-8'))
     lieu = regles['lieu']
     tz = ZoneInfo(lieu['fuseau'])
     maintenant = datetime.fromisoformat(a.maintenant) if a.maintenant else datetime.now(tz).replace(tzinfo=None)
+
+    if a.test:
+        meteo = Meteo(json.loads(Path(a.meteo).read_text()) if a.meteo else telecharge_meteo(lieu))
+        auj = maintenant.date()
+        nuit = meteo.nuit(auj)
+        lignes = [f"Les notifications du jardin arrivent bien. Nuit prévue : {degres(nuit)} "
+                  f"(au plus bas entre 18 h et 9 h)."]
+        actifs = sorted((p for p in regles['protections'] if dans_fenetre(auj, p['du'], p['au'])),
+                        key=lambda p: -p['seuil'])
+        for p in actifs:
+            etat = 'à faire' if nuit <= p['seuil'] else 'pas nécessaire'
+            lignes.append(f"· {degres(p['seuil'])} : {p['quoi']} → {etat}")
+        corps = '\n'.join(lignes)
+        print(corps)
+        if not a.essai:
+            envoie('Jardin · essai', corps, 3, lieu['site'])
+        return
 
     # GitHub lance le workflow toutes les heures, mais retarde ou saute souvent les
     # déclenchements planifiés. Le script ne dépend donc pas de l'heure exacte : il fait

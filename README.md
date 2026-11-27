@@ -58,3 +58,4 @@ prévision du matin n'annonçait pas. Le sujet ntfy est le secret `NTFY_TOPIC` d
 Pour corriger une exposition, un diamètre de pot ou un seuil de gel : modifier
 `meteo/regles.json`. Essai sans rien écrire ni envoyer : onglet Actions →
 « Vérification météo » → Run workflow, case « Essai » cochée.
+Notification d'essai (avec la nuit prévue) : même chemin, case « test » cochée.

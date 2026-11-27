@@ -13,6 +13,10 @@ on:
         description: "Essai : afficher le résultat sans rien écrire ni notifier"
         type: boolean
         default: true
+      test:
+        description: "Envoyer seulement une notification d'essai, avec la nuit prévue"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -37,7 +41,9 @@ jobs:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            if [ "${{ inputs.essai }}" = "true" ]; then
+            if [ "${{ inputs.test }}" = "true" ]; then
+              python3 meteo/verifie.py --test
+            elif [ "${{ inputs.essai }}" = "true" ]; then
               python3 meteo/verifie.py --force --essai
             else
               python3 meteo/verifie.py --force
