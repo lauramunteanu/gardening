@@ -475,7 +475,24 @@ def main():
         corps = '\n'.join(lignes)
         print(corps)
         if not a.essai:
-            envoie('Jardin · essai', corps, 3, lieu['site'])
+            sujet = os.environ.get('NTFY_TOPIC', '')
+            # le secret est masqué dans le journal : on n'en montre que la forme
+            print(f"Sujet ntfy : {len(sujet)} caractères, commence par {sujet[:9]!r}, "
+                  f"finit par {sujet[-3:]!r}, espaces autour : {sujet != sujet.strip()}")
+            serveur = os.environ.get('NTFY_SERVER', 'https://ntfy.sh').rstrip('/')
+            charge = {'topic': sujet.strip(), 'title': 'Jardin · essai', 'message': corps,
+                      'priority': 3, 'tags': ['seedling'], 'click': lieu['site']}
+            req = urllib.request.Request(serveur, data=json.dumps(charge).encode('utf-8'),
+                                         headers={'Content-Type': 'application/json'}, method='POST')
+            with urllib.request.urlopen(req, timeout=30) as r:
+                rep = json.load(r)
+            print(f"Réponse ntfy : HTTP {r.status}, message {rep.get('id')} publié")
+            url = f"{serveur}/{urllib.parse.quote(sujet.strip())}/json?poll=1&since={rep.get('id')}"
+            with urllib.request.urlopen(url, timeout=30) as r:
+                print(f"Relecture du sujet : {r.read().decode().count(chr(10))} message(s) après celui-ci (0 attendu)")
+            avant = f"{serveur}/{urllib.parse.quote(sujet.strip())}/json?poll=1&since=24h"
+            with urllib.request.urlopen(avant, timeout=30) as r:
+                print(f"Messages sur ce sujet depuis 24 h : {r.read().decode().count(chr(10))}")
         return
 
     # GitHub lance le workflow toutes les heures, mais retarde ou saute souvent les
