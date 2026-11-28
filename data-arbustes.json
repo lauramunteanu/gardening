@@ -232,8 +232,17 @@
         "10": [
           "Emmailloter le pot ET voile d'hivernage sur les tiges, à ouvrir par temps doux. Ce sont les boutons de l'an prochain.",
           "Serrer contre le mur sud, sous l'avancée de toit."
+        ],
+        "12": [
+          "Bouture (étagère de la cuisine) : tirer doucement fin décembre. Si elle résiste, elle a raciné ; garder le sac jusqu'aux nouvelles feuilles."
         ]
-      }
+      },
+      "journal": [
+        {
+          "date": "2026-11-28",
+          "texte": "Bouture de la branche cassée par la tempête, après une semaine dans l'eau : feuilles retirées sauf la touffe du bout, recoupée sous le dernier nœud, 2 paires d'yeux enterrées dans un godet de 9 cm de terreau. Sac congélation fermé, sur l'étagère de la cuisine sous les barres Barrina. Aérer chaque semaine, soucoupe vide. Si elle repart : dedans jusqu'en mai, une semaine d'endurcissement avant de sortir."
+        }
+      ]
     },
     {
       "nom": "Hortensia paniculata",
