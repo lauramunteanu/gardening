@@ -1,6 +1,6 @@
 {
  "version": 1,
- "jour": "2026-11-27",
+ "jour": "2026-11-28",
  "taches": [],
  "reportees": [],
  "etat": {
@@ -8,36 +8,35 @@
    "bulbes-terrasse": "2026-11-24",
    "etagere": "2026-11-24",
    "balcon-hiver": "2026-11-24",
-   "balcon-ete": "2026-11-27",
+   "balcon-ete": "2026-11-28",
    "rosiers-50": "2026-11-24",
    "rosier-black-magic": "2026-11-24",
-   "rosier-roald-dahl": "2026-11-27",
-   "pivoine": "2026-11-27",
-   "iris": "2026-11-27",
-   "muguet": "2026-11-27",
-   "lavande": "2026-11-27",
-   "gaura": "2026-11-27",
+   "rosier-roald-dahl": "2026-11-28",
+   "pivoine": "2026-11-28",
+   "iris": "2026-11-28",
+   "muguet": "2026-11-28",
+   "lavande": "2026-11-28",
+   "gaura": "2026-11-28",
    "ail-pots": "2026-11-24",
    "cima-di-rapa": "2026-11-24",
    "batavia": "2026-11-24",
    "bac": "2026-11-24",
-   "agapanthe": "2026-11-27",
-   "hortensias": "2026-11-27",
-   "arbustes-pot": "2026-11-27",
-   "legumes-pots-ete": "2026-11-27",
-   "potager-ete": "2026-11-27",
-   "jeunes-plants-terre": "2026-11-27"
+   "agapanthe": "2026-11-28",
+   "hortensias": "2026-11-28",
+   "arbustes-pot": "2026-11-28",
+   "legumes-pots-ete": "2026-11-28",
+   "potager-ete": "2026-11-28",
+   "jeunes-plants-terre": "2026-11-28"
   },
   "engrais": {},
   "une_fois": {},
   "notifie": {},
   "passages": {
-   "jour": "2026-11-27",
+   "jour": "2026-11-28",
    "faits": [
-    "matin",
-    "soir"
+    "matin"
    ]
   }
  },
- "maj": "2026-11-27T20:28"
+ "maj": "2026-11-28T12:42"
 }
